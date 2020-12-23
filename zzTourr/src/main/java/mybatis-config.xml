@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!-- VO 객체 별칭 지정 -->
+<typeAliases>
+	<typeAlias type="com.zzTourr.domain.mainVO" alias='main'/>
+	<typeAlias type="com.zzTourr.domain.customerVO" alias='customer'/>
+	<typeAlias type="com.zzTourr.domain.adminVO" alias='admin'/>
+	<typeAlias type="com.zzTourr.domain.hotelVO" alias='hotel'/>
+	
+</typeAliases>
+
+</configuration>
+
