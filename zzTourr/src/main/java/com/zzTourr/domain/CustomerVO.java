@@ -1,5 +1,5 @@
 package com.zzTourr.domain;
 
-public class mainVO {
+public class CustomerVO {
 
 }

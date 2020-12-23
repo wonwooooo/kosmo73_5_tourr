@@ -1,5 +1,5 @@
 package com.zzTourr.service;
 
-public interface mainService {
+public class AdminServiceImpl {
 
 }
