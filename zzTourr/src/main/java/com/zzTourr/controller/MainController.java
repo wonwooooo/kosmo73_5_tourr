@@ -1,5 +1,5 @@
 package com.zzTourr.controller;
 
-public class customerController {
+public class MainController {
 
 }

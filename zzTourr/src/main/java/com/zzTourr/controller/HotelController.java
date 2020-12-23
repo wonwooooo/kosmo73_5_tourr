@@ -1,5 +1,5 @@
 package com.zzTourr.controller;
 
-public class hotelController {
+public class HotelController {
 
 }

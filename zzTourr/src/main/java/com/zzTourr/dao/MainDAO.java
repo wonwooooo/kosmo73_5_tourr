@@ -1,5 +1,5 @@
 package com.zzTourr.dao;
 
-public interface adminDAO {
+public interface MainDAO {
 
 }
