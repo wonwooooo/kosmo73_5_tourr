@@ -1,5 +1,17 @@
 package com.zzTourr.controller;
 
-public class CustomerController {
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+@Controller
+public class CustomerController {
+	 
+	@RequestMapping("/customerViews/customerCart.trip")
+	   public String customerCart() {
+	      return "/customerViews/customerCart";
+	      
+	   }
+	
+
+	
 }
