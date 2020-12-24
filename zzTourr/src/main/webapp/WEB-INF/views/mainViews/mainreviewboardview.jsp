@@ -5,12 +5,12 @@
 <head>
 <title>re:ko</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" type="text/css" href="/zTrip/resources/maincss/mainstyle.css" />
+<link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/mainstyle.css" />
 </head>
 <body>
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="mainindex.trip"><img src="/zTrip/resources/mainimg/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
+    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
@@ -21,8 +21,10 @@
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
-            <li><a href="mainlodgelist.do">게스트하우스</a></li>
-            <li><a href="mainlodgelist.do">펜션</a></li>
+            <li><a href="mainlodgelist.trip">호텔</a></li>
+            <li><a href="mainlodgelist.trip">모텔</a></li>
+            <li><a href="mainlodgelist.trip">게스트하우스</a></li>
+            <li><a href="mainlodgelist.trip">펜션</a></li>
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
@@ -32,9 +34,9 @@
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
-            <li><a href="mainrvboardlist.do">리뷰게시판</a></li>
-            <li><a href="mainfreeboardlist.do">자유게시판</a></li>
-            <li><a href="mainfreeboardlist.do">동행자 찾아요</a></li>
+            <li><a href="mainrvboardlist.trip">리뷰게시판</a></li>
+            <li><a href="mainfreeboardlist.trip">자유게시판</a></li>
+            <li><a href="mainfreeboardlist.trip">동행자 찾아요</a></li>
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         <li><a>유용한 정보
@@ -44,8 +46,7 @@
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
             <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">환율</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">날씨</a></li>
+       
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
@@ -142,7 +143,7 @@
    </div>
 
         <div>
-        <img src="/zTrip/resources/mainimg/big_pic.jpg"/>
+        <img src="/zzTourr/resources/mainImgs/big_pic.jpg"/>
        <p>&nbsp;</p>
     </div>
          

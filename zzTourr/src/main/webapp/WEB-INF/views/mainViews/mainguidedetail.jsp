@@ -10,7 +10,7 @@
 <body>
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImg/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
+    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
@@ -21,6 +21,8 @@
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
+            <li><a href="mainlodgelist.trip">호텔</a></li>
+            <li><a href="mainlodgelist.trip">모텔</a></li>
             <li><a href="mainlodgelist.trip">게스트하우스</a></li>
             <li><a href="mainlodgelist.trip">펜션</a></li>
           </ul>
@@ -44,8 +46,7 @@
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
             <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">환율</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">날씨</a></li>
+           
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
@@ -139,7 +140,7 @@
         <ul>
         <li>
          <span>가격(1인 기준):</span> 50000원
-         <p><a href="maingureservation.do"><input type="button" value="예약하기"/></a> </p>
+         <p><a href="maingureservation.trip"><input type="button" value="예약하기"/></a> </p>
         </ul>
       </div>
       </div>
