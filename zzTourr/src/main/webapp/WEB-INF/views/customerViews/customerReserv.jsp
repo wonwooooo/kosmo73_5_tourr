@@ -4,10 +4,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>BuildUp Real Estate - List 2</title>
+<title>customerReserv.jsp 예약내역</title>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
 <!-- <link rel="stylesheet" type="text/css" href="/zTrip/resources/customercss/style.css" /> -->
-<link rel="stylesheet" type="text/css" href="/team5_travel_test/resources/customercss/style.css" />
+<link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/customerStyle.css" />
 </head>
 <body>
 <div id="main_container">
@@ -16,74 +16,25 @@
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
-        <li><a href="http://all-free-download.com/free-website-templates/">Home</a></li>
-        <li><a href="admin.html">Admin
-          <!--[if IE 7]><!-->
+        
+        <li><a href="list.html">마이페이지
           </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
+         
           <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
+            <li><a href="customerReserv.trip">구매내역</a></li>
+            <li><a href="customerCart.trip">장바구니</a></li>
+            <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
+            <li><a href="customerQna.trip">1:1 문의</a></li>
+            <li><a href="customerModify.trip">개인정보</a></li>
           </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
-        <li><a href="login.html">Login
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
-        <li><a href="list.html">Renting Homes
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">Lorem ipsum dolor sit amet</a></li>
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
-<!--         <li><a href="http://all-free-download.com/free-website-templates/">About Us </a></li> -->
-<!--         <li><a href="http://all-free-download.com/free-website-templates/">Customers</a></li> -->
-<!--         <li><a href="http://all-free-download.com/free-website-templates/">FAQ</a></li> -->
-<!--         <li><a href="contact.html">Contact</a></li> -->
+
       </ul>
     </div>
   </div>
   <div id="main_content">
 
-    <div class="column4">
+    <div class="column">
       <div class="title" style="float:left;">
         <div style="float:left;">예매내역</div>
 <!--         <div style="float:right; font-size:10px;color:#d8325d; padding-top:2px;">display: <a href="list2.html"><img src="images/list_style3_a.gif" border="0" /></a> <a href="list1.html"><img src="images/list_style1.gif" border="0" /></a> <a href="list.html"><img src="images/list_style2.gif" border="0" /></a> </div> -->
@@ -122,7 +73,7 @@
           <td>150 000 $</td>
            <td>Sale</td>
      		 <td><input type="button" value="결제하기"/></td>
-          <td><input type="button" value="취소신청"/></td>
+          <td><input type="button" value="취소하기"/></td>
           <td><input type="button" value="후기작성"/></td>
         </tr>
         </tr>
