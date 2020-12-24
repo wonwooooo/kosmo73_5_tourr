@@ -212,19 +212,19 @@ padding-bottom:10px;
 width:257px;
 height:10px;
 float:left;
-background:url(/zTrip/resources/mainimg/top_box_bg.gif) no-repeat center;
+background:url(/zzTourr/resources/mainImgs/top_box_bg.gif) no-repeat center;
 }
 .center_left_box{
 width:257px;
 height: auto;
 float:left;
-background:url(/zTrip/resources/mainimg/center_box_bg.gif) repeat-y;
+background:url(/zzTourr/resources/mainImgs/center_box_bg.gif) repeat-y;
 }
 .bottom_left_box{
 width:257px;
 height:10px;
 float:left;
-background:url(/zTrip/resources/mainimg/bottom_box_bg.gif) no-repeat center;
+background:url(/zzTourr/resources/mainImgs/bottom_box_bg.gif) no-repeat center;
 }
 .box_title{
 width:257px;
@@ -244,7 +244,7 @@ padding:5px;
 .proposal{
 width:287px;
 height:85px;
-background:url(/zTrip/resources/mainimg/proposal_box.gif) no-repeat center;
+background:url(/zzTourr/resources/mainImgs/proposal_box.gif) no-repeat center;
 background-position:0px 0px;
 margin-left:15px;
 margin-top:15px;
@@ -287,7 +287,7 @@ padding:0px;
 }
 .details_list ul li{
 padding:5px 5px 5px 25px;
-background:url(/zTrip/resources/mainimg/bullet.gif) no-repeat left;
+background:url(/zzTourr/resources/mainImgs/bullet.gif) no-repeat left;
 color:#333333;
 }
 .details_list ul li span{
@@ -296,7 +296,7 @@ color:#0464a1;
 .button{
 width:139px;
 height:30px;
-background:url(/zTrip/resources/mainimg/blank_button.gif) no-repeat center;
+background:url(/zzTourr/resources/mainImgs/blank_button.gif) no-repeat center;
 text-align:center;
 line-height:30px;
 font-weight:bold;

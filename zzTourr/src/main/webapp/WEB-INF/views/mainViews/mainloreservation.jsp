@@ -5,8 +5,8 @@
 <head>
 <title>BuildUp Real Estate - Login</title>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
-<link rel="stylesheet" type="text/css" href="/zTrip/resources/maincss/mainstyle.css" />
-<link rel="stylesheet" type="text/css" href="/zTrip/resources/maincss/mainadmin.css" />
+<link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/mainstyle.css" />
+<link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/mainadmin.css" />
 <link rel="stylesheet" href="//code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" />
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 <script src="//code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
@@ -33,7 +33,7 @@
 <body>
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="mainindex.trip"><img src="/zTrip/resources/mainimg/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
+    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
@@ -44,6 +44,8 @@
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
+            <li><a href="mainlodgelist.trip">호텔</a></li>
+            <li><a href="mainlodgelist.trip">모텔</a></li>
             <li><a href="mainlodgelist.trip">게스트하우스</a></li>
             <li><a href="mainlodgelist.trip">펜션</a></li>
           </ul>
@@ -67,8 +69,7 @@
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
             <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">환율</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">날씨</a></li>
+        
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>

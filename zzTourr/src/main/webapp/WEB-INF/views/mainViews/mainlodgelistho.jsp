@@ -1,16 +1,20 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>re:ko</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/mainstyle.css" />
+<link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/mainstyle.css"  />
 </head>
 <body>
+
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="http://all-free-download.com/free-website-templates/"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
+    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
@@ -21,7 +25,7 @@
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
-            <li><a href="mainlodgelist.trip">호텔</a></li>
+           <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
             <li><a href="mainlodgelist.trip">모텔</a></li>
             <li><a href="mainlodgelist.trip">게스트하우스</a></li>
             <li><a href="mainlodgelist.trip">펜션</a></li>
@@ -46,7 +50,6 @@
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
             <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
-          
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
@@ -63,7 +66,7 @@
             <div class="box_title"><span>밑의 버튼을 클릭해주세요</span> </div>
 
             <div style="float:right; padding:10px 25px 0 0;">
-               <input type="button" value="로그인" />
+               <a href="mainlogin.trip"><input type="button" value="로그인" /></a>
             </div>
        <div class="form_row">
               <a href="mainpassmiss.trip" style="text-decoration: none; color:#615357;"><label style="float:center;">아이디/비밀번호 찾기</label></a>
@@ -89,43 +92,83 @@
      
      <div style="float:right; padding:10px 25px 0 0;">
         <input type="button" value="로그아웃" />
-		</div>
+      </div>
        </div>
        </div>
         <div class="bottom_left_box"> </div>
       </div>
- 
+         <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>  
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>  
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
  </div> 
-  <div class="column4">
-      <div class="title">Contact Form</div>
-      <div class="contact_tab">
-        <div class="form_contact">
-          <div class="form_row_contact">
-           
-          </div>
-          <div class="form_row_contact">
-            <label class="left">제목: </label>
-            <input type="text" class="form_input_contact"/>
-          </div>
-          <div class="form_row_contact">
-            <label class="left">이미지: </label>
-          <input type="file" class="form_input_contact"/>
-        </div>
-          <div class="form_row_contact">
-            <label class="left">내용: </label>
-            <textarea name="" rows="" cols="50" ></textarea>
-          </div>
-          <div style="float:right; padding:10px 25px 0 0;">
-           
-          </div>
-        </div>
-        <div class="form_row_contact">
-          <input type="button" value="수정"/> &nbsp; <input type="button" value="목록보기"/>
-          </div>
-        
+
+
+     <!-- end of column one -->
+    <div class="column4">
+      <div class="title" style="float:left;">
+        <div style="float:left;">숙소 / 펜션</div>      
       </div>
+      <br/>
+       <br/>
+       <br/>
+  	   <div>
+ 		   <form id="lodsearch" action="lodsearch.trip" method="get">
+ 		  <select name="searchlo">
+            <option value="lodName">숙소명</option>
+            <option value="lodAddr">위치</option>
+          </select>
+          <input type="text" name="searchtext"/>
+           <input type="submit" value="검색"/>
+         </form>
+     </div>
+     <c:forEach items="${lodgeList }" var="lodge">
+      
+      <div class="offer_box_wide"><a href="mainlodgedetail.trip"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
+        <div class="offer_info"> <span>${lodge.lodName }</span>
+          <p class="offer"> ${lodge.lodCont } </p>
+          <div class="more"><a href="mainlodgedetail.trip">...more</a></div>
+        </div>
+      </div>
+   </c:forEach>
+      <div class="pagination"> 
+      <c:if test="${pageNo}>3 ">
+      			${startNo} = ${ pageNo} -2 
+      			${endNo} = ${pageNo} + 2 
+      			</c:if>
+  		<c:if test="${pageNo} >  ${totalcount}-3">
+      			${startNo} = ${pageNo} -4 
+      			${endNo} = ${totalcount }
+      	</c:if>
+
+
+      <c:forEach var='i' begin='${startNo }' end='${endNo }'>
+		
+		    <a href="mainlodgelistho.trip?page=${i }">${i }</a>
+			</c:forEach>
+	  <p>&nbsp; </p>
+ 
+         <div class="pagination"> <a href="mainlodgelistho.trip?page=1"><<</a><a href="mainlodgelistho.trip?page=${pNo }"><</a><a href="mainlodgelistho.trip?page=${nNo }">></a><a href="mainlodgelistho.trip?page=${totalcount }">>></a></div>
     </div>
-  
+    <!-- end of column four -->
+  </div>
   <div id="footer">
     
     <ul>
@@ -136,5 +179,4 @@
   </div>
 
 </body>
-
 </html>

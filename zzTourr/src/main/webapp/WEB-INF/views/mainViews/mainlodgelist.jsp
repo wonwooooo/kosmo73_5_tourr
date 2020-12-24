@@ -1,16 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>re:ko</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" type="text/css" href="/zTrip/resources/css/mainstyle.css"  />
+<link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/mainstyle.css"  />
+
 </head>
 <body>
+
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="mainindex.trip"><img src="/zTrip/resources/mainimg/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
+    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
@@ -21,6 +24,8 @@
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
+           <li><a href="mainlodgelistho.trip?pageNo=1">호텔</a></li>
+            <li><a href="mainlodgelist.trip">모텔</a></li>
             <li><a href="mainlodgelist.trip">게스트하우스</a></li>
             <li><a href="mainlodgelist.trip">펜션</a></li>
           </ul>
@@ -44,8 +49,6 @@
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
             <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">환율</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">날씨</a></li>
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
@@ -126,61 +129,24 @@
        <br/>
        <br/>
   	   <div>
+  	   <form id="lodsearch" action="lodsearch.trip?page=1" method="get">
  		  <select>
-            <option>숙소명</option>
-            <option>위치</option>
+            <option name="lodName">숙소명</option>
+            <option name="lodAddr">위치</option>
           </select>
-          <input type="text"/>
-           <input type="button" value="검색"/>
+          <input type="text" name="searchtext"/>
+           <input type="submit" value="검색"/>
+         </form>
      </div>
-      <div class="offer_box_wide"> <a href="mainlodgedetail.trip"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
-        <div class="offer_info"> <span>For Sale 150 000 $</span>
-          <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
+     <c:forEach items="${lodgeList }" var="lodge">
+      
+      <div class="offer_box_wide"><a href="mainlodgedetail.trip"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
+        <div class="offer_info"> <span>${lodge.lodName }</span>
+          <p class="offer"> ${lodge.lodCont } </p>
           <div class="more"><a href="mainlodgedetail.trip">...more</a></div>
         </div>
       </div>
-      <div class="offer_box_wide"> <a href="mainlodgedetail.trip"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
-        <div class="offer_info"> <span>For Sale 220 000 $</span>
-          <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainlodgedetail.trip">...more</a></div>
-        </div>
-      </div>
-      <div class="offer_box_wide"> <a href="mainlodgedetail.trip"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
-        <div class="offer_info"> <span>For Sale 150 000 $</span>
-          <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainlodgedetail.trip">...more</a></div>
-        </div>
-      </div>
-      <div class="offer_box_wide"> <a href="mainlodgedetail.trip"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
-        <div class="offer_info"> <span>For Sale 220 000 $</span>
-          <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainlodgedetail.trip">...more</a></div>
-        </div>
-      </div>
-      <div class="offer_box_wide"> <a href="mainlodgedetail.trip"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
-        <div class="offer_info"> <span>For Sale 150 000 $</span>
-          <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainlodgedetail.trip">...more</a></div>
-        </div>
-      </div>
-      <div class="offer_box_wide"> <a href="mainlodgedetail.trip"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
-        <div class="offer_info"> <span>For Sale 220 000 $</span>
-          <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainlodgedetail.trip">...more</a></div>
-        </div>
-      </div>
-      <div class="offer_box_wide"> <a href="mainlodgedetail.trip"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
-        <div class="offer_info"> <span>For Sale 150 000 $</span>
-          <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainlodgedetail.trip">...more</a></div>
-        </div>
-      </div>
-      <div class="offer_box_wide"> <a href="mainlodgedetail.trip"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
-        <div class="offer_info"> <span>For Sale 220 000 $</span>
-          <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainlodgedetail.trip">...more</a></div>
-        </div>
-      </div>
+     </c:forEach> 
       <div class="pagination"> <span class="disabled"><<</span><span class="current">1</span><a href="http://all-free-download.com/free-website-templates/">2</a><a href="http://all-free-download.com/free-website-templates/">3</a><a href="http://all-free-download.com/free-website-templates/">4</a><a href="http://all-free-download.com/free-website-templates/">5</a><a href="http://all-free-download.com/free-website-templates/">6</a><a href="http://all-free-download.com/free-website-templates/">7</a><a href="http://all-free-download.com/free-website-templates/">10</a><a href="http://all-free-download.com/free-website-templates/">11</a><a href="http://all-free-download.com/free-website-templates/">>></a> </div>
     </div>
     <!-- end of column four -->
@@ -193,5 +159,6 @@
     </ul>
  
   </div>
+
 </body>
 </html>
