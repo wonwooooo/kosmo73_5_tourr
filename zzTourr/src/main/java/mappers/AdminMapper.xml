@@ -1,1 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace = "manager">
+
+	<!-- 관리자 회원가입 _201222 원우 -->
+	<insert id="insertId" parameterType='admin'>
+		INSERT INTO admin(ADMINID, ADMINPW, ADMINMAIL, ADMINNAME, ADMINIMG)
+		VALUES (#{adminId}, #{adminPw}, #{adminMail}, #{adminName}, #{adminImg})
+	</insert> 
+	
+	
+	<!-- 관리자 로그인 _201223 원우 -->
+	<select id="loginId" parameterType="admin" resultType="admin">
+		SELECT * FROM admin
+		WHERE adminid = #{adminId} AND adminpw = #{adminPw}
+	</select>
+
+</mapper>
