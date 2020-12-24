@@ -1,1 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="main.MainDAO">
+
+	<select id="mainLodgeList" resultType="lodge">
+		<![CDATA[
+		select * from LODGE where LODID in
+(select LODID from (select rownum as rnum, LODID 
+from (select LODID from LODGE WHERE LODCATE='펜션' order by LODID desc)) where rnum>=1 and rnum<=8)
+order by LODID desc
+		]]>
+	</select>
+	
+	<select id="getTotalPageho" resultType="int">
+		<![CDATA[
+select count(*) cnt from LODGE WHERE LODCATE='호텔'
+		]]>
+	</select>
+
+ <select id="mainLodgeListho" parameterType="hashmap" resultType="lodge">
+		<![CDATA[
+		select * from LODGE where LODID in
+(select LODID from (select rownum as rnum, LODID 
+from (select LODID from LODGE WHERE LODCATE='호텔' order by LODID desc)) where rnum>=#{row1} and rnum<=#{row2})
+order by LODID desc
+		]]>
+ </select>
+ 
+ 	<select id="mainlodgelistserna" parameterType="hashmap" resultType="lodge">
+		<![CDATA[
+	select count(*) cnt from LODGE WHERE LODCATE='호텔' AND LODNAME like '%'||#{searchtext}||'%';
+select * from LODGE where LODID in
+(select LODID from (select rownum as rnum, LODID 
+from (select LODID from LODGE WHERE LODCATE='호텔'  AND LODNAME like '%'||#{searchtext}||'%' order by LODID desc)) where rnum>=1 and rnum<=8)
+order by LODID desc
+		]]>
+	</select>
+</mapper>

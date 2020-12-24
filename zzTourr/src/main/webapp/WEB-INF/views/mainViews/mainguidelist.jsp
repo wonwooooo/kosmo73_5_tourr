@@ -33,7 +33,7 @@ $(function() {
 <body>
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImg/logo.gif"  width="147" height="78" alt="" border="0" /></a> </div>
+    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif"  width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
@@ -45,6 +45,8 @@ $(function() {
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
+            <li><a href="mainlodgelist.trip">호텔</a></li>
+            <li><a href="mainlodgelist.trip">모텔</a></li>
             <li><a href="mainlodgelist.trip">게스트하우스</a></li>
             <li><a href="mainlodgelist.trip">펜션</a></li>
           </ul>
@@ -68,8 +70,7 @@ $(function() {
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
             <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">환율</a></li>
-            <li><a href="http://all-free-download.com/free-website-templates/">날씨</a></li>
+            
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
@@ -155,52 +156,52 @@ $(function() {
           <input type="text"/>
            <input type="button" value="검색"/>
      </div>
-      <div class="offer_box_wide"> <a href="mainguidedetail.do"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
+      <div class="offer_box_wide"> <a href="mainguidedetail.trip"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
         <div class="offer_info"> <span>For Sale 150 000 $</span>
           <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainguidedetail.do">...more</a></div>
+          <div class="more"><a href="mainguidedetail.trip">...more</a></div>
         </div>
       </div>
-      <div class="offer_box_wide"> <a href="mainguidedetail.do"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
+      <div class="offer_box_wide"> <a href="mainguidedetail.trip"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
         <div class="offer_info"> <span>For Sale 220 000 $</span>
           <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainguidedetail.do">...more</a></div>
+          <div class="more"><a href="mainguidedetail.trip">...more</a></div>
         </div>
       </div>
-      <div class="offer_box_wide"> <a href="mainguidedetail.do"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
+      <div class="offer_box_wide"> <a href="mainguidedetail.trip"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
         <div class="offer_info"> <span>For Sale 150 000 $</span>
           <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainguidedetail.do">...more</a></div>
+          <div class="more"><a href="mainguidedetail.trip">...more</a></div>
         </div>
       </div>
-      <div class="offer_box_wide"> <a href="mainguidedetail.do"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
+      <div class="offer_box_wide"> <a href="mainguidedetail.trip"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
         <div class="offer_info"> <span>For Sale 220 000 $</span>
           <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainguidedetail.do">...more</a></div>
+          <div class="more"><a href="mainguidedetail.trip">...more</a></div>
         </div>
       </div>
-      <div class="offer_box_wide"> <a href="mainguidedetail.do"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
+      <div class="offer_box_wide"> <a href="mainguidedetail.trip"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
         <div class="offer_info"> <span>For Sale 150 000 $</span>
           <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainguidedetail.do">...more</a></div>
+          <div class="more"><a href="mainguidedetail.trip">...more</a></div>
         </div>
       </div>
-      <div class="offer_box_wide"> <a href="mainguidedetail.do"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
+      <div class="offer_box_wide"> <a href="mainguidedetail.trip"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
         <div class="offer_info"> <span>For Sale 220 000 $</span>
           <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainguidedetail.do">...more</a></div>
+          <div class="more"><a href="mainguidedetail.trip">...more</a></div>
         </div>
       </div>
-      <div class="offer_box_wide"> <a href="mainguidedetail.do"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
+      <div class="offer_box_wide"> <a href="mainguidedetail.trip"><img src="images/p1.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
         <div class="offer_info"> <span>For Sale 150 000 $</span>
           <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainguidedetail.do">...more</a></div>
+          <div class="more"><a href="mainguidedetail.trip">...more</a></div>
         </div>
       </div>
-      <div class="offer_box_wide"> <a href="mainguidedetail.do"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
+      <div class="offer_box_wide"> <a href="mainguidedetail.trip"><img src="images/p2.jpg" width="130" height="98" class="img_left" alt="" border="0"/></a>
         <div class="offer_info"> <span>For Sale 220 000 $</span>
           <p class="offer"> "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." </p>
-          <div class="more"><a href="mainguidedetail.do">...more</a></div>
+          <div class="more"><a href="mainguidedetail.trip">...more</a></div>
         </div>
       </div>
       <div class="pagination"> <span class="disabled"><<</span><span class="current">1</span><a href="http://all-free-download.com/free-website-templates/">2</a><a href="http://all-free-download.com/free-website-templates/">3</a><a href="http://all-free-download.com/free-website-templates/">4</a><a href="http://all-free-download.com/free-website-templates/">5</a><a href="http://all-free-download.com/free-website-templates/">6</a><a href="http://all-free-download.com/free-website-templates/">7</a><a href="http://all-free-download.com/free-website-templates/">10</a><a href="http://all-free-download.com/free-website-templates/">11</a><a href="http://all-free-download.com/free-website-templates/">>></a> </div>
