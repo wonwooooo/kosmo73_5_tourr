@@ -15,7 +15,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 관리자 로그인 _201223 원우 -->
 	<select id="loginId" parameterType="admin" resultType="admin">
 		SELECT * FROM admin
-		WHERE adminid = ${adminId} AND adminpw = ${adminPw}
+		WHERE adminid = #{adminId} AND adminpw = #{adminPw}
 	</select>
 
 </mapper>
