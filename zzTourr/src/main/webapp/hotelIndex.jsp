@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>re:ko</title>
+<title>hotelIndex.jsp</title>
+
+<% response.sendRedirect("hotelindex.trip"); %>
+
 </head>
 <body>
-
-<% response.sendRedirect("mainViews/mainindex.trip"); %>
-
 
 </body>
 </html>

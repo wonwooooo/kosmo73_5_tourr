@@ -2,38 +2,404 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="main.MainDAO">
-
+	<!-- 숙소-펜션-전체리스트 -->
 	<select id="mainLodgeList" resultType="lodge">
 		<![CDATA[
-		select * from LODGE where LODID in
+			select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
+	(select LODID from (select rownum as rnum, LODID 
+	from (select LODID from LODGE WHERE LODCATE='펜션' order by LODID desc)) where rnum>=#{row1} and rnum<=#{row2})
+	order by LODID desc
+		]]>
+	</select>
+	
+	<!-- 숙소-펜션-전체페이지 -->
+	<select id="getTotalPagepen" resultType="int">
+		<![CDATA[
+select count(*) cnt from LODGE WHERE LODCATE='펜션'
+		]]>
+	</select>
+		
+	<!-- 숙소-펜션-검색리스트 -->
+ 	<select id="mainlodgelistserpen" parameterType="hashmap" resultType="lodge">
+		<![CDATA[
+select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
 (select LODID from (select rownum as rnum, LODID 
-from (select LODID from LODGE WHERE LODCATE='펜션' order by LODID desc)) where rnum>=1 and rnum<=8)
+from (select LODID from LODGE WHERE LODCATE='펜션'  AND LODADDR like '%'||trim(#{searchtext})||'%' order by LODID desc)) where rnum>=#{row1} and rnum<=#{row2})
 order by LODID desc
 		]]>
 	</select>
 	
+<!-- 숙소-펜션-검색페이지 -->
+	<select id="getTotalPagepense" parameterType="hashmap" resultType="int">
+	<![CDATA[
+		select count(*) cnt from LODGE where LODADDR like '%'||trim(#{searchtext})||'%' and  LODCATE='펜션'
+		]]>
+	</select>	
+		
+	<!-- 호텔-전체-전체페이지 -->
 	<select id="getTotalPageho" resultType="int">
 		<![CDATA[
 select count(*) cnt from LODGE WHERE LODCATE='호텔'
 		]]>
 	</select>
-
+	
+<!-- 호텔-전체-전체리스트 -->
  <select id="mainLodgeListho" parameterType="hashmap" resultType="lodge">
 		<![CDATA[
-		select * from LODGE where LODID in
-(select LODID from (select rownum as rnum, LODID 
-from (select LODID from LODGE WHERE LODCATE='호텔' order by LODID desc)) where rnum>=#{row1} and rnum<=#{row2})
-order by LODID desc
+			select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
+	(select LODID from (select rownum as rnum, LODID 
+	from (select LODID from LODGE WHERE LODCATE='호텔' order by LODID desc)) where rnum>=#{row1} and rnum<=#{row2})
+	order by LODID desc
 		]]>
  </select>
  
+ <!-- 호텔-전체-검색리스트 -->
  	<select id="mainlodgelistserna" parameterType="hashmap" resultType="lodge">
 		<![CDATA[
-	select count(*) cnt from LODGE WHERE LODCATE='호텔' AND LODNAME like '%'||#{searchtext}||'%';
-select * from LODGE where LODID in
+select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
 (select LODID from (select rownum as rnum, LODID 
-from (select LODID from LODGE WHERE LODCATE='호텔'  AND LODNAME like '%'||#{searchtext}||'%' order by LODID desc)) where rnum>=1 and rnum<=8)
+from (select LODID from LODGE WHERE LODCATE='호텔'  AND LODADDR like '%'||trim(#{searchtext})||'%' order by LODID desc)) where rnum>=#{row1} and rnum<=#{row2})
 order by LODID desc
 		]]>
 	</select>
+	
+<!-- 호텔-전체-검색페이지 -->
+	<select id="getTotalPagehose" parameterType="hashmap" resultType="int">
+	<![CDATA[
+		select count(*) cnt from LODGE where LODADDR like '%'||trim(#{searchtext})||'%' and  LODCATE='호텔'
+		]]>
+	</select>
+	
+	<!-- 모텔-전체-전체페이지 -->
+	<select id="getTotalPagemo" resultType="int">
+		<![CDATA[
+select count(*) cnt from LODGE WHERE LODCATE='모텔'
+		]]>
+	</select>
+	
+<!-- 모텔-전체-전체리스트 -->
+ <select id="mainLodgeListmo" parameterType="hashmap" resultType="lodge">
+		<![CDATA[
+			select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
+	(select LODID from (select rownum as rnum, LODID 
+	from (select LODID from LODGE WHERE LODCATE='모텔' order by LODID desc)) where rnum>=#{row1} and rnum<=#{row2})
+	order by LODID desc
+		]]>
+ </select>
+ 
+ <!-- 모텔-전체-검색리스트 -->
+ 	<select id="mainlodgelistsermo" parameterType="hashmap" resultType="lodge">
+		<![CDATA[
+select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
+(select LODID from (select rownum as rnum, LODID 
+from (select LODID from LODGE WHERE LODCATE='모텔'  AND LODADDR like '%'||trim(#{searchtext})||'%' order by LODID desc)) where rnum>=#{row1} and rnum<=#{row2})
+order by LODID desc
+		]]>
+	</select>
+	
+<!-- 모텔-전체-검색페이지 -->
+	<select id="getTotalPagemose" parameterType="hashmap" resultType="int">
+	<![CDATA[
+		select count(*) cnt from LODGE where LODADDR like '%'||trim(#{searchtext})||'%' and  LODCATE='모텔'
+		]]>
+	</select>
+	
+		<!-- 게하-전체-전체페이지 -->
+	<select id="getTotalPagege" resultType="int">
+		<![CDATA[
+select count(*) cnt from LODGE WHERE LODCATE='게스트하우스'
+		]]>
+	</select>
+	
+<!-- 게하-전체-전체리스트 -->
+ <select id="mainLodgeListge" parameterType="hashmap" resultType="lodge">
+		<![CDATA[
+			select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
+	(select LODID from (select rownum as rnum, LODID 
+	from (select LODID from LODGE WHERE LODCATE='게스트하우스' order by LODID desc)) where rnum>=#{row1} and rnum<=#{row2})
+	order by LODID desc
+		]]>
+ </select>
+ 
+ <!-- 게하-전체-검색리스트 -->
+ 	<select id="mainlodgelistserge" parameterType="hashmap" resultType="lodge">
+		<![CDATA[
+select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
+(select LODID from (select rownum as rnum, LODID 
+from (select LODID from LODGE WHERE LODCATE='게스트하우스'  AND LODADDR like '%'||trim(#{searchtext})||'%' order by LODID desc)) where rnum>=#{row1} and rnum<=#{row2})
+order by LODID desc
+		]]>
+	</select>
+	
+<!-- 게하-전체-검색페이지 -->
+	<select id="getTotalPagegese" parameterType="hashmap" resultType="int">
+	<![CDATA[
+		select count(*) cnt from LODGE where LODADDR like '%'||trim(#{searchtext})||'%' and  LODCATE='게스트하우스'
+		]]>
+	</select>
+	
+	<!-- 로그인 -->
+	<select id="mainidCheck" parameterType="users" resultType="users">
+select * from users
+<where>
+<if test="userId != null">
+userid= #{userId}
+</if>
+<if test="password != null">
+and password= #{password}
+</if>
+</where>  
+</select>
+
+	<!-- 가이드-전체-전체페이지 -->
+	<select id="getTotalPageguide" resultType="int">
+		<![CDATA[
+select count(*) cnt from (select guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, cuscount, ip, imgname, imgsize from guidetour where
+ guicate in  (select guicate from guidetour group by guicate) 
+and guiname in  (select guiname from guidetour group by guiname)
+and programname in (select programname from guidetour group by programname) 
+and guiarea in (select guiarea from guidetour group by guiarea) 
+and guicontent in (select guicontent from guidetour group by guicontent) 
+and guiprice in (select guiprice from guidetour group by guiprice) 
+and guitime in (select guitime from guidetour group by guitime)  
+and cuscount in (select cuscount from guidetour group by cuscount) 
+and ip in (select ip from guidetour group by ip) 
+and imgname in (select imgname from guidetour group by imgname) 
+and imgsize in (select imgsize from guidetour group by imgsize)  
+group by guicate, guiname,  programname, guiarea, guicontent, guiprice, guitime, cuscount,  ip, imgname, imgsize)
+		]]>
+	</select>
+	
+<!-- 가이드-전체-전체리스트 -->
+ <select id="mainGuideList" parameterType="hashmap" resultType="guidetour">
+			<![CDATA[
+ select guicate, guiname, programname, guiarea, substr(guicontent, 1, 70) guicontent,  guiprice, guitime, imgname from
+  (select rownum as rnum, guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, imgname from(
+select guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, imgname from (
+select * from (select productid, guicate, guiname,  programname, guiarea, SUBSTR(guicontent, 1, 70) guicontent,  guiprice, guitime, imgname
+from (select * from guidetour order by productid desc) where
+ guicate in  (select guicate from guidetour group by guicate) 
+ and guiname in  (select guiname from guidetour group by guiname) 
+ and programname in (select programname from guidetour group by programname)
+ and guiarea in (select guiarea from guidetour group by guiarea) 
+and guicontent in (select guicontent from guidetour group by guicontent) 
+and guiprice in (select guiprice from guidetour group by guiprice) 
+and guitime in (select guitime from guidetour group by guitime)  
+and cuscount in (select cuscount from guidetour group by cuscount) 
+and imgname in (select imgname from guidetour group by imgname) 
+and productid in (select productid from guidetour group by productid) 
+  group by productid,  guicate, guiname, programname, guiarea, guicontent,  guiprice, guitime, imgname
+ order by productid desc)
+  order by productid desc
+) where
+ guicate in  (select guicate from guidetour group by guicate) 
+and guiname in  (select guiname from guidetour group by guiname)
+and programname in (select programname from (select * from guidetour order by productid desc)) 
+and guiarea in (select guiarea from guidetour group by guiarea) 
+and guicontent in (select guicontent from guidetour group by guicontent) 
+and guiprice in (select guiprice from guidetour group by guiprice) 
+and guitime in (select guitime from guidetour group by guitime)  
+and imgname in (select imgname from guidetour group by imgname)  
+group by guicate, guiname,  programname, guiarea, guicontent, guiprice, guitime, imgname))
+where rnum between #{row1} and #{row2}
+		]]>
+ </select>
+
+
+	
+<!-- 가이드-전체-검색페이지 -->
+	<select id="getTotalPagega" parameterType="hashmap" resultType="int">
+	<![CDATA[
+		select count(*) cnt from (select guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, cuscount, ip, imgname, imgsize from guidetour where
+guiarea like '%'||trim(#{searchtext})||'%' and
+ guicate in  (select guicate from guidetour group by guicate) 
+and guiname in  (select guiname from guidetour group by guiname)
+and programname in (select programname from guidetour group by programname) 
+and guiarea in (select guiarea from guidetour group by guiarea) 
+and guicontent in (select guicontent from guidetour group by guicontent) 
+and guiprice in (select guiprice from guidetour group by guiprice) 
+and guitime in (select guitime from guidetour group by guitime)  
+and cuscount in (select cuscount from guidetour group by cuscount) 
+and ip in (select ip from guidetour group by ip) 
+and imgname in (select imgname from guidetour group by imgname) 
+and imgsize in (select imgsize from guidetour group by imgsize)  
+group by guicate, guiname,  programname, guiarea, guicontent, guiprice, guitime, cuscount,  ip, imgname, imgsize)
+		]]>
+	</select>
+
+<!-- 가이드-전체-검색리스트 -->
+<select id="ser" parameterType="hashmap" resultType="guidetour">
+	<![CDATA[
+select guicate, guiname,  programname, guiarea, substr(guicontent, 1, 60) guicontent,  guiprice, guitime, imgname from
+  (select rownum as rnum, guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, imgname from(
+select guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, imgname from (
+select * from (select productid, guicate, guiname,  programname, guiarea, SUBSTR(guicontent, 1, 70) guicontent,  guiprice, guitime, imgname 
+from (select * from guidetour order by productid desc) where 
+ guicate in  (select guicate from guidetour group by guicate) 
+ and guiname in  (select guiname from guidetour group by guiname) 
+ and programname in (select programname from guidetour group by programname) 
+ and guiarea in (select guiarea from guidetour group by guiarea) 
+and guicontent in (select guicontent from guidetour group by guicontent) 
+and guiprice in (select guiprice from guidetour group by guiprice) 
+and guitime in (select guitime from guidetour group by guitime)  
+and cuscount in (select cuscount from guidetour group by cuscount) 
+and imgname in (select imgname from guidetour group by imgname) 
+and productid in (select productid from guidetour group by productid) 
+  group by productid,  guicate, guiname, programname, guiarea, guicontent,  guiprice, guitime, imgname 
+ order by productid desc) 
+  order by productid desc 
+) where 
+ guicate in  (select guicate from guidetour group by guicate) 
+and guiname in  (select guiname from guidetour group by guiname) 
+and programname in (select programname from (select * from guidetour order by productid desc)) 
+and guiarea in (select guiarea from guidetour group by guiarea) 
+and guicontent in (select guicontent from guidetour group by guicontent) 
+and guiprice in (select guiprice from guidetour group by guiprice) 
+and guitime in (select guitime from guidetour group by guitime)  
+and imgname in (select imgname from guidetour group by imgname)  
+AND guiarea like '%'||trim(#{searchtext})||'%' 
+group by guicate, guiname,  programname, guiarea, guicontent, guiprice, guitime, imgname)) 
+where rnum between  #{row1} and #{row2}
+		]]>
+</select>
+
+<!-- 숙소-상세페이지 -->
+	<select id="mainlodgedetail" parameterType="lodge" resultType="lodge">
+	<![CDATA[
+select * from lodge where lodid=#{lodId}
+]]> 
+</select>
+
+<!-- 객실-상세페이지 -->
+	<select id="mainroomdetail" parameterType="lodge" resultType="room">
+	<![CDATA[
+select * from room where lodgeId=#{lodId}
+]]> 
+</select>
+
+<!-- 숙소-상세페이지-리뷰-페이지수 -->
+	<select id="mainProRevPage" parameterType="int" resultType="int">
+	<![CDATA[
+select count(*) cnt from productrevbo where productid=#{lodId}
+]]> 
+</select>
+
+<!-- 숙소-상세페이지-리뷰-리스트 -->
+	<select id="mainProRevList" parameterType="hashmap" resultType="productrevbo">
+	<![CDATA[
+select * from productrevbo where prorevid in
+(select prorevid from (select rownum as rnum, prorevid 
+from (select prorevid from productrevbo where productid=#{lodId} order by prorevid desc)) where rnum>=#{row1} and rnum<=#{row2})
+order by prorevid desc
+]]> 
+</select>
+
+<!-- 가이드 상세페이지(가이드 프로그램 정보) -->
+<select id="mainguidedetail" parameterType="String" resultType="guidetour">
+	<![CDATA[
+select * from guidetour where productid in 
+(select productid from guidetour where programname=#{programName}) 
+and rownum =1
+]]> 
+</select>
+
+<!-- 가이드 상세페이지 조회-고객리뷰-전체리스트 -->
+<select id="mainProRevListga" parameterType="hashmap" resultType="productrevbo">
+	<![CDATA[
+select * from productrevbo where prorevid in
+(select prorevid from (select rownum as rnum, prorevid 
+from (select * from productrevbo where productid in (select productid from guidetour where programname=#{programName}) order by prorevid desc)) where rnum>=1 and rnum<=3)
+order by prorevid desc
+]]> 
+</select>
+
+<!-- 가이드 상세페이지 조회-고객리뷰-페이지 -->
+<select id="mainProRevPagega" parameterType="String" resultType="int">
+	<![CDATA[
+select count(*) cnt from productrevbo where productid in (select productid from guidetour where programname=#{programName})
+]]> 
+</select>
+
+<!-- 자유게시판-그룹번호받아오기 -->
+<select id="mainGetFrGroupIddao" resultType="int">
+	<![CDATA[
+select SEQ_comboard_group.nextval from dual
+]]> 
+</select>
+
+<!-- 자유게시판-글쓰기 -->
+	<insert id="insertComBoard" parameterType="comboard">
+		<![CDATA[
+		insert into comboard(articleid, category, userid, groupid, sequenceno, postingdate, readcount, username, title, content)
+values(seq_comboard.nextval, #{category}, #{userId}, #{groupId}, #{sequenceNo}, sysdate, 0, #{userName}, #{title}, #{content})
+		]]>
+	</insert>
+	
+<!-- 자유게시판-리스트 -->	
+<select id="mainComBoardList" parameterType="hashmap" resultType="comboard">
+		<![CDATA[
+	select * from comboard where articleid in
+(select articleid from (select rownum as rnum, articleid 
+from (select articleid from comboard where category ='자유게시판' order by sequenceno desc)) where rnum>=#{row1} and rnum<=#{row2})
+order by sequenceno desc
+		]]>
+ </select>
+ 
+ <!-- 자유게시판-페이지 -->
+ <select id="getTotalPageComBoard" resultType="int">
+	<![CDATA[
+select count(*) cnt from comboard where category ='자유게시판'
+]]> 
+</select>
+
+<!-- 자유게시판-글보기 -->
+	<select id="mainfreeBoardViewdao" parameterType="int" resultType="comboard">
+	<![CDATA[
+select * from comboard where  category ='자유게시판' and articleid =#{articleId}
+]]> 
+</select>
+
+<!-- 자유게시판-글보기-조회수 +1 증가 -->
+	<update id="updateFreeBoardCountdao" parameterType="int">
+	<![CDATA[
+update comboard set readcount=(readcount+1) where  category ='자유게시판' and articleid = #{articleId}
+]]> 
+</update>
+
+<!-- 자유게시판-글수정-->
+	<update id="mainupdatefrBoard" parameterType="comboard">
+	<![CDATA[
+update comboard set title=#{title}, content=#{content} where  articleid=#{articleId}
+]]> 
+</update>
+
+<!-- 자유게시판-글삭제-->
+	<delete id="maindeletefrBoard" parameterType="comboard">
+	<![CDATA[
+delete from comboard where articleid=#{articleId}
+]]> 
+</delete>
+
+<!-- 자유게시판-답글의 번호-->
+	<select id="selectLastSequenceNumber" parameterType="hashmap" resultType="String">
+	<![CDATA[
+SELECT min(sequenceno) as minseq FROM comboard WHERE sequenceno < #{maxSeqNum} AND sequenceno >= #{minSeqNum}
+]]> 
+</select>
+
+<!--숙소-날짜-리스트-->
+	<select id="mainlosevDateDAO" parameterType="reservation" resultType="reservation">
+	<![CDATA[
+  select to_char(to_date(#{checkInDate2}, 'yyyy/mm/dd') + (level-1), 'yy/mm/dd') checkindate2 from dual
+  connect by level <= (to_date(#{checkOut2}, 'yyyy/mm/dd') - to_date(#{checkInDate2}, 'yyyy/mm/dd') + 1)
+]]> 
+</select>
+
+<!-- 객실수 체크 -->
+<select id="roomNum" parameterType="hashmap" resultType="int">
+	<![CDATA[
+  select (select lodcount from room where productid=#{productId}) - (SELECT COUNT(*) CNT from reservation 
+  where productid=#{productId} AND #{checkInDate2} >= CHECKINDATE2 AND #{checkInDate2} < CHECKOUT2) cnt from dual
+]]> 
+</select>
 </mapper>
