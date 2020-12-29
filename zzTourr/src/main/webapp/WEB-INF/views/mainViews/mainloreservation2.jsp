@@ -21,21 +21,11 @@
     dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
     dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
     showMonthAfterYear: true,
-    yearSuffix: '년',
-    
-    beforeShowDay: function(date) {
-
-        var day = date.getDay();
-
-        return [(day == 1 || day == 2 || day == 3|| day == 4), ''];
-
-    }
-  
+    yearSuffix: '년'
   });
 
   $(function() {
-    $("#datepicker1, #datepicker2").datepicker({minDate: 1, maxDate: '+2m'}
-);
+    $("#datepicker1, #datepicker2").datepicker();
   });
 
 </script>
@@ -72,7 +62,6 @@
             <li><a href="mainfreeboardlist.trip">동행자 찾아요</a></li>
           </ul>
           </li>
-
         <li><a>유용한 정보
           <!--[if IE 7]><!-->
           </a>
@@ -80,7 +69,7 @@
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
             <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
-           
+        
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
@@ -93,7 +82,6 @@
             <li><a href="customerModify.trip">개인정보</a></li>
           </ul>
      </li>
-     
       </ul>
     </div>
   </div>
@@ -102,26 +90,36 @@
        <div class="left_box">
         <div class="top_left_box"> </div>
         <div class="center_left_box">
-          <div class="box_title"><span>가이드예약</span> </div>
+          <div class="box_title"><span>객실예약</span> </div>
+      <form action="mainloreser" method="get"/>
           <div class="form">
+             
             <div class="form_row">
-              <label class="left">이용자명: </label>
+           
+              <label class="left">투숙자명: </label>
               <input type="text" class="form_input" />
             </div>
             <div class="form_row">
-              <label class="left">이용자Tel: </label>
+              <label class="left">투숙자Tel: </label>
               <input type="text" class="form_input" />
             </div>
   			  <div class="form_row">
-              <label class="left">인원: </label>
-              <input type="text" class="form_input" value="숫자로만 입력바랍니다"/>   
+              <label class="left">투숙인원: </label>
+                 <select>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              </select>
             </div>
             <div class="form_row">
-            <label class="left">이용일자: </label>
+            <label class="left">체크인: </label>
               <input type="text" class="form_input" id="datepicker1" value="클릭하여 날짜선택"/>
 
              </div>
-            
+            <div class="form_row">
+            <label class="left">체크아웃	: </label>
+              <input type="text" class="form_input" id="datepicker2" value="클릭하여 날짜선택"/> 
+            </div>
              <div style="float:right; padding:10px 25px 0 0;">
                <input type="button" value="예상금액확인" />
             </div>
@@ -130,11 +128,12 @@
                <input type="text" class="form_input" />
             </div>
            <div style="float:right; padding:10px 25px 0 0;">
-               <input type="button" value="예약하기" />
+               <input type="submit" value="예약하기" />
             </div>
      
             
           </div>
+          </form>
         </div>
         <div class="bottom_left_box"> </div>
       </div>

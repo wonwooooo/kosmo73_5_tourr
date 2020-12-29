@@ -39,6 +39,9 @@ text-align:justify;
 padding:2px;
 margin:0px;
 }
+.searchtext{
+background:url("/zzTourr/resources/mainImgs/lodge_search_guide.gif") no-repeat;
+}
 p.proposal_text{
 width:170px;
 font-size:11px;

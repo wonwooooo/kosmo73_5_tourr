@@ -38,7 +38,7 @@
             <li><a href="mainfreeboardlist.trip">자유게시판</a></li>
             <li><a href="mainfreeboardlist.trip">동행자 찾아요</a></li>
           </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+         </li>
         <li><a>유용한 정보
           <!--[if IE 7]><!-->
           </a>
@@ -50,7 +50,15 @@
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
-     <li><a href="http://all-free-download.com/free-website-templates/">마이페이지</a></li>
+     <li><a>마이페이지</a>
+     <ul>
+            <li><a href="customerReserv.trip">구매내역</a></li>
+            <li><a href="customerCart.trip">장바구니</a></li>
+            <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
+            <li><a href="customerQna.trip">1:1 문의</a></li>
+            <li><a href="customerModify.trip">개인정보</a></li>
+          </ul>
+     </li>
       </ul>
     </div>
   </div>
@@ -80,7 +88,7 @@
 	 <div class="left_box">
         <div class="top_left_box"> </div>
         <div class="center_left_box">
-          <div class="box_title"><span>노신영노신님, 환영합니다!</span> </div>
+          <div class="box_title"><span>${sessionScope.login }님, 환영합니다!</span> </div>
           <div class="form">
     
       <div class="form_row">
