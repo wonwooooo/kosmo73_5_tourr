@@ -10,12 +10,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/hotel.css" />
 </head>
 <script type="text/javascript"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
-<body bgcolor="#f5f2d0">
+<body>
 <br/>	
 <div class="col-sm-offset-2 col-sm-10">
 <h1>로그인 해주세요.</h1>
