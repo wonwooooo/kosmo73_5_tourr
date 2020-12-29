@@ -25,7 +25,7 @@
   });
 
   $(function() {
-    $("#datepicker1, #datepicker2").datepicker();
+    $("#datepicker1, #datepicker2").datepicker({minDate: 1, maxDate: '+2m'});
   });
 
 </script>
@@ -61,7 +61,7 @@
             <li><a href="mainfreeboardlist.trip">자유게시판</a></li>
             <li><a href="mainfreeboardlist.trip">동행자 찾아요</a></li>
           </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+          </li>
         <li><a>유용한 정보
           <!--[if IE 7]><!-->
           </a>
@@ -73,7 +73,15 @@
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
-     <li><a href="http://all-free-download.com/free-website-templates/">마이페이지</a></li>
+     <li><a>마이페이지</a>
+     <ul>
+            <li><a href="customerReserv.trip">구매내역</a></li>
+            <li><a href="customerCart.trip">장바구니</a></li>
+            <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
+            <li><a href="customerQna.trip">1:1 문의</a></li>
+            <li><a href="customerModify.trip">개인정보</a></li>
+          </ul>
+     </li>
       </ul>
     </div>
   </div>
@@ -83,8 +91,11 @@
         <div class="top_left_box"> </div>
         <div class="center_left_box">
           <div class="box_title"><span>객실예약</span> </div>
+     
           <div class="form">
+       <form action="mainloservationDay.trip" method="get">         
             <div class="form_row">
+        
               <label class="left">투숙자명: </label>
               <input type="text" class="form_input" />
             </div>
@@ -93,35 +104,29 @@
               <input type="text" class="form_input" />
             </div>
   			  <div class="form_row">
-              <label class="left">투숙인원: </label>
-                 <select>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              </select>
+              <label class="left">투숙인원: </label> 
+     <a>최대 투숙 인원은 ${maxPeople } 명입니다</a>
+     <a>방번호는 ${productId } 입니다</a>
+            <input type="text" class="form_input" name="productId" value="${productId }" />
             </div>
             <div class="form_row">
             <label class="left">체크인: </label>
-              <input type="text" class="form_input" id="datepicker1" value="클릭하여 날짜선택"/>
-
+              <input type="text" class="form_input" id="datepicker1" value="클릭하여 날짜선택" name="checkInDate2"/>
+<!-- checkInDate2, checkOut2 -->
              </div>
             <div class="form_row">
             <label class="left">체크아웃	: </label>
-              <input type="text" class="form_input" id="datepicker2" value="클릭하여 날짜선택"/> 
+              <input type="text" class="form_input" id="datepicker2" value="클릭하여 날짜선택" name="checkOut2"/> 
             </div>
              <div style="float:right; padding:10px 25px 0 0;">
-               <input type="button" value="예상금액확인" />
+               <input type="submit" value="날짜확인" />
+              
             </div>
-              <div class="form_row">
-              <label class="left">예상금액: </label>
-               <input type="text" class="form_input" />
-            </div>
-           <div style="float:right; padding:10px 25px 0 0;">
-               <input type="button" value="예약하기" />
-            </div>
+             </form>
      
             
           </div>
+          </form>
         </div>
         <div class="bottom_left_box"> </div>
       </div>

@@ -1,21 +1,25 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <title>re:ko</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/mainstyle.css" />
+<link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/mainstyle.css"  />
+<script type="text/javascript" src="/zzTourr/resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/zzTourr/resources/js/mainmoksearch.js"></script>
 </head>
 <body>
+
 <div id="main_container">
   <div id="header">
     <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
-       
         <li><a href="mainguidelist.trip">가이드</a></li>
         <li><a>숙소
           <!--[if IE 7]><!-->
@@ -23,7 +27,7 @@
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
-           	  <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
+           <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
             <li><a href="mainlodgelistmo.trip?page=1">모텔</a></li>
             <li><a href="mainlodgelistge.trip?page=1">게스트하우스</a></li>
             <li><a href="mainlodgelist.trip?page=1">펜션</a></li>
@@ -38,9 +42,9 @@
           <ul>
             <li><a href="mainrvboardlist.trip">리뷰게시판</a></li>
             <li><a href="mainfreeboardlist.trip">자유게시판</a></li>
+         
           </ul>
-          </li>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+         </li>
         <li><a>유용한 정보
           <!--[if IE 7]><!-->
           </a>
@@ -51,7 +55,7 @@
           </ul>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         </li>
-         <c:if test="${sessionScope.login != null }">
+          <c:if test="${sessionScope.login != null }">
      <li><a>마이페이지</a>
      <ul>
             <li><a href="customerReserv.trip">구매내역</a></li>
@@ -59,15 +63,14 @@
             <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
             <li><a href="customerQna.trip">1:1 문의</a></li>
             <li><a href="customerModify.trip">개인정보</a></li>
-          </ul>
-     </li>
-        </c:if>
-        </ul>
+          </ul></li>
+      </ul>
+      </c:if>
     </div>
   </div>
- <div id="main_content">
-    <div class="column1">
-    <c:if test="${sessionScope.login == null }">
+  <div id="main_content">
+     <div class="column1">
+     <c:if test="${sessionScope.login == null }">
      <div class="left_box">
         <div class="top_left_box"> </div>
         <div class="center_left_box">
@@ -116,6 +119,17 @@
       <p>&nbsp; </p>
       <p>&nbsp; </p>
       <p>&nbsp; </p>
+         <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>  
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>
+         <p>&nbsp; </p>
+      <p>&nbsp; </p>
+      <p>&nbsp; </p>  
+      <p>&nbsp; </p>
       <p>&nbsp; </p>
       <p>&nbsp; </p>
       <p>&nbsp; </p>
@@ -127,72 +141,54 @@
       <p>&nbsp; </p>
       <p>&nbsp; </p>
       <p>&nbsp; </p>
- </div>   
-   <div class="column4">
+      <p>&nbsp; </p>
+ </div> 
+
+
+     <!-- end of column one -->
+    <div class="column4">
       <div class="title" style="float:left;">
-        <div style="float:left;">자유게시판</div>
-        <div style="float:right; font-size:10px;color:#d8325d; padding-top:2px;"> </div>
-       
+        <div style="float:left;">숙소 / 모텔</div>      
       </div>
-      <table style="clear:both; width:695px; margin-top:10px;" cellpadding="0" cellspacing="0" border="0">
-        <tr>
-            <th>글번호</th>
-          <th>제목</th>
-          <th>작성자</th>
-          <th>조회수</th>
-        </tr>
-       <c:forEach items="${freeList }" var="comboard">
-        <tr class="color1" onmouseout="style.backgroundColor='#F3F5F6'" onclick="document.location.href='#'" onmouseover="this.style.cursor='pointer'; style.backgroundColor='#ffffff'" title="Vezi detaliile anuntului" >
-          
-          <td>${comboard.articleId }</td>
-         <td><a href="mainfreeboardview.trip?articleId=${comboard.articleId }" style="color:#424849;float:left">
- <c:set var = 'start' value='' />
- <c:set var = 'gender' value='RE:' />
-
- <c:if test ="${comboard.level > 0 }">
- <c:forEach var='i' begin='1' end='${comboard.level }'>
-
-<c:set var = 'start' value="${start}${gender}" />
-
-  </c:forEach>
-  </c:if>
-	${start }${comboard.title }
-        
-         </a></td>
-          <td>${comboard.userName } </td>
-          <td>${comboard.readCount } </td>
-        </tr>
-        </c:forEach>
-       
-      </table>
+      <br/>
+       <br/>
+       <br/>
+  	   <div>
+ 		   <form id="lodsearch" action="mainlodsearchmo.trip?page=1" method="get">
+          <input type="text" id="searchtext" name="searchtext" class="searchtext"/>
+           <input type="submit" value="검색"/>
+         </form>
+         <form action="mainlodgelistmo.trip?page=1" method="get">
+          <input type="submit" value="전체모텔목록보기"/>
+          </form>
+     </div>
+     <c:forEach items="${lodgeList }" var="lodge">
       
-    </div>
-    <c:if test="${sessionScope.login != null }">
-    <form id="writeform" name="writeform" action="mainfreeboardinput.trip" method="get">
-    <input type="hidden" name="reservName" value="${sessionScope.login}"/> 
-    <input type="hidden" name="userId" value="${sessionScope.loginId}"/> 
-      <input type="submit" value="글쓰기"/>
-      </form>
-     </c:if>
-    <!-- end of column four -->
- <div class="pagination"> 
-      
+      <div class="offer_box_wide"><a href="mainlodgedetail.trip?lodId=${lodge.lodId }&page=1"><img src="/zzTourr/resources/hotelUpload/${lodge.imgName}" width="130" height="98" class="img_left" alt="" border="0"/></a>
+        <div class="offer_info"> <span>${lodge.lodName }</span>
+          <p class="offer"> ${lodge.lodCont } </p>
+          <div class="more"><a href="mainlodgedetail.trip">...more</a></div>
+        </div>
+      </div>
+   </c:forEach>
+       </div>
+      <div class="pagination"> 
+      <c:if test="${pageNo}>3 ">
+      			${startNo} = ${ pageNo} -2 
+      			${endNo} = ${pageNo} + 2 
+      			</c:if>
   		<c:if test="${pageNo} >  ${totalcount}-3">
       			${startNo} = ${pageNo} -4 
       			${endNo} = ${totalcount }
       	</c:if>
-      	<c:if test="${pageNo}>3 ">
-      			${startNo} = ${ pageNo} -2 
-      			${endNo} = ${pageNo} + 2 
-      			</c:if>
 
       <c:forEach var='i' begin='${startNo }' end='${endNo }'>
 		
-		    <a href="mainfreeboardlist.trip?&page=${i }">${i }</a>
+		    <a href="mainlodsearchmo.trip?page=${i }&searchtext=${searchtext }">${i }</a>
 			</c:forEach>
 	  <p>&nbsp; </p>
   </div>
-         <div class="pagination"> <a href="mainfreeboardlist.trip?&page=1"><<</a><a href="mainfreeboardlist.trip?&page=${pNo }"><</a><a href="mainfreeboardlist.trip?page=${nNo }">></a><a href="mainfreeboardlist.trip?page=${totalcount }">>></a></div>
+         <div class="pagination"> <a href="mainlodsearchmo.trip?pageNo=1&searchtext=${searchtext }"><<</a><a href="mainlodsearchmo.trip?pageNo=${pNo }&searchtext=${searchtext }"><</a><a href="mainlodsearchmo.trip?pageNo=${nNo }&searchtext=${searchtext }">></a><a href="mainlodsearchmo.trip?pageNo=${totalcount }&searchtext=${searchtext }">>></a></div>
   <div id="footer">
     
     <ul>
@@ -201,5 +197,6 @@
     </ul>
  
   </div>
+
 </body>
 </html>
