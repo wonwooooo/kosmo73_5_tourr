@@ -5,6 +5,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 <mapper namespace = "manager">
 
+	<!-- ================================================ 
+			로그인 관련
+	 ================================================ -->
+	 
 	<!-- 관리자 회원가입 _201222 원우 -->
 	<insert id="insertId" parameterType='admin'>
 		INSERT INTO admin(ADMINID, ADMINPW, ADMINMAIL, ADMINNAME, ADMINIMG)
@@ -17,5 +21,127 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT * FROM admin
 		WHERE adminid = #{adminId} AND adminpw = #{adminPw}
 	</select>
+	
+	
+	<!-- 중복확인 -->
+	<select id="idCheck" parameterType="String" resultType="Integer">
+		SELECT count(*) FROM admin
+		WHERE adminid = #{id}
+	</select>
+	
+	<!-- 로그인 관련 end -->
+	
+
+
+	<!-- ================================================ 
+			예약목록
+	 ================================================ -->	
+	
+	<!-- 전체예약목록 가져오기 _201228 원우 -->
+	<select id="totalReservList" parameterType="Map" resultType="reservation">
+		SELECT *
+		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE, CHECKOUT, CHECKINDATE2, CHECKOUT2, RESERVPRICE, RESSTATE
+			FROM reservation)
+        WHERE NUM between #{startPage} and #{endPage}
+	</select>
+	
+
+	<!-- 전체 예약 목록 행 개수 세기 (페이징 처리) -->
+	<select id="selectTotalListCount" parameterType="Map" resultType="Integer">
+		SELECT count(*)
+		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE, CHECKOUT, CHECKINDATE2, CHECKOUT2, RESERVPRICE, RESSTATE
+			FROM reservation)
+	</select>	
+	
+
+	<!-- 객실예약목록 가져오기 _201228 원우 -->
+	<select id="roomReservList" parameterType="Map" resultType="reservation">
+		SELECT *
+		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE2, CHECKOUT2, RESERVPRICE, RESSTATE
+			FROM reservation
+			WHERE CATEGORY = '숙소' )
+	</select>
+	
+	
+	<!-- 가이드예약목록 가져오기 _201228 원우 -->
+	<select id="guideReservList" parameterType="Map" resultType="reservation">
+		SELECT *
+		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE, CHECKOUT, RESERVPRICE, RESSTATE
+			FROM reservation
+			WHERE CATEGORY = '가이드' )
+	</select>
+	
+	
+	<!-- 예약상세내역 가져오기 _201231 -->
+	<select id=""></select>
+	
+
+
+	<!-- ================================================ 
+			회원
+	 ================================================ -->
+	
+	<!-- 회원목록 가져오기 _201228 원우 -->
+	<select id="memberList" resultType="users">
+		SELECT * FROM users
+	</select>
+	
+	
+	<!-- 숙소사장+가이드 목록 가져오기 _201229 원우 -->
+	<!-- https://homesi.tistory.com/entry/ResultMap-을-이용한-mybatis -->
+	<resultMap type="mgr" id="mgr">
+		<result column="OWERNAME" property="mgrName"/>
+		<result column="OWNERID" property="mgrId"/>
+		<result column="LODTEL" property="mgrTel"/>
+	</resultMap>
+	<resultMap type="lodge" id="lodge">
+		<result column="LODTEL" property="lodTel"/>
+		<result column="LODNAME" property="lodName"/>
+	</resultMap>
+	
+	<select id="lodgeclientList" parameterType="mgr" resultMap="mgr">
+		SELECT o.OWNERNAME, o.LODTEL, 
+				LISTAGG(l.LODNAME, ', ') WITHIN GROUP(ORDER BY l.LODNAME) AS LODNAME
+		FROM LODOWNER o INNER JOIN LODGE l
+		GROUP BY o.OWNERNAME, o.LODTEL
+	</select>
+
+
+
+
+	<!-- ================================================ 
+			차트!!!!!!!!!!!!!
+	 ================================================ -->
+
+	<!-- 예약 완료 매출 -->
+	<select id="chart1" resultType="Map">
+		SELECT reservday, SUM(RESERVPRICE) AS sum 
+		FROM
+		    (SELECT (TO_CHAR(RESDATE2,'yymm'))AS reservday, RESERVPRICE
+		    FROM reservation
+		    WHERE RESSTATE='예약완료') 
+		GROUP BY reservday
+		ORDER BY reservday ASC
+	</select>
+
+
+	<!-- yy년 mm월의 숙소(6)와 가이드(1)별 매출 -->
+	<select id="chart2" parameterType="String" resultType="Map">
+		SELECT code2, SUM(RESERVPRICE) AS sum
+		FROM
+		    (SELECT SUBSTR(PRODUCTID, 1,1) AS code2, RESERVPRICE
+		     FROM reservation
+		     WHERE (TO_CHAR(RESDATE2,'yymm'))= #{yymm})
+		GROUP BY code2
+	</select>
+
+
+
+
+
+
+
+
+
 
 </mapper>
