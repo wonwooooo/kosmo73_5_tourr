@@ -15,7 +15,7 @@ public class LodgeVO {
 	private String lodConven;
 	private String lodCate;
 	private int lodCount;
-	private String peakSumStart;
+	private Date peakSumStart;
 	private Date peakSumExit;
 	private Date peakWinStart;
 	private Date peakWinExit;
@@ -101,10 +101,10 @@ public class LodgeVO {
 	public void setLodCount(int lodCount) {
 		this.lodCount = lodCount;
 	}
-	public String getPeakSumStart() {
+	public Date getPeakSumStart() {
 		return peakSumStart;
 	}
-	public void setPeakSumStart(String peakSumStart) {
+	public void setPeakSumStart(Date peakSumStart) {
 		this.peakSumStart = peakSumStart;
 	}
 	public Date getPeakSumExit() {
@@ -143,7 +143,6 @@ public class LodgeVO {
 	public void setImgSize(long imgSize) {
 		this.imgSize = imgSize;
 	}
-	
-	
+
 	
 }

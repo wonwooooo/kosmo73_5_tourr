@@ -6,95 +6,70 @@
 <title>re:ko</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/mainstyle.css" />
+<script type="text/javascript" src="/zzTourr/resources/js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="/zzTourr/resources/js/mainfreeyouhyo.js"></script>
 </head>
 <body>
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
+    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo1.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
+       
+        <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
+         <li><a href="mainlodgelistmo.trip?page=1">모텔</a></li>
+          <li><a href="mainlodgelistge.trip?page=1">게스트하우스</a></li>
+          <li><a href="mainlodgelist.trip?page=1">펜션</a></li>
         
-        <li><a href="mainguidelist.trip">가이드</a></li>
-        <li><a>숙소
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-          	 <li><a href="mainlodgelist.trip">호텔</a></li>
-            <li><a href="mainlodgelist.trip">모텔</a></li>
-            <li><a href="mainlodgelist.trip">게스트하우스</a></li>
-            <li><a href="mainlodgelist.trip">펜션</a></li>
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
         <li><a>커뮤니티
           <!--[if IE 7]><!-->
           </a>
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
-            <li><a href="mainrvboardlist.trip">리뷰게시판</a></li>
+           
             <li><a href="mainfreeboardlist.trip">자유게시판</a></li>
-            <li><a href="mainfreeboardlist.trip">동행자 찾아요</a></li>
           </ul>
+          </li>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        <li><a>유용한 정보
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
+        
+
+     <li><a>마이페이지</a>
+     <ul>
+            <li><a href="customerReserv.trip">구매내역</a></li>
+            <li><a href="customerCart.trip">장바구니</a></li>
+            <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
+            <li><a href="customerQna.trip">1:1 문의</a></li>
+            <li><a href="customerModify.trip">개인정보</a></li>
           </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
-     <li><a href="http://all-free-download.com/free-website-templates/">마이페이지</a></li>
+     </li>
+
       </ul>
     </div>
   </div>
-  <div id="main_content">
+ <div id="main_content">
     <div class="column1">
-     <div class="left_box">
-        <div class="top_left_box"> </div>
-        <div class="center_left_box">
-          <div class="box_title"><span>로그인하려면</span> </div>
-            <div class="box_title"><span>밑의 버튼을 클릭해주세요</span> </div>
-			
-            <div style="float:right; padding:10px 25px 0 0;">
-                <a href="mainlogin.trip"><input type="button" value="로그인" /></a>
-           
-             </form>
-       <div class="form_row">
-              <a href="mainpassmiss.trip" style="text-decoration: none; color:#615357;"><label style="float:center;">아이디/비밀번호 찾기</label></a>
-            
-            </div>
-            
-             <div class="form_row">
-              <label style="float:center;">회원가입 </label>
-           </div>
-          </div>
-	 <div class="bottom_left_box"> </div>
-	</div>
-
+     
 	 <div class="left_box">
         <div class="top_left_box"> </div>
         <div class="center_left_box">
-          <div class="box_title"><span>노신영노신님, 환영합니다!</span> </div>
+          <div class="box_title"><span>${sessionScope.login }님, 환영합니다!</span> </div>
           <div class="form">
     
       <div class="form_row">
           <label style="float:center;">오늘도 기분좋은 하루 되세요.</label>
      </div>
-     
+     <form Id="logoutform" name="logoutform" action="mainlogOut.trip" method="post">
      <div style="float:right; padding:10px 25px 0 0;">
-        <input type="button" value="로그아웃" />
+        <input type="submit" value="로그아웃" />
       </div>
+        </form>
        </div>
        </div>
         <div class="bottom_left_box"> </div>
       </div>
+
          <p>&nbsp; </p>
       <p>&nbsp; </p>
       <p>&nbsp; </p>
@@ -116,32 +91,36 @@
  </div>   
   <div class="column4">
       <div class="title">Contact Form</div>
+    <form id="saveform" name="saveform" action="mainfreeboardsave.trip" method="get">
       <div class="contact_tab">
         <div class="form_contact">
           <div class="form_row_contact">
             <label class="left">작성자: </label>
-            <input type="text" class="form_input_contact"/>
+            <input type="label" name = "userName" value="${sessionScope.login }" class="form_input_contact"/>
           </div>
           <div class="form_row_contact">
             <label class="left">제목: </label>
-            <input type="text" class="form_input_contact"/>
+            <input type="text" name = "title" id="title" class="form_input_contact"/>
           </div>
          
           <div class="form_row_contact">
             <label class="left">내용: </label>
-            <textarea name="" rows="" cols="50" ></textarea>
+            <textarea name="content" id="content" rows="" cols="50" ></textarea>
           </div>
+          
+          <input type="hidden" name="category" value="자유게시판"/>
+          <input type="hidden" name="userId" value="${sessionScope.loginId }"/>
+          
           <div style="float:right; padding:10px 25px 0 0;">
            
           </div>
         </div>
         <div class="form_row_contact">
-          <input type="button" value="작성"/> &nbsp; <input type="button" value="취소"/>
-          </div>
-        
+          <input type="submit" value="작성" id="submitinput"/> &nbsp; <input type="reset" value="취소"/>
+            </div>        
       </div>
+      </form>
     </div>
-  
   <div id="footer">
     
     <ul>
@@ -150,7 +129,5 @@
     </ul>
  
   </div>
-
 </body>
-
 </html>
