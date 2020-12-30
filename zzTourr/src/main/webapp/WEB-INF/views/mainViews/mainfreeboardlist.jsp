@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -10,52 +11,45 @@
 <body>
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
+    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo1.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
        
-        <li><a href="mainguidelist.trip">가이드</a></li>
-        <li><a>숙소
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-           	 <li><a href="mainlodgelist.trip">호텔</a></li>
-            <li><a href="mainlodgelist.trip">모텔</a></li>
-            <li><a href="mainlodgelist.trip">게스트하우스</a></li>
-            <li><a href="mainlodgelist.trip">펜션</a></li>
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
+      <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
+         <li><a href="mainlodgelistmo.trip?page=1">모텔</a></li>
+          <li><a href="mainlodgelistge.trip?page=1">게스트하우스</a></li>
+          <li><a href="mainlodgelist.trip?page=1">펜션</a></li>
+        
         <li><a>커뮤니티
           <!--[if IE 7]><!-->
           </a>
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
-            <li><a href="mainrvboardlist.trip">리뷰게시판</a></li>
+           
             <li><a href="mainfreeboardlist.trip">자유게시판</a></li>
-            <li><a href="mainfreeboardlist.trip">동행자 찾아요</a></li>
           </ul>
+          </li>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        <li><a>유용한 정보
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
+        
+         <c:if test="${sessionScope.login != null }">
+     <li><a>마이페이지</a>
+     <ul>
+            <li><a href="customerReserv.trip">구매내역</a></li>
+            <li><a href="customerCart.trip">장바구니</a></li>
+            <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
+            <li><a href="customerQna.trip">1:1 문의</a></li>
+            <li><a href="customerModify.trip">개인정보</a></li>
           </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
-     <li><a href="http://all-free-download.com/free-website-templates/">마이페이지</a></li>
-      </ul>
+     </li>
+        </c:if>
+        </ul>
     </div>
   </div>
  <div id="main_content">
     <div class="column1">
+    <c:if test="${sessionScope.login == null }">
      <div class="left_box">
         <div class="top_left_box"> </div>
         <div class="center_left_box">
@@ -63,9 +57,8 @@
             <div class="box_title"><span>밑의 버튼을 클릭해주세요</span> </div>
 
             <div style="float:right; padding:10px 25px 0 0;">
-            <a href="mainlogin.trip"><input type="button" value="로그인" /></a>
+                <a href="mainlogin.trip"><input type="button" value="로그인" /></a>
             </div>
-
        <div class="form_row">
               <a href="mainpassmiss.trip" style="text-decoration: none; color:#615357;"><label style="float:center;">아이디/비밀번호 찾기</label></a>
             
@@ -77,24 +70,27 @@
           </div>
 	 <div class="bottom_left_box"> </div>
 	</div>
-
+	   </c:if>
+<c:if test="${sessionScope.login != null }">
 	 <div class="left_box">
         <div class="top_left_box"> </div>
         <div class="center_left_box">
-          <div class="box_title"><span>노신영노신님, 환영합니다!</span> </div>
+          <div class="box_title"><span>${sessionScope.login }님, 환영합니다!</span> </div>
           <div class="form">
     
       <div class="form_row">
           <label style="float:center;">오늘도 기분좋은 하루 되세요.</label>
      </div>
-     
+     <form Id="logoutform" name="logoutform" action="mainlogOut.trip" method="post">
      <div style="float:right; padding:10px 25px 0 0;">
-        <input type="button" value="로그아웃" />
+        <input type="submit" value="로그아웃" />
       </div>
+      </form>
        </div>
        </div>
         <div class="bottom_left_box"> </div>
       </div>
+       </c:if>
          <p>&nbsp; </p>
       <p>&nbsp; </p>
       <p>&nbsp; </p>
@@ -116,114 +112,69 @@
  </div>   
    <div class="column4">
       <div class="title" style="float:left;">
-        <div style="float:left;">?????</div>
+        <div style="float:left;">자유게시판</div>
         <div style="float:right; font-size:10px;color:#d8325d; padding-top:2px;"> </div>
        
       </div>
       <table style="clear:both; width:695px; margin-top:10px;" cellpadding="0" cellspacing="0" border="0">
         <tr>
-            <th>???</th>
-         
-          <th>??</th>
-          <th>???</th>
-          <th>???</th>
-          <th>???</th>
+            <th>글번호</th>
+          <th>제목</th>
+          <th>작성자</th>
+          <th>조회수</th>
         </tr>
-        <tr class="color1" onmouseout="style.backgroundColor='#F3F5F6'" onclick="document.location.href='#'" onmouseover="this.style.cursor='pointer'; style.backgroundColor='#ffffff'" title="Vezi detaliile anuntului" >
-         
-          <td>Sale</td>
-          <td>House</td>
-          <td>Duis </td>
-          <td>Duis aute </td>
-          <td>150 000 $</td>
-        </tr>
-        <tr class="color1" onmouseout="style.backgroundColor='#F3F5F6'" onclick="document.location.href='#'" onmouseover="this.style.cursor='pointer'; style.backgroundColor='#ffffff'" title="Vezi detaliile anuntului" >
-         
-          <td>Sale</td>
-          <td>House</td>
-          <td>Duis </td>
-          <td>Duis aute </td>
-          <td>150 000 $</td>
-        </tr>
+       <c:forEach items="${freeList }" var="comboard">
         <tr class="color1" onmouseout="style.backgroundColor='#F3F5F6'" onclick="document.location.href='#'" onmouseover="this.style.cursor='pointer'; style.backgroundColor='#ffffff'" title="Vezi detaliile anuntului" >
           
-          <td>Sale</td>
-          <td>House</td>
-          <td>Duis </td>
-          <td>Duis aute </td>
-          <td>150 000 $</td>
+          <td>${comboard.articleId }</td>
+         <td><a href="mainfreeboardview.trip?articleId=${comboard.articleId }" style="color:#424849;float:left">
+ <c:set var = 'start' value='' />
+ <c:set var = 'gender' value='RE:' />
+
+ <c:if test ="${comboard.level > 0 }">
+ <c:forEach var='i' begin='1' end='${comboard.level }'>
+
+<c:set var = 'start' value="${start}${gender}" />
+
+  </c:forEach>
+  </c:if>
+	${start }${comboard.title }
+        
+         </a></td>
+          <td>${comboard.userName } </td>
+          <td>${comboard.readCount } </td>
         </tr>
-        <tr class="color1" onmouseout="style.backgroundColor='#F3F5F6'" onclick="document.location.href='#'" onmouseover="this.style.cursor='pointer'; style.backgroundColor='#ffffff'" title="Vezi detaliile anuntului" >
-         
-          <td>Sale</td>
-          <td>House</td>
-          <td>Duis </td>
-          <td>Duis aute </td>
-          <td>150 000 $</td>
-        </tr>
-           <tr class="color1" onmouseout="style.backgroundColor='#F3F5F6'" onclick="document.location.href='#'" onmouseover="this.style.cursor='pointer'; style.backgroundColor='#ffffff'" title="Vezi detaliile anuntului" >
-         
-          <td>Sale</td>
-          <td>House</td>
-          <td>Duis </td>
-          <td>Duis aute </td>
-          <td>150 000 $</td>
-        </tr>
-           <tr class="color1" onmouseout="style.backgroundColor='#F3F5F6'" onclick="document.location.href='#'" onmouseover="this.style.cursor='pointer'; style.backgroundColor='#ffffff'" title="Vezi detaliile anuntului" >
-         
-          <td>Sale</td>
-          <td>House</td>
-          <td>Duis </td>
-          <td>Duis aute </td>
-          <td>150 000 $</td>
-        </tr>
-           <tr class="color1" onmouseout="style.backgroundColor='#F3F5F6'" onclick="document.location.href='#'" onmouseover="this.style.cursor='pointer'; style.backgroundColor='#ffffff'" title="Vezi detaliile anuntului" >
-         
-          <td>Sale</td>
-          <td>House</td>
-          <td>Duis </td>
-          <td>Duis aute </td>
-          <td>150 000 $</td>
-        </tr>
-           <tr class="color1" onmouseout="style.backgroundColor='#F3F5F6'" onclick="document.location.href='#'" onmouseover="this.style.cursor='pointer'; style.backgroundColor='#ffffff'" title="Vezi detaliile anuntului" >
-         
-          <td>Sale</td>
-          <td>House</td>
-          <td>Duis </td>
-          <td>Duis aute </td>
-          <td>150 000 $</td>
-        </tr>
-           <tr class="color1" onmouseout="style.backgroundColor='#F3F5F6'" onclick="document.location.href='#'" onmouseover="this.style.cursor='pointer'; style.backgroundColor='#ffffff'" title="Vezi detaliile anuntului" >
-         
-          <td>Sale</td>
-          <td>House</td>
-          <td>Duis </td>
-          <td>Duis aute </td>
-          <td>150 000 $</td>
-        </tr>
-           <tr class="color1" onmouseout="style.backgroundColor='#F3F5F6'" onclick="document.location.href='#'" onmouseover="this.style.cursor='pointer'; style.backgroundColor='#ffffff'" title="Vezi detaliile anuntului" >
-         
-          <td>Sale</td>
-          <td>House</td>
-          <td>Duis </td>
-          <td>Duis aute </td>
-          <td>150 000 $</td>
-        </tr>
+        </c:forEach>
+       
       </table>
-      <div class="pagination"> <span class="disabled"><<</span><span class="current">1</span><a href="http://all-free-download.com/free-website-templates/">2</a><a href="http://all-free-download.com/free-website-templates/">3</a><a href="http://all-free-download.com/free-website-templates/">4</a><a href="http://all-free-download.com/free-website-templates/">5</a><a href="http://all-free-download.com/free-website-templates/">6</a><a href="http://all-free-download.com/free-website-templates/">7</a><a href="http://all-free-download.com/free-website-templates/">10</a><a href="http://all-free-download.com/free-website-templates/">11</a><a href="http://all-free-download.com/free-website-templates/">>></a> </div>
+      
     </div>
-      <input type="button" value="글쓰기"/>
+    <c:if test="${sessionScope.login != null }">
+    <form id="writeform" name="writeform" action="mainfreeboardinput.trip" method="get">
+    <input type="hidden" name="reservName" value="${sessionScope.login}"/> 
+    <input type="hidden" name="userId" value="${sessionScope.loginId}"/> 
+      <input type="submit" value="글쓰기"/>
+      </form>
+     </c:if>
     <!-- end of column four -->
+ <div class="pagination"> 
+      
+  		<c:if test="${pageNo} >  ${totalcount}-3">
+      			${startNo} = ${pageNo} -4 
+      			${endNo} = ${totalcount }
+      	</c:if>
+      	<c:if test="${pageNo}>3 ">
+      			${startNo} = ${ pageNo} -2 
+      			${endNo} = ${pageNo} + 2 
+      			</c:if>
+
+      <c:forEach var='i' begin='${startNo }' end='${endNo }'>
+		
+		    <a href="mainfreeboardlist.trip?&page=${i }">${i }</a>
+			</c:forEach>
+	  <p>&nbsp; </p>
   </div>
-   <div class="column4">
-        <select>
-            <option>제목</option>
-            <option>이름</option>
-            <option>내용</option>
-         </select>
-         <input type="text"/>
-        <input type="button" value="검색"/>
-   </div>	
+         <div class="pagination"> <a href="mainfreeboardlist.trip?&page=1"><<</a><a href="mainfreeboardlist.trip?&page=${pNo }"><</a><a href="mainfreeboardlist.trip?page=${nNo }">></a><a href="mainfreeboardlist.trip?page=${totalcount }">>></a></div>
   <div id="footer">
     
     <ul>

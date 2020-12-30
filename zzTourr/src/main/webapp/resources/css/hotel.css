@@ -1,0 +1,36 @@
+table thead {
+	background-color : #FF6F61;
+}
+table tbody{
+	height : 200px;
+	overflow-y : scroll;
+	}
+	
+.table-res{
+	height: 250px;
+	overflow-y : scroll;
+}	
+	
+#footer{
+width: 100% ;
+height:41px;
+clear:both;
+font-size:11px;
+background-color:#f2efef;
+border-top:1px #eeabbd dashed;
+}
+
+.star-rating {
+	width: 304px;
+	}
+.star-rating,.star-rating span {
+	display:inline-block;
+	height:55px;
+	overflow:hidden;
+	background:url(/resources/hotelImgs/star.png)no-repeat;
+	}
+.star-rating span {
+	background-position: left bottom;
+	line-height: 0;
+	vertical-align: top;
+}
