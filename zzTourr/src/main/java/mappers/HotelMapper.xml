@@ -3,17 +3,60 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace = "Hotel">
+<mapper namespace = "hotel">
+
 	<!-- 회원가입 -->
-	<insert id="insertId" parameterType='mgr'>
-		
+	<insert id="MgrInsert">
+		INSERT INTO lodowner(LODTEL,OWNERID,OWNERNAME,OWPASS)
+		VALUES(#{lodTel},#{ownerId},#{ownerName},#{owPass})
 	</insert> 
 	
-	<!-- 로그인 -->
-	<select id="loginId" parameterType="mgr" resultType="mgr">
+	 <!-- 로그인 -->
+	<select id="MgrLogin" resultType="com.zzTourr.domain.MgrVO">
+		SELECT * FROM lodowner 
+	 	WHERE ownerid = #{ownerId} AND owpass = #{owPass}
+	</select>
+	
+	<!-- 숙소주인 정보가져오기 -->
+	<select id="selMgr" resultType="com.zzTourr.domain.MgrVO">
+		SELECT * FROM lodowner
+		WHERE lodTel = #{lodTel}
+	</select>
+	
+	 <!-- 숙소주인 개인정보수정 -->
+	<update id="updateMgr">
 	<![CDATA[
+	UPDATE lodowner SET ownerid = #{ownerId}, ownerName= #{ownerName}, owpass=#{owPass} WHERE LODTEL = #{lodTel}
+	]]>
+	</update>
+	
+	<!-- 숙소등록 -->
+	<insert id="LodgeInsert">
+		INSERT INTO lodge(LODTEL,LODID,LODNAME,LODADDR,LODCONT,LODCONVEN,LODCATE,LODCOUNT,PEAKSUMSTART,PEAKSUMEXIT,
+		PEAKWINSTART,PEAKWINEXIT,IP,IMGNAME,IMGSIZE)
+		VALUES(#{lodTel},SEQ_LODGEID.nextval(),#{lodName},#{lodAddr},#{lodCont},#{lodConven},#{lodCate},0
+		,#{peakSumStart},#{peakSumExit},#{peakWinStart},#{peakWinExit},#{ip},#{imgName},#{imgSize})
+	</insert>
+	<!-- 숙소 수정 -->
+	<update id="updateLodge">
+		UPDATE lodge set LODTEL,LODID,LODNAME,LODADDR,LODCONT,LODCONVEN,LODCATE,LODCOUNT,PEAKSUMSTART,PEAKSUMEXIT,PEAKWINSTART
+		,PEAKWINEXIT,IP,IMGNAME,IMGSIZE WHERE LODTEL = #{lodTel} AND  LODID = #{lodId}
 		
+	
+	</update>
+	<!-- 
+	<insert id="RoomInsert">
+		INSERT INTO ROOM(PRODUCTID,LODGEID,ROOMNAME,ROOMCONT,PEAKPRICE,OFFPRICE,LODCOUNT,IP,IMGNAME,IMGSIZE,MAXPEOPLE)
+		VALUES(SEQ_PRODUCTID.NEXTVAL(),#{},#{},#{},#{},#{},#{},#{},#{},#{},#{})	
+	</insert>
+	 
+	<select id="selRes" parameterType="mgr" resultType="res">
+	<![CDATA[
+		SELECT * FROM reservation
+		WHERE productid = 
+		{SELECT productid FROM room	WHERE lodid = 
+		{SELECT lodid FROM lodge WHERE lodtel= #{}}}
 	]]>
 	</select>
-
+-->
 </mapper>

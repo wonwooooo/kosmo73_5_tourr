@@ -7,44 +7,13 @@
 <head>
 <meta charset="UTF-8">
 <title>NewLodge.jsp</title>
+<link rel="stylesheet" type="text/css" href="/resources/css/hotel.css?ver=1" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<link rel="stylesheet" type="text/css" href="/resources/css/hotel.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker3.min.css">
-<script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.min.js"></script>
-<script src="/js/bootstrap-datepicker.kr.js" charset="UTF-8"></script>
-</head>
 <script type="text/javascript"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
-$.datepicker.setDefaults({
-    dateFormat: 'yy/mm/dd',
-    prevText: '이전 달',
-    nextText: '다음 달',
-    monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-    monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
-    dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-    dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
-    dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
-    showMonthAfterYear: true,
-    yearSuffix: '년'
-  });
-$(document).ready(function){
-	$(fileInput).on('change',function(){
-		if(window.FileReader){
-			var filename= $(this)[0].files[0].name;
-		} else {
-			var filename = $(this).val().split('/').pop().split('\\').pop();
-		}
-		
-		$("#userfile").val(filename);
-	})
-	
-	$("#datepicker1, #datepicker2").datepicker();
-}	
-
 function sample6_execDaumPostcode(){
     new daum.Postcode({
        oncomplete : function(data) {
@@ -83,57 +52,11 @@ function sample6_execDaumPostcode(){
     }).open();
  }
 </script>
+</head>
+
 
 <body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="ownerlogin.trip">Re:ko</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          숙소 관리 <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="newLodge.trip">숙소 등록</a></li>
-            <li><a href="ModifyLodge.trip">숙소 수정</a></li>
-            <li><a href="priceEdit.trip">요금 설정</a></li>           
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">예약 관리 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="ResMgr.trip">예약 관리</a></li>
-            <li><a href="salHis.trip">매출 내역</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" >리뷰 관리 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="Review.trip">리뷰 및 피드백</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >계정 관리 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="Mypage.trip">마이페이지</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<jsp:include page="hotelMenu.jsp"/>
 <article class="container">
             <div class="page-header">
                 <div class="col-md-9 col-md-offset-3">
@@ -144,14 +67,14 @@ function sample6_execDaumPostcode(){
                 </div>
             </div>
             <div class="col-sm-6 col-md-offset-3">
-                <form role="form">
-                    <div class="form-group">
+                <form name="newLodge" method="post" action="LodgeInsert.trip">
+                    <div >
                         <label for="inputName">숙소 이름</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="숙소이름을 입력해 주세요">
+                        <input type="text" class="form-control" id="inputName" name="lodName" placeholder="숙소이름을 입력해 주세요">
                     </div>
                     <div class="form-group">
                         <label for="InputLodgeType">숙소 타입을 정해주세요</label>
-                        <select class="form-control">
+                        <select class="form-control" name="lodCate">
                         	<option value="hotel">호텔</option>
                         	<option value="guest-house">게스트하우스</option>
                         	<option value="motel">모텔</option>
@@ -167,10 +90,10 @@ function sample6_execDaumPostcode(){
                            <div class="SectionCreateCafeKeyword">                     
                               <div class="cafe_keyword_input_area">
                               <div class="FormInputText">
-                                       <input type="text" id="sample6_postcode" placeholder="우편번호" size="5"> 
+                                       <input type="text" id="sample6_postcode" placeholder="우편번호"> 
                               <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" class="selectPost">
                               <br>
-                              <input type="text" id="sample6_address" placeholder="주소" name="addr" required class="id" oninput="checkId()" value="${userVO.addr}" readonly>
+                              <input type="text" id="sample6_address" placeholder="주소" name="lodAddr" required class="id" oninput="checkId()" value="${userVO.addr}" readonly>
                                  </div>                                                                                                   
                               </div>
                            </div>               
@@ -180,57 +103,28 @@ function sample6_execDaumPostcode(){
                    <div class="form-group">
               		<label>사용가능한 편의시설을 선택해주세요</label>
               		<br/>
-                   	<input type="radio" value="kitchen">주방
-                   	<input type="radio" value="barbeque">바베큐장
-                   	<input type="radio" value="pool">수영장
-                   	<input type="radio" value="jacuzzi">자쿠지
-                   	<input type="radio" value="airconditioner">에어컨
-                   	<input type="radio" value="heater">히터
-                   	<input type="radio" value="on-dol">온돌보일러  	                   
+              		<input type="radio" name="lodconven" value="kitchen">주방
+                   	<input type="radio" name="lodconven" value="barbeque">바베큐장
+                   	<input type="radio" name="lodconven" value="pool">수영장
+                   	<input type="radio" name="lodconven" value="jacuzzi">자쿠지
+                   	<input type="radio" name="lodconven" value="airconditioner">에어컨
+                   	<input type="radio" name="lodconven" value="heater">히터
+                   	<input type="radio" name="lodconven" value="on-dol">온돌보일러  	                   
                    
                    </div>
                   <div class="form-group">
                    		<label> 간단하게 숙소를 소개해주세요 </label>
                    		<br/>
-                   		<input class="col-md-9" type="text" ><br/>                  	
+                   		<input class="col-md-9" type="text" name="lodcont"><br/>                  	
                    </div>
                    <div class="form-group">
                   	<label> 하절기 성수기 기간을 정해주세요. (최대2주) </label><br/>
-                   	<input type="text" id="datepicker1"> ~ 
-                   	<input type="text" id="datepicker2"> 
-                   	
+                   	<input type="text" id="datepicker">
                    </div>
                    <div class="form-group">
                   	<label> 동절기 성수기 기간을 정해주세요. (최대2주) </label><br/>
-                  	<input type="text" id="datepicker1"> ~ 
-                   	<input type="text" id="datepicker2">
                    </div>
-					<div class ="form-group">
-						<label>객실을 등록해주세요</label>
-						<input type="button" value="새 객실" onclick="newRoom.trip">
-						<div class ="form-group">
-							<label>객실명을 입력해주세요</label>
-							<br/>
-							<input type="text" width="10"><br/>
-							최대인원수 : 
-							<select>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							</select><br/>
-							객실수 : 
-							<select>
-							<option value="1">1</option>
-							<option value="2">2</option>
-							<option value="3">3</option>
-							<option value="4">4</option>
-							<option value="5">5</option>
-							</select><br/>
-							비수기요금 : <input type="number"><br/>
-							성수기요금 : <input type="number"><br/>
-							<label>파일첨부</label>
+                   <label>파일첨부</label>
 							<input id="fileInput" type="file" data-class-button="btn btn-default" data-class-input="form-control"
 							data-button-text="" data-icon-name="fa fa-upload" class="form-control" tabindex="-1" style="position: absolute; clip: rect(0px 0px 0px 0px);">
 							<div class="bootstrap-filestyle input-group">
@@ -241,18 +135,16 @@ function sample6_execDaumPostcode(){
 									</label>
 								</span>
 							</div>
-							
-							
-						</div>			
-						
-					</div>
-                    <div class="form-group text-right">
-                        <button type="submit" id="join-submit" class="btn btn-default">
+                   <button type="submit" id="join-submit" class="btn btn-default">
                             숙소 등록하기 
                         </button>
+                        </form>
+                    <hr/>    
+					
+                    <div class="form-group text-right">
+                        
                      
                     </div>
-                </form>
             </div>
             </article>
 </body>

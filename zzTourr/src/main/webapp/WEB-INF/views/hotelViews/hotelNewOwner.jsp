@@ -25,27 +25,28 @@
                 </div>
             </div>
             <div class="col-sm-6 col-md-offset-3">
-                <form role="form">
+                <form name="newOwner" method="post" action="newOwner.trip">
                     <div class="form-group">
                         <label for="inputName">이름</label>
-                        <input type="text" class="form-control" id="inputName" placeholder="이름을 입력해 주세요">
+                        <input type="text" class="form-group" name="ownerName" placeholder="이름을 입력해 주세요">
                     </div>
                     <div class="form-group">
-                        <label for="InputEmail">이메일</label>
-                        <input type="email" class="form-control" id="InputEmail" placeholder="이메일 주소를 입력해주세요">
+                        <label for="inputPassword">아이디</label>
+                        <input type="text" class="form-group" name="ownerId" placeholder="아이디를 입력해주세요">
                     </div>
                     <div class="form-group">
                         <label for="inputPassword">비밀번호</label>
-                        <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호를 입력해주세요">
+                        <input type="password" class="form-group" name="owPass" placeholder="비밀번호를 입력해주세요">
                     </div>
                     <div class="form-group">
                         <label for="inputPasswordCheck">비밀번호 확인</label>
-                        <input type="password" class="form-control" id="inputPasswordCheck" placeholder="비밀번호 확인을 위해 다시한번 입력 해 주세요">
+                        <input type="password" class="form-group" id="inputPasswordCheck" placeholder="비밀번호 확인을 위해 다시한번 입력 해 주세요">
                     </div>
                     <div class="form-group">
                         <label for="inputMobile">휴대폰 번호</label>
-                        <input type="tel" class="form-control" id="inputMobile" placeholder="휴대폰번호를 입력해 주세요">
+                        <input type="tel" class="form-group" name="lodTel" placeholder="휴대폰번호를 입력해 주세요">
                     </div>
+                    
                   
 
  					<!-- <div class="form-group">
@@ -62,9 +63,6 @@
                     <div class="form-group text-center">
                         <button type="submit" id="join-submit" class="btn btn-default">
                             회원가입
-                        </button>
-                        <button type="submit" class="btn btn-default">
-                            가입취소
                         </button>
                     </div>
                 </form>

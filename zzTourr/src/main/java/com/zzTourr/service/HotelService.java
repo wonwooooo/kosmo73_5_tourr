@@ -1,11 +1,11 @@
 package com.zzTourr.service;
 
+import javax.inject.Inject;
+
 import com.zzTourr.domain.MgrVO;
 
 public interface HotelService {
-
-	int idInsert(MgrVO vo);
-
-	MgrVO hotelMgrlogin(MgrVO vo);
-
+	
+	public void hotelMgrInsert(MgrVO vo);
+	
 }

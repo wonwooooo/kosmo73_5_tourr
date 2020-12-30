@@ -1,19 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>hotelReview</title>
+<title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/hotel.css" />
-</head>
 <script type="text/javascript"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
 <body>
 <nav class="navbar navbar-default">
   <div class="container-fluid">
@@ -63,30 +61,5 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="col-sm-offset-1 col-sm-5">
-	<h2>리뷰</h2>
-	<div class="wrap-star" >
-		<h3>숙소1</h3> 
-		<div class="star-rating">
-			<span style="width:60%"></span>
-		</div>
-	</div>
-	<div class="wrap-star" >
-		<h3>숙소2</h3> <div class="star-rating">
-			<span style="width:80%"></span>
-		</div>
-	</div>
-	<div class="wrap-star" >
-		<h3>숙소3</h3> <div class="star-rating">
-			<span style="width:100%"></span>
-		</div>
-	</div>
-</div>
-<div class="col-sm-6">
-	<h2>피드백</h2>
-
-</div>
 </body>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
 </html>
