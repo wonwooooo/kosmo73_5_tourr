@@ -21,19 +21,19 @@ public class MainServiceImpl implements MainService{
 	private int totalRecCount;	
 	
 	private int pageTotalCount;		
-	//¼÷¼Ò ¹× °¡ÀÌµå ¸ñ·Ï
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½
 	private int countPerPage = 8;
 	
-	//¼÷¼Ò ¹× °¡ÀÌµå ¸®ºä
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½
 	private int countPerPageRe = 3;
 	
-	//°Ô½ÃÆÇ
+	//ï¿½Ô½ï¿½ï¿½ï¿½
 	private int countPerPageBo = 10;
 	
 	@Autowired
 	private MainDAOImpl mainDAO;
 	
-	//¼÷¼Ò Ä«Å×°í¸® Áß Ä«Å×°í¸®°¡ 'Ææ¼Ç'ÀÎ °ÍÀ» °Ë»ö-ÀüÃ¼ ÆäÀÌÁö ¼ö °è»ê
+	//ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½×°ï¿½ ï¿½ï¿½ Ä«ï¿½×°ï¿½ï¿½ï¿½ 'ï¿½ï¿½ï¿½'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½-ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 	public int mainLodgeList(LodgeVO vo) {
 		totalRecCount =  mainDAO.getTotalPagepen();
 		pageTotalCount = totalRecCount / countPerPage;
@@ -42,7 +42,7 @@ public class MainServiceImpl implements MainService{
 		return pageTotalCount;
 	}
 	
-	//¼÷¼Ò Ä«Å×°í¸® Áß Ä«Å×°í¸®°¡ 'Ææ¼Ç'ÀÎ °ÍÀÇ ¸®½ºÆ®
+	//ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½×°ï¿½ ï¿½ï¿½ Ä«ï¿½×°ï¿½ï¿½ï¿½ 'ï¿½ï¿½ï¿½'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®
 	public List<LodgeVO> mainLodgeList(int pageNo) {
 		int firstRow = (pageNo-1)*countPerPage + 1;
 		int endRow = pageNo*countPerPage; 
@@ -55,7 +55,7 @@ public class MainServiceImpl implements MainService{
 	}
 	
 
-	//¼÷¼Ò-Ææ¼Ç-°Ë»ö-¸®½ºÆ®
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½Æ®
 	public List<LodgeVO> mainlodgelistserpen(int pageNo, LodgeVO vo, String searchlo) {
 		int firstRow = (pageNo-1)*countPerPage + 1;
 		int endRow = pageNo*countPerPage; 
@@ -68,7 +68,7 @@ public class MainServiceImpl implements MainService{
 		return mainDAO.mainlodgelistserpen(map);
 	}
 
-	//¼÷¼Ò Ä«Å×°í¸® Áß Ä«Å×°í¸®°¡ 'Ææ¼Ç' / °Ë»ö 'Áö¿ª'ÀÎ °ÍÀ» ¼­ºñ½º´Ü¿¡¼­ ÆäÀÌÂ¡ Àû¿ë-ÀüÃ¼ ÆäÀÌÁö ¼ö °è»ê
+	//ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½×°ï¿½ ï¿½ï¿½ Ä«ï¿½×°ï¿½ï¿½ï¿½ 'ï¿½ï¿½ï¿½' / ï¿½Ë»ï¿½ 'ï¿½ï¿½ï¿½ï¿½'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ñ½º´Ü¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â¡ ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 	public int mainLodgeListpense(LodgeVO vo, String searchtext) {
 		HashMap map = new HashMap();
 		map.put("lov", vo);	
@@ -83,7 +83,7 @@ public class MainServiceImpl implements MainService{
 
 
 
-	//¼÷¼Ò Ä«Å×°í¸® Áß Ä«Å×°í¸®°¡ 'È£ÅÚ'ÀÎ °ÍÀ» ¼­ºñ½º´Ü¿¡¼­ ÆäÀÌÂ¡ Àû¿ë-ÀüÃ¼ ÆäÀÌÁö ¼ö °è»ê
+	//ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½×°ï¿½ ï¿½ï¿½ Ä«ï¿½×°ï¿½ï¿½ï¿½ 'È£ï¿½ï¿½'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ñ½º´Ü¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â¡ ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 	public int mainLodgeListho(LodgeVO vo) {
 		totalRecCount =  mainDAO.getTotalPageho();
 		pageTotalCount = totalRecCount / countPerPage;
@@ -93,7 +93,7 @@ public class MainServiceImpl implements MainService{
 		
 	}
 	
-	//¼÷¼Ò Ä«Å×°í¸® Áß Ä«Å×°í¸®°¡ 'È£ÅÚ'ÀÎ °ÍÀ» ¼­ºñ½º´Ü¿¡¼­ ÆäÀÌÂ¡ Àû¿ë-½ÇÁ¦ÀûÀ¸·Î °ª 2°³¿¡ ÀÇÇØ ¶ç¿öÁö´Â ³»¿ë
+	//ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½×°ï¿½ ï¿½ï¿½ Ä«ï¿½×°ï¿½ï¿½ï¿½ 'È£ï¿½ï¿½'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ñ½º´Ü¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â¡ ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ 2ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 		public List<LodgeVO> mainLodgeListho(int pageNo) {
 		int firstRow = (pageNo-1)*countPerPage + 1;
 		int endRow = pageNo*countPerPage; 
@@ -105,7 +105,7 @@ public class MainServiceImpl implements MainService{
 		return mainDAO.mainLodgeListho(map);
 	}
 
-		//¼÷¼Ò-È£ÅÚ-°Ë»ö-¸®½ºÆ®
+		//ï¿½ï¿½ï¿½ï¿½-È£ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½Æ®
 		public List<LodgeVO> mainlodgelistserna(int pageNo,  LodgeVO vo, String searchlo) {
 			int firstRow = (pageNo-1)*countPerPage + 1;
 			int endRow = pageNo*countPerPage; 
@@ -118,7 +118,7 @@ public class MainServiceImpl implements MainService{
 		}
 
 
-		//¼÷¼Ò Ä«Å×°í¸® Áß Ä«Å×°í¸®°¡ 'È£ÅÚ' / °Ë»ö 'Áö¿ª'ÀÎ °ÍÀ» ¼­ºñ½º´Ü¿¡¼­ ÆäÀÌÂ¡ Àû¿ë-ÀüÃ¼ ÆäÀÌÁö ¼ö °è»ê
+		//ï¿½ï¿½ï¿½ï¿½ Ä«ï¿½×°ï¿½ ï¿½ï¿½ Ä«ï¿½×°ï¿½ï¿½ï¿½ 'È£ï¿½ï¿½' / ï¿½Ë»ï¿½ 'ï¿½ï¿½ï¿½ï¿½'ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ñ½º´Ü¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Â¡ ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½
 		public int mainLodgeListhose(LodgeVO vo, String searchtext) {
 			HashMap map = new HashMap();
 			map.put("lov", vo);	
@@ -132,7 +132,7 @@ public class MainServiceImpl implements MainService{
 			
 		}
 
-		//¼÷¼Ò-¸ğÅÚ-ÀüÃ¼ÆäÀÌÁö¼ö
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		public int mainLodgeListmo(LodgeVO vo) {
 			totalRecCount =  mainDAO.getTotalPagemo();
 			pageTotalCount = totalRecCount / countPerPage;
@@ -141,7 +141,7 @@ public class MainServiceImpl implements MainService{
 			return pageTotalCount;
 		}
 
-		//¼÷¼Ò-¸ğÅÚ-ÀüÃ¼¸®½ºÆ®
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½Æ®
 		public List<LodgeVO> mainLodgePagemo(int pageNo) {
 			int firstRow = (pageNo-1)*countPerPage + 1;
 			int endRow = pageNo*countPerPage; 
@@ -153,7 +153,7 @@ public class MainServiceImpl implements MainService{
 			return mainDAO.mainLodgeListhmo(map);
 		}
 
-		//¼÷¼Ò-¸ğÅÚ-°Ë»ö-¸®½ºÆ®
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½Æ®
 		public List<LodgeVO> mainlodgelistsermo(int pageNo, LodgeVO vo, String searchlo) {
 			int firstRow = (pageNo-1)*countPerPage + 1;
 			int endRow = pageNo*countPerPage; 
@@ -165,7 +165,7 @@ public class MainServiceImpl implements MainService{
 			return mainDAO.mainlodgelistsermo(map);
 		}
 
-		//¼÷¼Ò-¸ğÅÚ-°Ë»ö-ÀüÃ¼ÆäÀÌÁö¼ö
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		public int mainLodgeListmose(LodgeVO vo, String searchtext) {
 			HashMap map = new HashMap();
 			map.put("lov", vo);	
@@ -179,7 +179,7 @@ public class MainServiceImpl implements MainService{
 			
 		}
 
-		//¼÷¼Ò-°ÔÇÏ-ÀüÃ¼ÆäÀÌÁö¼ö
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		public int mainLodgePagege(LodgeVO vo) {
 			totalRecCount =  mainDAO.getTotalPagege();
 			pageTotalCount = totalRecCount / countPerPage;
@@ -188,7 +188,7 @@ public class MainServiceImpl implements MainService{
 			return pageTotalCount;
 			}
 
-		//¼÷¼Ò-°ÔÇÏ-ÀüÃ¼-¸®½ºÆ®
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼-ï¿½ï¿½ï¿½ï¿½Æ®
 		public List<LodgeVO> mainLodgeListge(int pageNo) {
 			int firstRow = (pageNo-1)*countPerPage + 1;
 			int endRow = pageNo*countPerPage; 
@@ -200,7 +200,7 @@ public class MainServiceImpl implements MainService{
 			return mainDAO.mainLodgeListge(map);
 		}
 
-		//¼÷¼Ò-°ÔÇÏ-°Ë»ö-¸®½ºÆ®
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½Æ®
 		public List<LodgeVO> mainlodgelistserge(int pageNo, LodgeVO vo, String searchlo) {
 			int firstRow = (pageNo-1)*countPerPage + 1;
 			int endRow = pageNo*countPerPage; 
@@ -212,7 +212,7 @@ public class MainServiceImpl implements MainService{
 			return mainDAO.mainlodgelistserge(map);
 		}
 
-		//¼÷¼Ò-°ÔÇÏ-°Ë»ö-ÀüÃ¼ÆäÀÌÁö¼ö
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		public int mainLodgeListge(LodgeVO vo, String searchtext) {
 			HashMap map = new HashMap();
 			map.put("lov", vo);	
@@ -226,12 +226,12 @@ public class MainServiceImpl implements MainService{
 			
 		}
 
-		//·Î±×ÀÎ
+		//ï¿½Î±ï¿½ï¿½ï¿½
 		public UsersVO mainidCheckLogin(UsersVO vo) {
 			return mainDAO.mainmemberLogin(vo);
 		}
 
-		//¼÷¼Ò-°¡ÀÌµå-¸®½ºÆ®
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½Ìµï¿½-ï¿½ï¿½ï¿½ï¿½Æ®
 		public List<GuideTourVO> mainGuideList(int pageNo) {
 			int firstRow = (pageNo-1)*countPerPage + 1;
 			int endRow = pageNo*countPerPage; 
@@ -243,7 +243,7 @@ public class MainServiceImpl implements MainService{
 			return mainDAO.mainGuideList(map);
 		}
 
-		//¼÷¼Ò-°¡ÀÌµå-ÀüÃ¼ÆäÀÌÁö¼ö
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½Ìµï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		public int mainGuidePage(GuideTourVO vo) {
 			totalRecCount =  mainDAO.getTotalPageguide();
 			pageTotalCount = totalRecCount / countPerPage;
@@ -252,7 +252,7 @@ public class MainServiceImpl implements MainService{
 			return pageTotalCount;
 		}
 
-		//°¡ÀÌµå-¸®½ºÆ®-°Ë»ö
+		//ï¿½ï¿½ï¿½Ìµï¿½-ï¿½ï¿½ï¿½ï¿½Æ®-ï¿½Ë»ï¿½
 		public List<GuideTourVO> mainguidelistser(int pageNo, GuideTourVO vo, String searchlo) {
 			System.out.println("//"+searchlo);
 			int firstRow = (pageNo-1)*countPerPage + 1;
@@ -265,7 +265,7 @@ public class MainServiceImpl implements MainService{
 			return mainDAO.mainGuidelistser(map);
 		}
 
-		//°¡ÀÌµå-ÀüÃ¼ÆäÀÌÁö¼ö-°Ë»ö
+		//ï¿½ï¿½ï¿½Ìµï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½
 		public int mainGuidePageser(GuideTourVO vo, String searchtext) {
 			HashMap map = new HashMap();
 			map.put("lov", vo);	
@@ -278,18 +278,18 @@ public class MainServiceImpl implements MainService{
 			return pageTotalCount;
 		}
 
-		//¼÷¼Ò-»ó¼¼ÆäÀÌÁö
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		public LodgeVO mainlodgedetail(LodgeVO vo) {
 			return mainDAO.mainlodgedetail(vo);
 		}
 
-		//¼÷¼Ò »ó¼¼ÆäÀÌÁö Å¬¸¯½Ã °´½ÇÁ¤º¸ º¸ÀÌµµ·Ï
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½
 		public List<RoomVO> mainroomlist(LodgeVO vo) {
 			return mainDAO.mainroomdetail(vo);
 		}
 
-		//¼÷¼Ò »ó¼¼ÆäÀÌÁö Å¬¸¯½Ã ¸®ºä º¸ÀÌµµ·Ï
-		//¸®½ºÆ®
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½
+		//ï¿½ï¿½ï¿½ï¿½Æ®
 		public List<ProductRevboVO> productRevboList(int lodIdNum, int pageNo) {
 			int firstRow = (pageNo-1)*countPerPageRe + 1;
 			int endRow = pageNo*countPerPageRe; 
@@ -302,8 +302,8 @@ public class MainServiceImpl implements MainService{
 			return mainDAO.mainProRevList(map);
 		}
 
-		//¼÷¼Ò »ó¼¼ÆäÀÌÁö Å¬¸¯½Ã ¸®ºä º¸ÀÌµµ·Ï
-		//ÆäÀÌÁö¼ö
+		//ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½
+		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		public int productRevboPage(int lodIdNum) {
 			totalRecCount =  mainDAO.mainProRevPage(lodIdNum);
 			pageTotalCount = totalRecCount / countPerPageRe;
@@ -312,12 +312,12 @@ public class MainServiceImpl implements MainService{
 			return pageTotalCount;
 		}
 
-		//°¡ÀÌµå»ó¼¼ÆäÀÌÁö-°Ë»ö-°¡ÀÌµå(Á¤º¸)
+		//ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½Ìµï¿½(ï¿½ï¿½ï¿½ï¿½)
 		public GuideTourVO mainguidedetail(String programName) {
 			return mainDAO.mainguidedetail(programName);
 		}
 
-		//°¡ÀÌµå-»ó¼¼ÆäÀÌÁö-°í°´¸®ºä-¸®½ºÆ®
+		//ï¿½ï¿½ï¿½Ìµï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½Æ®
 		public List<ProductRevboVO> productRevboListga(String programName, int pageNo) {
 			int firstRow = (pageNo-1)*countPerPageRe + 1;
 			int endRow = pageNo*countPerPageRe; 
@@ -330,7 +330,7 @@ public class MainServiceImpl implements MainService{
 			return mainDAO.mainProRevListga(map);
 		}
 
-		//°¡ÀÌµå-»ó¼¼ÆäÀÌÁö-°í°´¸®ºä-ÀüÃ¼ÆäÀÌÁö¼ö
+		//ï¿½ï¿½ï¿½Ìµï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		public int productRevboPagega(String programName) {
 			totalRecCount =  mainDAO.mainProRevPagega(programName);
 			pageTotalCount = totalRecCount / countPerPageRe;
@@ -339,7 +339,7 @@ public class MainServiceImpl implements MainService{
 			return pageTotalCount;
 		}
 
-		//ÀÚÀ¯°Ô½ÃÆÇ-¸®½ºÆ®
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½Æ®
 		public List<ComBoardVO> freeBoardList(int pageNo) {
 			int firstRow = (pageNo-1)*countPerPageBo + 1;
 			int endRow = pageNo*countPerPageBo; 
@@ -351,7 +351,7 @@ public class MainServiceImpl implements MainService{
 			return mainDAO.mainComBoardList(map);
 		}
 
-		//ÀÚÀ¯°Ô½ÃÆÇ-ÀüÃ¼ÆäÀÌÁö¼ö
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		public int freeBoardList(ComBoardVO vo) {
 			totalRecCount =  mainDAO.getTotalPageComBoard();
 			pageTotalCount = totalRecCount / countPerPageBo;
@@ -360,50 +360,71 @@ public class MainServiceImpl implements MainService{
 			return pageTotalCount;
 		}
 
-		//ÀÚÀ¯°Ô½ÃÆÇ-±×·ì¹øÈ£¹Ş¾Æ¿À±â
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½×·ï¿½ï¿½È£ï¿½Ş¾Æ¿ï¿½ï¿½ï¿½
 		public int mainGetFrGroupId() {
 			return mainDAO.mainGetFrGroupIddao();
 		}
 
-		//ÀÚÀ¯°Ô½ÃÆÇ-±Û¾²±â
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Û¾ï¿½ï¿½ï¿½
 		public int insertComBoard(ComBoardVO vo) {
 			return mainDAO.insertComBoard(vo);
 			
 		}
 
-		//ÀÚÀ¯°Ô½ÃÆÇ-±Ûº¸±â
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Ûºï¿½ï¿½ï¿½
 		public ComBoardVO mainfreeBoardView(int articleId) {
 			return mainDAO.mainfreeBoardViewdao(articleId);
 		}
 
-		//ÀÚÀ¯°Ô½ÃÆÇ-±Û º¼¶§ Á¶È¸¼ö +1 Áõ°¡
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½ï¿½ +1 ï¿½ï¿½ï¿½ï¿½
 		public void updateFreeBoardCount(int articleId) {
 			mainDAO.updateFreeBoardCountdao(articleId);
 		}
 
-		//ÀÚÀ¯°Ô½ÃÆÇ-±Û¼öÁ¤
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Û¼ï¿½ï¿½ï¿½
 		public void mainfreeBoardUpdate(ComBoardVO vo) {
 			mainDAO.mainupdatefrBoard(vo);
 		}
 
-		//ÀÚÀ¯°Ô½ÃÆÇ-±Û»èÁ¦
+		//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Û»ï¿½ï¿½ï¿½
 		public void mainfreeBoarddelete(ComBoardVO vo) {
 			mainDAO.maindeletefrBoard(vo);
 		}
 
-		//¼÷¼Ò-³¯Â¥-¸®½ºÆ®
+		//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Â¥-ï¿½ï¿½ï¿½ï¿½Æ®
 		public List<ReservationVO> mainlosevDate(ReservationVO vo) {
 			return mainDAO.mainlosevDateDAO(vo);
 		}
 
-		//°´½Ç¼ö Ã¼Å©
-		public int idCheck_Login(String checkInDate2, String checkOut2, int pId) {
-			System.out.println(pId);
-			HashMap map = new HashMap();
-			map.put("checkInDate2", checkInDate2);	
-			map.put("checkOut2", checkOut2);
-			map.put("productId", pId);
-			return mainDAO.roomNum(map);
+		//ï¿½ï¿½ï¿½Ç¼ï¿½ Ã¼Å©
+		public int idCheck_Login(ReservationVO vo) {
+			
+			return mainDAO.roomNum(vo);
+		}
+
+		//ì˜ˆì•½í•˜ê¸°
+		public int insertRev(ReservationVO vo) {
+			return mainDAO.insertRevDAO(vo);
+		}
+
+		//ë©”ì¸í˜ì´ì§€-íœì…˜
+		public List<LodgeVO> mainmainLodgeList() {
+			return mainDAO.mmainLodgeListpen();
+		}
+
+		//ë©”ì¸í˜ì´ì§€-í˜¸í…”
+		public List<LodgeVO> mainmainLodgeListho() {
+			return mainDAO.mmainLodgeListho();
+		}
+
+		//ë©”ì¸í˜ì´ì§€-ê²ŒìŠ¤íŠ¸í•˜ìš°ìŠ¤
+		public List<LodgeVO> mainmainLodgeListge() {
+			return mainDAO.mmainLodgeListge();
+		}
+
+		//ë©”ì¸í˜ì´ì§€-ëª¨í…”
+		public List<LodgeVO> mainmainLodgePagemo() {
+			return mainDAO.mmainLodgeListmo();
 		}
 
 		

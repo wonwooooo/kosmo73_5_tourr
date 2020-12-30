@@ -33,11 +33,29 @@ public class MainController {
 
 	@Autowired
 	private MainDAO mainDAO;
-
 	
+	//객실마감으로 예약실패
+		@RequestMapping("/mainViews/mainpasssres.trip")
+		public String mainrevmiss() {
+			return "/mainViews/mainpasssres";
+			
+		}	
+
+	//메인페이지
 	@RequestMapping("mainViews/mainindex.trip")
-	public String mainindex() {
-		return "/mainViews/mainindex";
+	public ModelAndView mainindex() {
+		List<LodgeVO> resultho = mainService.mainmainLodgeListho();
+		List<LodgeVO> resultmo = mainService.mainmainLodgePagemo();
+		List<LodgeVO> resultge = mainService.mainmainLodgeListge();
+		List<LodgeVO> resultpen = mainService.mainmainLodgeList();
+		
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("mainViews/mainindex");
+		mv.addObject("hoList", resultho);
+		mv.addObject("moList", resultmo);
+		mv.addObject("geList", resultge);
+		mv.addObject("penList", resultpen);
+		return mv;
 		
 	}
 	
@@ -382,8 +400,9 @@ public class MainController {
 			session.setAttribute("login", result.getUserName());
 			session.setAttribute("loginId", result.getUserId());
 			session.setAttribute("loginTel", result.getUserTel());
-					
-			return "/mainViews/mainindex";
+				
+			return "redirect:mainindex.trip";
+			//return "/mainViews/mainindex";
 		}
 		
 	}	
@@ -804,7 +823,7 @@ public class MainController {
 		mv.addObject("reservName", reservName);
 		mv.addObject("reservTel", reservTel);
 		mv.addObject("userId", userId);
-		mv.addObject("productId", productIdi);
+		mv.addObject("productId", productId);
 		mv.addObject("peakPrice", peakPrice);
 		mv.addObject("offPrice", offPrice);
 		mv.addObject("peakSumStart", peakSumStart);
@@ -819,11 +838,16 @@ public class MainController {
 	
 	//숙소-예약-화면에서 넘겨받은값들 예약 페이지로 끌고가서-날짜확인 
 		@RequestMapping("/mainViews/mainloservationDay.trip")
-		public ModelAndView mainloservationDay(ReservationVO vo) { 
+		public ModelAndView mainloservationDay(ReservationVO vo, String checkInDate2, String checkOut2, String reservPrice, String maxPeople) { 
+	//		System.out.println(offPrice);
 			List<ReservationVO> result = mainService.mainlosevDate(vo);
+			System.out.println(result.size());
 			ModelAndView mv = new ModelAndView();
 			mv.addObject("dateList", result);
-			
+			mv.addObject("price", Integer.parseInt(reservPrice)*result.size());
+			mv.addObject("checkInDate2", checkInDate2);
+			mv.addObject("checkOut2", checkOut2);
+			mv.addObject("maxPeople", maxPeople);
 			mv.addObject("productId", vo.getProductId());
 			System.out.println(vo.getProductId());
 			mv.setViewName("mainViews/mainloservationDay");
@@ -835,23 +859,38 @@ public class MainController {
 		//*****************************************
 		//AJAX
 		@ResponseBody
-		public String idCheck(String checkInDate2, String checkOut2, String productId){
-			int pId  = Integer.parseInt(productId);
-			int result = mainService.idCheck_Login(checkInDate2, checkOut2, pId);
+		public String idCheck(ReservationVO vo){
+		
+	//	int pId  = Integer.parseInt(productId);
+		//	System.out.println("++"+pId);
+	//	vo.setProductId(pId);
+			
+			String message = null;
+			
+			int result = mainService.idCheck_Login(vo);
 			System.out.println(result);
-			String message = "이미 사용중입니다";
+			message = "1";
 			if(result > 0) {
 				message = "사용가능한 아이디입니다";
+				
+			}else {
+				
 			}
+			
+		
+			
+			return message;
 			/***
 			 * 추후에는 보내는 테이타는 JSON구조로 만드시고(JSON 라이브러리 필요)
 			 * 그 JSON을 문자열로 변환해서 리턴함
 			 * 
 			 */
-			return message;
+			
 			//****** 리턴형이 String 인 경우 원래는 뷰페이지 지정이여야 하지만
 			// AJAX인 경우는 결과 리턴
 		}
+	//	@RequestMapping("/mainViews/maingureservation.trip")	
+		
 		
 	@RequestMapping("/mainViews/maingureservation.trip")
 	public String maingureservation() {
@@ -864,4 +903,11 @@ public class MainController {
 		return "/mainViews/mainerror";
 		
 	}
+	 //숙소 예약
+	@RequestMapping("/mainViews/finalinsert.trip")
+	public String mainRevinput(ReservationVO vo) {
+		mainService.insertRev(vo);
+		return "redirect:mainindex.trip";
+		
+	}	
 }

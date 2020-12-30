@@ -33,7 +33,7 @@
 <body>
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
+    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo1.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
@@ -90,7 +90,8 @@
        <div class="left_box">
         <div class="top_left_box"> </div>
         <div class="center_left_box">
-          <div class="box_title"><span>객실예약</span> </div>
+          <div class="box_title"><span>객실예약 #1</span> </div>
+       <div class="box_title"><span>객실예약 #1</span> </div>
       <form action="mainloreser" method="get"/>
           <div class="form">
              

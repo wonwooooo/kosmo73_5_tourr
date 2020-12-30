@@ -14,42 +14,24 @@
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
-        <li><a href="mainguidelist.trip">가이드</a></li>
-        <li><a>숙소
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-            <li><a href="mainlodgelist.trip">호텔</a></li>
-            <li><a href="mainlodgelist.trip">모텔</a></li>
-            <li><a href="mainlodgelist.trip">게스트하우스</a></li>
-            <li><a href="mainlodgelist.trip">펜션</a></li>
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
+          
+      <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
+         <li><a href="mainlodgelistmo.trip?page=1">모텔</a></li>
+          <li><a href="mainlodgelistge.trip?page=1">게스트하우스</a></li>
+          <li><a href="mainlodgelist.trip?page=1">펜션</a></li>
+        
         <li><a>커뮤니티
           <!--[if IE 7]><!-->
           </a>
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
-            <li><a href="mainrvboardlist.trip">리뷰게시판</a></li>
+           
             <li><a href="mainfreeboardlist.trip">자유게시판</a></li>
-            <li><a href="mainfreeboardlist.trip">동행자 찾아요</a></li>
           </ul>
-        </li>
-        <li><a>유용한 정보
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
-          
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
+          </li>
+          <!--[if lte IE 6]></td></tr></table></a><![endif]-->	
+    <c:if test="${sessionScope.login != null }">
      <li><a>마이페이지</a>
      <ul>
             <li><a href="customerReserv.trip">구매내역</a></li>
@@ -59,6 +41,7 @@
             <li><a href="customerModify.trip">개인정보</a></li>
           </ul>
      </li>
+     </c:if>
       </ul>
     </div>
   </div>

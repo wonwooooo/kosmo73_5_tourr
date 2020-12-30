@@ -13,130 +13,143 @@ import com.zzTourr.domain.RoomVO;
 import com.zzTourr.domain.UsersVO;
 
 public interface MainDAO {
-	//¼÷¼Ò-Ææ¼Ç-ÀüÃ¼¸®½ºÆ®
+	//ìˆ™ì†Œ-íœì…˜-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<LodgeVO> mainLodgeList(HashMap map);
 	
-	//¼÷¼Ò-Ææ¼Ç-ÀüÃ¼ÆäÀÌÁö¼ö
+	//ìˆ™ì†Œ-íœì…˜-ì „ì²´í˜ì´ì§€ìˆ˜
 	public int getTotalPagepen();
 	
-	//¼÷¼Ò-Ææ¼Ç-°Ë»ö-ÀüÃ¼¸®½ºÆ®
+	//ìˆ™ì†Œ-íœì…˜-ê²€ìƒ‰-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<LodgeVO> mainlodgelistserpen(HashMap map);
 		
-	//¼÷¼Ò-Ææ¼Ç-°Ë»ö-ÆäÀÌÁö¼ö
+	//ìˆ™ì†Œ-íœì…˜-ê²€ìƒ‰-í˜ì´ì§€ìˆ˜
 	public int getTotalPagepense(HashMap map);
 	
-	//¼÷¼Ò-È£ÅÚ-ÀüÃ¼ÆäÀÌÁö¼ö
+	//ìˆ™ì†Œ-í˜¸í…”-ì „ì²´í˜ì´ì§€ìˆ˜
 	public int getTotalPageho();
 	
-	//¼÷¼Ò-È£ÅÚ-ÀüÃ¼¸®½ºÆ®
+	//ìˆ™ì†Œ-í˜¸í…”-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<LodgeVO> mainLodgeListho(HashMap map);
 	
-	//¼÷¼Ò-È£ÅÚ-°Ë»ö-ÀüÃ¼¸®½ºÆ®
+	//ìˆ™ì†Œ-í˜¸í…”-ê²€ìƒ‰-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<LodgeVO> mainlodgelistserna(HashMap map);
 	
-	//¼÷¼Ò-È£ÅÚ-°Ë»ö-ÆäÀÌÁö¼ö
+	//ìˆ™ì†Œ-í˜¸í…”-ê²€ìƒ‰-í˜ì´ì§€ìˆ˜
 	public int getTotalPagehose(HashMap map);
 	
-	//¼÷¼Ò-¸ğÅÚ-ÀüÃ¼ÆäÀÌÁö¼ö
+	//ìˆ™ì†Œ-ëª¨í…”-ì „ì²´í˜ì´ì§€ìˆ˜
 	public int getTotalPagemo();
 		
-	//¼÷¼Ò-¸ğÅÚ-ÀüÃ¼¸®½ºÆ®
+	//ìˆ™ì†Œ-ëª¨í…”-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<LodgeVO> mainLodgeListhmo(HashMap map);
 	
-	//¼÷¼Ò-¸ğÅÚ-°Ë»ö-ÀüÃ¼¸®½ºÆ®
+	//ìˆ™ì†Œ-ëª¨í…”-ê²€ìƒ‰-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<LodgeVO> mainlodgelistsermo(HashMap map);
 		
-	//¼÷¼Ò-¸ğÅÚ-°Ë»ö-ÆäÀÌÁö¼ö
+	//ìˆ™ì†Œ-ëª¨í…”-ê²€ìƒ‰-í˜ì´ì§€ìˆ˜
 	public int getTotalPagemose(HashMap map);
 	
-	//¼÷¼Ò-°ÔÇÏ-ÀüÃ¼ÆäÀÌÁö¼ö
+	//ìˆ™ì†Œ-ê²Œí•˜-ì „ì²´í˜ì´ì§€ìˆ˜
 	public int getTotalPagege();
 			
-	//¼÷¼Ò-°ÔÇÏ-ÀüÃ¼¸®½ºÆ®
+	//ìˆ™ì†Œ-ê²Œí•˜-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<LodgeVO> mainLodgeListge(HashMap map);
 		
-	//¼÷¼Ò-°ÔÇÏ-°Ë»ö-ÀüÃ¼¸®½ºÆ®
+	//ìˆ™ì†Œ-ê²Œí•˜-ê²€ìƒ‰-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<LodgeVO> mainlodgelistserge(HashMap map);
 			
-	//¼÷¼Ò-°ÔÇÏ-°Ë»ö-ÆäÀÌÁö¼ö
+	//ìˆ™ì†Œ-ê²Œí•˜-ê²€ìƒ‰-í˜ì´ì§€ìˆ˜
 	public int getTotalPagegese(HashMap map);
 	
-	//·Î±×ÀÎ È®ÀÎ±â´É ±¸Çö
+	//ë¡œê·¸ì¸ í™•ì¸ê¸°ëŠ¥ êµ¬í˜„
 	public UsersVO mainmemberLogin(UsersVO vo);
 		
-	//°¡ÀÌµå-ÀüÃ¼¸®½ºÆ®
+	//ê°€ì´ë“œ-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<GuideTourVO> mainGuideList(HashMap map);
 		
-	//°¡ÀÌµå-ÀüÃ¼ÆäÀÌÁö¼ö
+	//ê°€ì´ë“œ-ì „ì²´í˜ì´ì§€ìˆ˜
 	public int getTotalPageguide();
 	
-	//°¡ÀÌµå-°Ë»ö-ÀüÃ¼¸®½ºÆ®
+	//ê°€ì´ë“œ-ê²€ìƒ‰-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<GuideTourVO> mainGuidelistser(HashMap map);
 			
-	//°¡ÀÌµå-°Ë»ö-ÆäÀÌÁö¼ö
+	//ê°€ì´ë“œ-ê²€ìƒ‰-í˜ì´ì§€ìˆ˜
 	public int getTotalPagega(HashMap map);
 	
-	//¼÷¼Ò »ó¼¼ÆäÀÌÁö(¼÷¼ÒÁ¤º¸)
+	//ìˆ™ì†Œ ìƒì„¸í˜ì´ì§€(ìˆ™ì†Œì •ë³´)
 	public LodgeVO mainlodgedetail(LodgeVO vo);
 	
-	//¼÷¼Ò »ó¼¼ÆäÀÌÁö Á¶È¸½Ã °´½ÇÁ¤º¸
+	//ìˆ™ì†Œ ìƒì„¸í˜ì´ì§€ ì¡°íšŒì‹œ ê°ì‹¤ì •ë³´
 	public List<RoomVO> mainroomdetail(LodgeVO vo);
 	
-	//¼÷¼Ò »ó¼¼ÆäÀÌÁö Á¶È¸-°í°´¸®ºä-ÀüÃ¼¸®½ºÆ®
+	//ìˆ™ì†Œ ìƒì„¸í˜ì´ì§€ ì¡°íšŒ-ê³ ê°ë¦¬ë·°-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<ProductRevboVO> mainProRevList(HashMap map);
 				
-	//¼÷¼Ò »ó¼¼ÆäÀÌÁö Á¶È¸-°í°´¸®ºä-ÆäÀÌÁö
+	//ìˆ™ì†Œ ìƒì„¸í˜ì´ì§€ ì¡°íšŒ-ê³ ê°ë¦¬ë·°-í˜ì´ì§€
 	public int  mainProRevPage(int lodIdNum);
 	
-	//°¡ÀÌµå »ó¼¼ÆäÀÌÁö(°¡ÀÌµåÁ¤º¸)
+	//ê°€ì´ë“œ ìƒì„¸í˜ì´ì§€(ê°€ì´ë“œì •ë³´)
 	public GuideTourVO mainguidedetail(String programName);
 	
-	//°¡ÀÌµå »ó¼¼ÆäÀÌÁö Á¶È¸-°í°´¸®ºä-ÀüÃ¼¸®½ºÆ®
+	//ê°€ì´ë“œ ìƒì„¸í˜ì´ì§€ ì¡°íšŒ-ê³ ê°ë¦¬ë·°-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<ProductRevboVO> mainProRevListga(HashMap map);
 					
-	//°¡ÀÌµå »ó¼¼ÆäÀÌÁö Á¶È¸-°í°´¸®ºä-ÆäÀÌÁö
+	//ê°€ì´ë“œ ìƒì„¸í˜ì´ì§€ ì¡°íšŒ-ê³ ê°ë¦¬ë·°-í˜ì´ì§€
 	public int  mainProRevPagega(String programName);
 	
-	//ÀÚÀ¯°Ô½ÃÆÇ-ÀüÃ¼¸®½ºÆ®
+	//ììœ ê²Œì‹œíŒ-ì „ì²´ë¦¬ìŠ¤íŠ¸
 	public List<ComBoardVO> mainComBoardList(HashMap map);
 			
-	//ÀÚÀ¯°Ô½ÃÆÇ-ÀüÃ¼ÆäÀÌÁö¼ö
+	//ììœ ê²Œì‹œíŒ-ì „ì²´í˜ì´ì§€ìˆ˜
 	public int getTotalPageComBoard();
 	
-	//ÀÚÀ¯°Ô½ÃÆÇ-±×·ì¹øÈ£¹Ş¾Æ¿À±â
+	//ììœ ê²Œì‹œíŒ-ê·¸ë£¹ë²ˆí˜¸ë°›ì•„ì˜¤ê¸°
 	 public int mainGetFrGroupIddao();
 	 
-	//ÀÚÀ¯°Ô½ÃÆÇ-±Û¾²±â
+	//ììœ ê²Œì‹œíŒ-ê¸€ì“°ê¸°
 	 public int insertComBoard(ComBoardVO vo);
 	 
-	 //ÀÚÀ¯°Ô½ÃÆÇ-±Ûº¸±â
+	//ììœ ê²Œì‹œíŒ-ê¸€ë³´ê¸°
 	 public ComBoardVO mainfreeBoardViewdao(int articleId);
 	 
-	 //ÀÚÀ¯°Ô½ÃÆÇ-±Û¼öÁ¤
+	//ììœ ê²Œì‹œíŒ-ê¸€ìˆ˜ì •
 	 public void mainupdatefrBoard(ComBoardVO vo);
 	 
-	 //ÀÚÀ¯°Ô½ÃÆÇ-±Û»èÁ¦
+	//ììœ ê²Œì‹œíŒ-ê¸€ì‚­ì œ
 	 public void maindeletefrBoard(ComBoardVO vo);
 	 
-	//¸®ºä°Ô½ÃÆÇ-±Û¾²±â
+	//ë¦¬ë·°ê²Œì‹œíŒ-ê¸€ì“°ê¸°
 	public int insertRvBoard(ComBoardVO vo);
 		 
-	//¸®ºä°Ô½ÃÆÇ-±Ûº¸±â
+	//ë¦¬ë·°ê²Œì‹œíŒ-ê¸€ë³´ê¸°
 	public ComBoardVO mainrvBoardViewdao(int articleId);
 		 
-	//¸®ºä°Ô½ÃÆÇ-±Û¼öÁ¤
+	//ë¦¬ë·°ê²Œì‹œíŒ-ê¸€ìˆ˜ì •
 	public void mainrvupdatefrBoard(ComBoardVO vo);
 		 
-	//¸®ºä°Ô½ÃÆÇ-±Û»èÁ¦
+	//ë¦¬ë·°ê²Œì‹œíŒ-ê¸€ì‚­ì œ
 	public void mainrvdeletefrBoard(ComBoardVO vo);
 
-	 //´ä±ÛÀÇ ¹øÈ£
+	//ë‹µê¸€ì˜ ë²ˆí˜¸
 	public String selectLastSequenceNumber(String maxSeqNum, String minSeqNum);
 	
-	//¸®½ºÆ®-¼÷¼Ò-³¯Â¥
+	//ë¦¬ìŠ¤íŠ¸-ìˆ™ì†Œ-ë‚ ì§œ
 	public List<ReservationVO> mainlosevDateDAO(ReservationVO vo);
 	
-	//°´½Ç ÀÜ¿© °´¼ö
-	public int roomNum(HashMap map);
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Ü¿ï¿½ ï¿½ï¿½ï¿½ï¿½
+	public int roomNum(ReservationVO vo);
+	
+	//ë©”ì¸í˜ì´ì§€-íœì…˜
+	public List<LodgeVO> mmainLodgeListpen();
+
+	//ë©”ì¸í˜ì´ì§€-í˜¸í…”
+	public List<LodgeVO> mmainLodgeListho();
+		
+	//ë©”ì¸í˜ì´ì§€-ê²ŒìŠ¤íŠ¸í•˜ìš°ìŠ¤
+	public List<LodgeVO> mmainLodgeListge();
+
+	//ë©”ì¸í˜ì´ì§€-ëª¨í…”
+	public List<LodgeVO> mmainLodgeListmo();
+
 
 }
