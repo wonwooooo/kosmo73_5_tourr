@@ -390,16 +390,62 @@ SELECT min(sequenceno) as minseq FROM comboard WHERE sequenceno < #{maxSeqNum} A
 <!--숙소-날짜-리스트-->
 	<select id="mainlosevDateDAO" parameterType="reservation" resultType="reservation">
 	<![CDATA[
-  select to_char(to_date(#{checkInDate2}, 'yyyy/mm/dd') + (level-1), 'yy/mm/dd') checkindate2 from dual
-  connect by level <= (to_date(#{checkOut2}, 'yyyy/mm/dd') - to_date(#{checkInDate2}, 'yyyy/mm/dd') + 1)
+  select to_char(to_date(#{checkInDate2}, 'yyyy/mm/dd') + (level-1), 'yy/mm/dd') checkindate2, ${productId} productId from dual
+  connect by level <= (to_date(#{checkOut2} , 'yyyy/mm/dd')  - to_date(#{checkInDate2}, 'yyyy/mm/dd') )
 ]]> 
 </select>
 
 <!-- 객실수 체크 -->
-<select id="roomNum" parameterType="hashmap" resultType="int">
+<select id="roomNum" parameterType="reservation" resultType="int">
 	<![CDATA[
   select (select lodcount from room where productid=#{productId}) - (SELECT COUNT(*) CNT from reservation 
   where productid=#{productId} AND #{checkInDate2} >= CHECKINDATE2 AND #{checkInDate2} < CHECKOUT2) cnt from dual
 ]]> 
 </select>
+
+<!-- 예약하기 -->
+<insert id="insertRevDAO" parameterType="reservation">
+insert into reservation(resid, userid, category, productid, checkindate2, checkout2, reservname, reservtel, lodger, lodgertel, count, peoplenum, resdate2, resstate, reservprice)
+values(seq_resid.nextval, #{userId}, '숙소', #{productId}, #{checkInDate2}, #{checkOut2},  #{reservName},  #{reservTel}, #{lodger}, #{lodgerTel}, 1, #{peopleNum}, sysdate, '예약완료', #{reservPrice})
+</insert>
+
+<!-- 펜션-메인리스트 -->
+	<select id="mmainLodgeListpen" resultType="lodge">
+		<![CDATA[
+			select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
+	(select LODID from (select rownum as rnum, LODID 
+	from (select LODID from LODGE WHERE LODCATE='펜션' order by LODID desc)) where rnum>=1 and rnum<=2)
+	order by LODID desc
+		]]>
+	</select>
+	
+<!-- 호텔-메인리스트 -->
+ <select id="mmainLodgeListho" resultType="lodge">
+		<![CDATA[
+			select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
+	(select LODID from (select rownum as rnum, LODID 
+	from (select LODID from LODGE WHERE LODCATE='호텔' order by LODID desc)) where rnum>=1 and rnum<=2)
+	order by LODID desc
+		]]>
+ </select>	
+ 
+ <!-- 게스트하우스-메인리스트 -->
+ <select id="mmainLodgeListge" resultType="lodge">
+		<![CDATA[
+			select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
+	(select LODID from (select rownum as rnum, LODID 
+	from (select LODID from LODGE WHERE LODCATE='게스트하우스' order by LODID desc)) where rnum>=1 and rnum<=2)
+	order by LODID desc
+		]]>
+ </select>	
+ 
+  <!-- 모텔-메인리스트 -->
+ <select id="mmainLodgeListmo" resultType="lodge">
+		<![CDATA[
+			select lodtel, lodid, lodname, lodaddr, SUBSTR(lodcont, 1, 70) lodcont, lodconven, lodcate, lodcount, peaksumstart, peaksumexit, peakwinstart, peakwinexit, ip, imgname, imgsize from LODGE where LODID in
+	(select LODID from (select rownum as rnum, LODID 
+	from (select LODID from LODGE WHERE LODCATE='모텔' order by LODID desc)) where rnum>=1 and rnum<=2)
+	order by LODID desc
+		]]>
+ </select>	
 </mapper>

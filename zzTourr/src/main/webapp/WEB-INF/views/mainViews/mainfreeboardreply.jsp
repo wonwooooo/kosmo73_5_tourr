@@ -12,47 +12,28 @@
 <body>
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
+    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo1.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
        
-        <li><a href="mainguidelist.trip">가이드</a></li>
-        <li><a>숙소
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-             <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
-            <li><a href="mainlodgelistmo.trip?page=1">모텔</a></li>
-            <li><a href="mainlodgelistge.trip?page=1">게스트하우스</a></li>
-            <li><a href="mainlodgelist.trip?page=1">펜션</a></li>
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
+       <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
+         <li><a href="mainlodgelistmo.trip?page=1">모텔</a></li>
+          <li><a href="mainlodgelistge.trip?page=1">게스트하우스</a></li>
+          <li><a href="mainlodgelist.trip?page=1">펜션</a></li>
+        
         <li><a>커뮤니티
           <!--[if IE 7]><!-->
           </a>
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
-            <li><a href="mainrvboardlist.trip">리뷰게시판</a></li>
+           
             <li><a href="mainfreeboardlist.trip">자유게시판</a></li>
-
           </ul>
           </li>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        <li><a>유용한 정보
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
+        
      <li><a>마이페이지</a>
      <ul>
             <li><a href="customerReserv.trip">구매내역</a></li>

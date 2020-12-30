@@ -22,269 +22,300 @@ public class MainDAOImpl implements MainDAO{
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
-	//¼÷¼Ò-Ææ¼Ç-°Ë»ö-ÆäÀÌÁö³Ñ¹ö
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½
 	public List<LodgeVO> mainLodgeList(HashMap map) {
-		System.out.println("===> Mybatis mainLodgeList() È£Ãâ");
+		System.out.println("===> Mybatis mainLodgeList() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainLodgeList", map);
 	}
 
-	//¼÷¼Ò-Ææ¼Ç-ÆäÀÌÁö³Ñ¹ö
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½
 	public int getTotalPagepen() {
-		System.out.println("===> Mybatis getTotalPagepen() È£Ãâ");
+		System.out.println("===> Mybatis getTotalPagepen() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.getTotalPagepen");
 	}
 
-	//¼÷¼Ò-Ææ¼Ç-°Ë»ö-º¸±â
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½
 	public List<LodgeVO> mainlodgelistserpen(HashMap map) {
-		System.out.println("===> Mybatis mainlodgelistserpen() È£Ãâ");
+		System.out.println("===> Mybatis mainlodgelistserpen() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainlodgelistserpen", map);
 	}
 
-	//¼÷¼Ò-Ææ¼Ç-°Ë»ö-ÆäÀÌÁö³Ñ¹ö
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½
 	public int getTotalPagepense(HashMap map) {
-		System.out.println("===> Mybatis getTotalPagepense() È£Ãâ");
+		System.out.println("===> Mybatis getTotalPagepense() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.getTotalPagepense", map);
 	}
 
 	
-	//¼÷¼Ò-È£ÅÚ-ÆäÀÌÁö³Ñ¹ö
+	//ï¿½ï¿½ï¿½ï¿½-È£ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½
 	public int getTotalPageho() {
-		System.out.println("===> Mybatis getTotalPageho() È£Ãâ");
+		System.out.println("===> Mybatis getTotalPageho() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.getTotalPageho");
 	}
 
-	//¼÷¼Ò-È£ÅÚ-º¸±â
+	//ï¿½ï¿½ï¿½ï¿½-È£ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½
 	public List<LodgeVO> mainLodgeListho(HashMap map) {
-		System.out.println("===> Mybatis mainLodgeListho() È£Ãâ");
+		System.out.println("===> Mybatis mainLodgeListho() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainLodgeListho", map);
 	}
 
-	//¼÷¼Ò-È£ÅÚ-°Ë»ö-º¸±â
+	//ï¿½ï¿½ï¿½ï¿½-È£ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½
 	public List<LodgeVO> mainlodgelistserna(HashMap map) {
-		System.out.println("===> Mybatis mainlodgelistserna() È£Ãâ");
+		System.out.println("===> Mybatis mainlodgelistserna() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainlodgelistserna", map);
 	}
 
-	//¼÷¼Ò-È£ÅÚ-°Ë»ö-ÆäÀÌÁö³Ñ¹ö
+	//ï¿½ï¿½ï¿½ï¿½-È£ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½
 	public int getTotalPagehose(HashMap map) {
 		System.out.println(map);
-		System.out.println("===> Mybatis getTotalPagehose() È£Ãâ");
+		System.out.println("===> Mybatis getTotalPagehose() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.getTotalPagehose", map);
 	}
 
-	//¼÷¼Ò-¸ğÅÚ-ÆäÀÌÁö³Ñ¹ö
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½
 	public int getTotalPagemo() {
-		System.out.println("===> Mybatis getTotalPagemo() È£Ãâ");
+		System.out.println("===> Mybatis getTotalPagemo() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.getTotalPagemo");
 	}
 
-	//¼÷¼Ò-¸ğÅÚ-º¸±â
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½
 	public List<LodgeVO> mainLodgeListhmo(HashMap map) {
-		System.out.println("===> Mybatis mainLodgeListmo() È£Ãâ");
+		System.out.println("===> Mybatis mainLodgeListmo() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainLodgeListmo", map);
 	}
 
-	//¼÷¼Ò-¸ğÅÚ-°Ë»ö-º¸±â
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½
 	public List<LodgeVO> mainlodgelistsermo(HashMap map) {
-		System.out.println("===> Mybatis mainlodgelistsermo() È£Ãâ");
+		System.out.println("===> Mybatis mainlodgelistsermo() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainlodgelistsermo", map);
 	}
 
-	//¼÷¼Ò-¸ğÅÚ-°Ë»ö-ÆäÀÌÁö³Ñ¹ö
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½
 	public int getTotalPagemose(HashMap map) {
-		System.out.println("===> Mybatis getTotalPagemose() È£Ãâ");
+		System.out.println("===> Mybatis getTotalPagemose() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.getTotalPagemose", map);
 	}
 
-	//¼÷¼Ò-°ÔÇÏ-ÆäÀÌÁö³Ñ¹ö
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½
 	public int getTotalPagege() {
-		System.out.println("===> Mybatis getTotalPagege() È£Ãâ");
+		System.out.println("===> Mybatis getTotalPagege() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.getTotalPagege");
 	}
 
-	//¼÷¼Ò-°ÔÇÏ-ÀüÃ¼-º¸±â
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼-ï¿½ï¿½ï¿½ï¿½
 	public List<LodgeVO> mainLodgeListge(HashMap map) {
-		System.out.println("===> Mybatis mainLodgeListge() È£Ãâ");
+		System.out.println("===> Mybatis mainLodgeListge() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainLodgeListge", map);
 	}
 
-	//¼÷¼Ò-°ÔÇÏ-°Ë»ö-º¸±â
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½
 	public List<LodgeVO> mainlodgelistserge(HashMap map) {
-		System.out.println("===> Mybatis mainlodgelistserge() È£Ãâ");
+		System.out.println("===> Mybatis mainlodgelistserge() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainlodgelistserge", map);
 	}
 
-	//¼÷¼Ò-°ÔÇÏ-°Ë»ö-ÆäÀÌÁö³Ñ¹ö
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¹ï¿½
 	public int getTotalPagegese(HashMap map) {
-		System.out.println("===> Mybatis getTotalPagegese() È£Ãâ");
+		System.out.println("===> Mybatis getTotalPagegese() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.getTotalPagegese", map);
 	}
 
-	//·Î±×ÀÎ
+	//ï¿½Î±ï¿½ï¿½ï¿½
 	public UsersVO mainmemberLogin(UsersVO vo) {
-		System.out.println("===> MemberMapper mainidCheck È£Ãâ");
+		System.out.println("===> MemberMapper mainidCheck È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.mainidCheck", vo);
 	}
 
-	//°¡ÀÌµå-¸®½ºÆ®
+	//ï¿½ï¿½ï¿½Ìµï¿½-ï¿½ï¿½ï¿½ï¿½Æ®
 	public List<GuideTourVO> mainGuideList(HashMap map) {
-		System.out.println("===> Mybatis mainGuideList() È£Ãâ");
+		System.out.println("===> Mybatis mainGuideList() È£ï¿½ï¿½");
 		System.out.println(map);
 		return mybatis.selectList("main.MainDAO.mainGuideList", map);
 	}
 
-	//°¡ÀÌµå-ÆäÀÌÁö¼ö
+	//ï¿½ï¿½ï¿½Ìµï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int getTotalPageguide() {
-		System.out.println("===> Mybatis getTotalPageguide() È£Ãâ");
+		System.out.println("===> Mybatis getTotalPageguide() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.getTotalPageguide");
 	}
 
-	//°¡ÀÌµå-°Ë»ö-¸®½ºÆ®
+	//ï¿½ï¿½ï¿½Ìµï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½Æ®
 	public List<GuideTourVO> mainGuidelistser(HashMap map) {
-		System.out.println("===> Mybatis ser() È£Ãâ");
+		System.out.println("===> Mybatis ser() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.ser", map);
 	}
 
-	//°¡ÀÌµå-°Ë»ö-ÆäÀÌÁö¼ö
+	//ï¿½ï¿½ï¿½Ìµï¿½-ï¿½Ë»ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int getTotalPagega(HashMap map) {
-		System.out.println("===> Mybatis getTotalPagega() È£Ãâ");
+		System.out.println("===> Mybatis getTotalPagega() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.getTotalPagega", map);
 	}
 
-	//¼÷¼Ò-»ó¼¼ÆäÀÌÁö
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public LodgeVO mainlodgedetail(LodgeVO vo) {
-		System.out.println("===> Mybatis mainlodgedetail È£Ãâ");
+		System.out.println("===> Mybatis mainlodgedetail È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.mainlodgedetail", vo);
 	}
 
-	//¼÷¼Ò-»ó¼¼ÆäÀÌÁö-Å¬¸¯½Ã °´½ÇÁ¤º¸
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public List<RoomVO> mainroomdetail(LodgeVO vo) {
-		System.out.println("===> Mybatis mainroomdetail È£Ãâ");
+		System.out.println("===> Mybatis mainroomdetail È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainroomdetail", vo);
 	}
 
-	//¼÷¼Ò-»ó¼¼ÆäÀÌÁö-°í°´¸®ºä-¸®½ºÆ®
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½Æ®
 	public List<ProductRevboVO> mainProRevList(HashMap map) {
-		System.out.println("===> Mybatis mainProRevList() È£Ãâ");
+		System.out.println("===> Mybatis mainProRevList() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainProRevList", map);
 	}
 
-	//¼÷¼Ò-»ó¼¼ÆäÀÌÁö-°í°´¸®ºä-ÆäÀÌÁö
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int mainProRevPage(int lodIdNum) {
-		System.out.println("===> Mybatis mainProRevPage() È£Ãâ");
+		System.out.println("===> Mybatis mainProRevPage() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.mainProRevPage", lodIdNum);
 	}
 
-	//°¡ÀÌµå »ó¼¼ÆäÀÌÁö(°¡ÀÌµåÁ¤º¸)
+	//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½)
 	public GuideTourVO mainguidedetail(String programName) {
-		System.out.println("===> Mybatis mainguidedetail È£Ãâ");
+		System.out.println("===> Mybatis mainguidedetail È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.mainguidedetail", programName);
 	}
 
-	//°¡ÀÌµå »ó¼¼ÆäÀÌÁö Á¶È¸-°í°´¸®ºä-ÀüÃ¼¸®½ºÆ®
+	//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½Æ®
 	public List<ProductRevboVO> mainProRevListga(HashMap map) {
-		System.out.println("===> Mybatis mainProRevListga() È£Ãâ");
+		System.out.println("===> Mybatis mainProRevListga() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainProRevListga", map);
 	}
 
-	//°¡ÀÌµå »ó¼¼ÆäÀÌÁö Á¶È¸-°í°´¸®ºä-ÆäÀÌÁö
+	//ï¿½ï¿½ï¿½Ìµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int mainProRevPagega(String programName) {
-		System.out.println("===> Mybatis mainProRevPagega() È£Ãâ");
+		System.out.println("===> Mybatis mainProRevPagega() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.mainProRevPagega", programName);
 	}
 
-	//ÀÚÀ¯°Ô½ÃÆÇ-ÀüÃ¼¸®½ºÆ®
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½Æ®
 	public List<ComBoardVO> mainComBoardList(HashMap map) {
-		System.out.println("===> Mybatis mainProRevListga() È£Ãâ");
+		System.out.println("===> Mybatis mainProRevListga() È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainComBoardList", map);
 	}
 
-	//ÀÚÀ¯°Ô½ÃÆÇ-ÀüÃ¼ÆäÀÌÁö¼ö
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½ï¿½Ã¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	public int getTotalPageComBoard() {
-		System.out.println("===> Mybatis getTotalPageComBoard() È£Ãâ");
+		System.out.println("===> Mybatis getTotalPageComBoard() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.getTotalPageComBoard");
 	}
 
-	//ÀÚÀ¯°Ô½ÃÆÇ-±×·ì¹øÈ£¹Ş¾Æ¿À±â
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½×·ï¿½ï¿½È£ï¿½Ş¾Æ¿ï¿½ï¿½ï¿½
 	public int mainGetFrGroupIddao() {
-		System.out.println("===> Mybatis mainGetFrGroupIddao() È£Ãâ");
+		System.out.println("===> Mybatis mainGetFrGroupIddao() È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.mainGetFrGroupIddao");
 	}
 
-	//ÀÚÀ¯°Ô½ÃÆÇ-±Û¾²±â
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Û¾ï¿½ï¿½ï¿½
 	public int insertComBoard(ComBoardVO vo) {
-		System.out.println("===> Mybatis insertComBoard() È£Ãâ");
+		System.out.println("===> Mybatis insertComBoard() È£ï¿½ï¿½");
 		return mybatis.insert("main.MainDAO.insertComBoard", vo);
 	}
-	//ÀÚÀ¯°Ô½ÃÆÇ-±Ûº¸±â
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Ûºï¿½ï¿½ï¿½
 	public ComBoardVO mainfreeBoardViewdao(int articleId) {
-		System.out.println("===> Mybatis mainfreeBoardViewdao È£Ãâ");
+		System.out.println("===> Mybatis mainfreeBoardViewdao È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.mainfreeBoardViewdao", articleId);
 	}
 
-	//ÀÚÀ¯°Ô½ÃÆÇ-±Û º¼¶§ Á¶È¸¼ö +1 Áõ°¡
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¸ï¿½ï¿½ +1 ï¿½ï¿½ï¿½ï¿½
 	public void updateFreeBoardCountdao(int articleId) {
-		System.out.println("===> Mybatis updateFreeBoardCountdao() È£Ãâ");
+		System.out.println("===> Mybatis updateFreeBoardCountdao() È£ï¿½ï¿½");
 		mybatis.update("main.MainDAO.updateFreeBoardCountdao", articleId);
 		
 	}
 
-	//ÀÚÀ¯°Ô½ÃÆÇ-±Û¼öÁ¤
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Û¼ï¿½ï¿½ï¿½
 	public void mainupdatefrBoard(ComBoardVO vo) {
-		System.out.println("===> Mybatis mainupdatefrBoard È£Ãâ");
+		System.out.println("===> Mybatis mainupdatefrBoard È£ï¿½ï¿½");
 		mybatis.update("main.MainDAO.mainupdatefrBoard", vo);
 	}
 
-	//ÀÚÀ¯°Ô½ÃÆÇ-±Û»èÁ¦
+	//ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Û»ï¿½ï¿½ï¿½
 	public void maindeletefrBoard(ComBoardVO vo) {
-		System.out.println("===> Mybatis maindeletefrBoard È£Ãâ");
+		System.out.println("===> Mybatis maindeletefrBoard È£ï¿½ï¿½");
 		mybatis.update("main.MainDAO.maindeletefrBoard", vo);
 	}
 
-	//´ä±ÛÀÇ ¹øÈ£
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È£
 	public String selectLastSequenceNumber(String maxSeqNum, String minSeqNum) {
 		HashMap map = new HashMap();
 		map.put("maxSeqNum", maxSeqNum);	
 		map.put("minSeqNum", minSeqNum);
-		System.out.println("===> Mybatis selectLastSequenceNumber È£Ãâ");
+		System.out.println("===> Mybatis selectLastSequenceNumber È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.selectLastSequenceNumber", map);
 	}
 
-	//¸®ºä°Ô½ÃÆÇ-±Û¾²±â
+	//ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Û¾ï¿½ï¿½ï¿½
 	public int insertRvBoard(ComBoardVO vo) {
-		System.out.println("===> Mybatis insertRvBoard() È£Ãâ");
+		System.out.println("===> Mybatis insertRvBoard() È£ï¿½ï¿½");
 		return mybatis.insert("main.MainDAO.insertRvBoard", vo);
 	}
 
-	//¸®ºä°Ô½ÃÆÇ-±Ûº¸±â
+	//ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Ûºï¿½ï¿½ï¿½
 	public ComBoardVO mainrvBoardViewdao(int articleId) {
-		System.out.println("===> Mybatis mainfreeBoardViewdao È£Ãâ");
+		System.out.println("===> Mybatis mainfreeBoardViewdao È£ï¿½ï¿½");
 		return mybatis.selectOne("main.MainDAO.mainfreeBoardViewdao", articleId);
 	}
 
-	//¸®ºä°Ô½ÃÆÇ-±Û¼öÁ¤
+	//ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Û¼ï¿½ï¿½ï¿½
 	public void mainrvupdatefrBoard(ComBoardVO vo) {
-		System.out.println("===> Mybatis mainrvupdatefrBoard È£Ãâ");
+		System.out.println("===> Mybatis mainrvupdatefrBoard È£ï¿½ï¿½");
 		mybatis.update("main.MainDAO.mainrvupdatefrBoard", vo);
 	}
 
-	//¸®ºä°Ô½ÃÆÇ-±Û»èÁ¦
+	//ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½-ï¿½Û»ï¿½ï¿½ï¿½
 	public void mainrvdeletefrBoard(ComBoardVO vo) {
-		System.out.println("===> Mybatis mainrvdeletefrBoard È£Ãâ");
+		System.out.println("===> Mybatis mainrvdeletefrBoard È£ï¿½ï¿½");
 		mybatis.update("main.MainDAO.mainrvdeletefrBoard", vo);
 	}
 
-	//¼÷¼Ò-³¯Â¥-¸®½ºÆ®
+	//ï¿½ï¿½ï¿½ï¿½-ï¿½ï¿½Â¥-ï¿½ï¿½ï¿½ï¿½Æ®
 	public List<ReservationVO> mainlosevDateDAO(ReservationVO vo) {
-		System.out.println("===> Mybatis mainlosevDateDAO È£Ãâ");
+		System.out.println("===> Mybatis mainlosevDateDAO È£ï¿½ï¿½");
 		return mybatis.selectList("main.MainDAO.mainlosevDateDAO", vo);
 	}
 	
-	//°´½Ç¼ö Ã¼Å©
-	public int roomNum(HashMap map) {
-		System.out.println("===> Mybatis roomNum È£Ãâ");
-		System.out.println(map);
-		return mybatis.selectOne("main.MainDAO.roomNum", map);
+	//ï¿½ï¿½ï¿½Ç¼ï¿½ Ã¼Å©
+	public int roomNum(ReservationVO vo) {
+		System.out.println("===> Mybatis roomNum È£ï¿½ï¿½");
+		//System.out.println(map);
+		return mybatis.selectOne("main.MainDAO.roomNum", vo);
+	}
+
+	//ì˜ˆì•½í•˜ê¸°
+	public int insertRevDAO(ReservationVO vo) {
+		System.out.println("===> Mybatis insertRvBoard() È£ï¿½ï¿½");
+		return mybatis.insert("main.MainDAO.insertRevDAO", vo);
+	}
+
+	//ë©”ì¸í˜ì´ì§€-íœì…˜
+	public List<LodgeVO> mmainLodgeListpen() {
+		System.out.println("===> Mybatis mmainLodgeListpen");
+		return mybatis.selectList("main.MainDAO.mmainLodgeListpen");
+		
+	}
+
+	//ë©”ì¸í˜ì´ì§€-í˜¸í…”
+	public List<LodgeVO> mmainLodgeListho() {
+		System.out.println("===> Mybatis mmainLodgeListho()");
+		return mybatis.selectList("main.MainDAO.mmainLodgeListho");
+	}
+
+	//ë©”ì¸í˜ì´ì§€-ê²ŒìŠ¤íŠ¸í•˜ìš°ìŠ¤
+	public List<LodgeVO> mmainLodgeListge() {
+		System.out.println("===> Mybatis mmainLodgeListge()");
+		return mybatis.selectList("main.MainDAO.mmainLodgeListge");
+	}
+
+	//ë©”ì¸í˜ì´ì§€-ëª¨í…”
+	public List<LodgeVO> mmainLodgeListmo() {
+		System.out.println("===> Mybatis mmainLodgeListmo()");
+		return mybatis.selectList("main.MainDAO.mmainLodgeListmo");
 	}
 
 

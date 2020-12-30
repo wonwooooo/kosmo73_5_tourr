@@ -26,47 +26,28 @@
 <body>
 <div id="main_container">
   <div id="header">
-    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo.gif" width="147" height="78" alt="" border="0" /></a> </div>
+    <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo1.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
      
-        <li><a href="mainguidelist.trip">가이드</a></li>
-        <li><a>숙소
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-              <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
-            <li><a href="mainlodgelistmo.trip?page=1">모텔</a></li>
-            <li><a href="mainlodgelistge.trip?page=1">게스트하우스</a></li>
-            <li><a href="mainlodgelist.trip?page=1">펜션</a></li>
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
+          
+      <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
+         <li><a href="mainlodgelistmo.trip?page=1">모텔</a></li>
+          <li><a href="mainlodgelistge.trip?page=1">게스트하우스</a></li>
+          <li><a href="mainlodgelist.trip?page=1">펜션</a></li>
+        
         <li><a>커뮤니티
           <!--[if IE 7]><!-->
           </a>
           <!--<![endif]-->
           <!--[if lte IE 6]><table><tr><td><![endif]-->
           <ul>
-            <li><a href="mainrvboardlist.trip">리뷰게시판</a></li>
+           
             <li><a href="mainfreeboardlist.trip">자유게시판</a></li>
           </ul>
-         </li>
+          </li>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        <li><a>유용한 정보
-          <!--[if IE 7]><!-->
-          </a>
-          <!--<![endif]-->
-          <!--[if lte IE 6]><table><tr><td><![endif]-->
-          <ul>
-            <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
-            
-          </ul>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-        </li>
      <c:if test="${sessionScope.login != null }">
      <li><a>마이페이지</a>
      <ul>
@@ -242,11 +223,7 @@
           	<input type="submit" value="예약하기" style="width:100;height:17;FONT-SIZE: 8pt"/>
           	</form>
           	</c:if></a>&nbsp;
-          	<c:if test="${sessionScope.login != null }">
-          	<form action="mainlocart.trip">
-          	<input type="button" value="장바구니추가" style="width:100;height:17;FONT-SIZE: 8pt"/>
-      		</form>
-          	</c:if></p>
+          	</p>
           </li>
             </c:forEach>
         </ul>
@@ -259,8 +236,8 @@
           <li><span>주소:</span> ${lodge.lodAddr } </li>
           <li><span>연락처:</span> ${lodge.lodTel } </li>
           <li><span>편의시설:</span> ${lodge.lodConven }</li>
-          <li><span>하절기 성수기:</span> <fmt:formatDate value="${lodge.peakSumStart }" pattern="yyyy/MM/dd"/> ~ <fmt:formatDate value="${lodge.peakSumExit }" pattern="yyyy/MM/dd"/></li>
-          <li><span>동절기 성수기:</span> <fmt:formatDate value="${lodge.peakWinStart }" pattern="yyyy/MM/dd"/> ~ <fmt:formatDate value="${lodge.peakWinExit }" pattern="yyyy/MM/dd"/></li>
+          <li><span>특이사항:</span>숙소 사정에 따라 성수기 금액이 반영될 수 있습니다</li>
+       
         </ul>
       </div>
       </div>

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -41,8 +40,8 @@
     <div id="logo"> <a href="mainindex.trip"><img src="/zzTourr/resources/mainImgs/logo1.gif" width="147" height="78" alt="" border="0" /></a> </div>
     <div class="banner_adds"></div>
     <div class="menu">
-      <ul>
-             
+             <ul>
+          
       <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
          <li><a href="mainlodgelistmo.trip?page=1">모텔</a></li>
           <li><a href="mainlodgelistge.trip?page=1">게스트하우스</a></li>
@@ -58,8 +57,8 @@
             <li><a href="mainfreeboardlist.trip">자유게시판</a></li>
           </ul>
           </li>
-          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-           <c:if test="${sessionScope.login != null }">
+          <!--[if lte IE 6]></td></tr></table></a><![endif]-->	
+    <c:if test="${sessionScope.login != null }">
      <li><a>마이페이지</a>
      <ul>
             <li><a href="customerReserv.trip">구매내역</a></li>
@@ -68,9 +67,8 @@
             <li><a href="customerQna.trip">1:1 문의</a></li>
             <li><a href="customerModify.trip">개인정보</a></li>
           </ul>
-        
      </li>
-       </c:if>
+     </c:if>
       </ul>
     </div>
   </div>
@@ -79,51 +77,19 @@
       <div class="left_box">
         <div class="top_left_box"> </div>
         <div class="center_left_box">
-          <div class="box_title"><span>로그인</span></div>
-          <form Id="loginform" name="loginform" action="mainloginok.trip" method="post">
+          <div class="box_title"><span>고객님! 죄송합니다...</span></div>
+       
           <div class="form">
-            <div class="form_row">
-              <label class="left">ID: </label>
-              <input type="text" class="form_input"  name="userId"/>
-            </div>
-            <div class="form_row">
-              <label class="left">패스워드: </label>
-              <input type="password" class="form_input"  name="password"/>
-            </div>
-           
-             <div style="float:right; padding:10px 25px 0 0;">
-               <input type="button" value="로그인" id="Submit"/>
-            </div>
-            </form>
-
+     
                <div class="form_row">
-                <label style="float:center;">ID/비밀번호 입력시 공백이 있으면 </label>
+                <label style="float:center;">해당 객실은 마감으로 예약이 안됩니다.</label>
                 </div>
                  <div class="form_row">
-                 <label style="float:center;">로그인이 불가하니 정확히 입력바랍니다. </label>
+                 <label style="float:center;">죄송합니다만 가능한 객실로</label>
                  </div>
-           
-          		 <div class="form_row">
-                <label style="float:center;">&nbsp; </label>
-                </div>
-                 
-            <div class="form_row">
-             <label style="float:center;">ID/비밀번호가 기억나지 않으시는 분은 </label>   
-            </div>
-             <div class="form_row">
-             <label style="float:center;">고객센터(010-4708-7412)로</label>   
-            </div>
-             <div class="form_row">
-             <label style="float:center;">평일 AM 9시 ~ PM 6시에 연락주세요.</label>   
-            </div>
-             <div class="form_row">
-                <label style="float:center;">&nbsp; </label>
-                </div>
-            
-             <div class="form_row">
-              <label style="float:center;">회원가입 </label>
-              </div>
-           
+               <div class="form_row">
+                 <label style="float:center;">다시 예약 부탁드립니다</label>
+                 </div>
           </div>
         </div>
         <div class="bottom_left_box"> </div>
