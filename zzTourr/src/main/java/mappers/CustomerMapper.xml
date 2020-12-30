@@ -1,1 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="customer.customerDAO">
+
+	<!-- 회원가입 작성 -->
+   <insert id="customerInsert" parameterType="users">
+      <![CDATA[
+		INSERT INTO users(userid, username, usertel, password, email, nation, gender, age)
+		VALUES (#{userId}, #{userName}, #{userTel}, #{password}, #{email}, #{nation}, #{gender}, #{age})
+      ]]>
+   </insert>
+   
+   <!-- 아이디 중복 검사 -->
+   <select id="customerIdcheck" parameterType="String" resultType="int">
+   	 SELECT count(*) FROM users WHERE userId = #{userId}
+   </select>
+   
+   
+   <!-- 회원정보 수정(비밀번호) -->
+   <update id="customerModify" parameterType="users">
+   	 <![CDATA[
+   		UPDATE users SET password = #{password}
+   		WHERE userid = #{userId}
+   	]]>
+   </update>
+   
+   <!-- 회원정보 조회 -->
+   <select id="userName" parameterType="String" resultType="users">
+	select * from users where userId=#{userId}
+   </select>
+   
+   <!-- 세션으로 불러온 id에 맞는 예약내역을 list로 호출 -->
+   <select id="reservationDAO" parameterType="String" resultType="reservation">
+	select resid, (select lodname from lodge where lodid in (select lodgeid from room where productid  in (select productid from room where productid in (select productid from reservation where userid=#{userId})))) || ' / ' ||
+(select roomname from room where productid in (select productid from reservation where userid = #{userId}))
+as category, reservprice, peoplenum, checkindate2, resstate, resdate2, productId from reservation where userid=#{userId}
+   </select>
+   
+   <!-- 결제하기 -->
+   <insert id="customerPayment" parameterType="payment">
+      <![CDATA[
+		INSERT INTO payment(payid, resid, payprice, paydate)
+		VALUES (SEQ_PAYID.nextval, #{resId}, #{payPrice}, sysdate)
+      ]]>
+   </insert>
+   
+   <!-- 상품후기 작성 -->
+   <insert id="revInsertDao" parameterType="productrevbo">
+      <![CDATA[
+		INSERT INTO productrevbo(prorevid, resid, userId, productId, username, revdate, revcontent, grade)
+		VALUES (SEQ_PRODUCTREVBO.nextval, #{resId}, #{userId}, #{productId}, #{userName}, sysdate, #{revContent}, #{grade} )
+      ]]>
+   </insert>
+   
+   <!-- 상품후기 내역 -->
+   <select id="revListDAO" parameterType="String" resultType="productrevbo">
+   		select * from productrevbo where res
+   
+   </select>
+   
+   
+</mapper>
