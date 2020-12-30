@@ -4,21 +4,19 @@
 <html>
 <head>
 
-	<!-- Required meta tags -->
-	<meta charset="UTF-8">
-	<!-- 
-		20121 16:56p
-		viewport
-		> https://offbyone.tistory.com/110
-	 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 <title>adminLogin.jsp</title>
 
-	<!-- bootstrap download _201222 원우 -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-	
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>adminLogin.jsp</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/libs/css/style.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    
     <style>
 	    html,
 	    body {
@@ -37,6 +35,41 @@
 
 </head>
 <body>
+
+    <!-- ============================================================== -->
+    <!-- login page  -->
+    <!-- ============================================================== -->
+    <div class="splash-container">
+        <div class="card ">
+            <div class="card-header text-center"><a href="${pageContext.request.contextPath}/resources/adminTemplate/index.html"><img class="logo-img" src="${pageContext.request.contextPath}/resources/adminTemplate/assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div style="text-align:center;"> ${mesage} </div>
+            <div class="card-body">
+                <form method="post" action="login.trip">
+                    <div class="form-group">
+                        <input name='adminId' class="form-control form-control-lg" id="username" type="text" placeholder="Username" autocomplete="off">
+                    </div>
+                    <div class="form-group">
+                        <input name='adminPw' class="form-control form-control-lg" id="password" type="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span>
+                        </label>
+                    </div>
+                    <button id='submit' type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+                </form>
+            </div>
+            <div class="card-footer bg-white p-0  ">
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="adminJoin.trip" class="footer-link">Create An Account</a></div>
+                <div class="card-footer-item card-footer-item-bordered">
+                    <a href="#" class="footer-link">Forgot Password</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+
 
 </body>
 </html>
