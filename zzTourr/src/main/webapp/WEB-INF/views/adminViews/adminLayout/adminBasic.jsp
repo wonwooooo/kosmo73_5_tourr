@@ -10,17 +10,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/libs/css/style.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+	<jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_css.jsp"/>
 
     <!-- Optional JavaScript -->
-    <script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/libs/js/main-js.js"></script>
+    <jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_js.jsp"/>
 
 </head>
 <body>
@@ -39,7 +34,7 @@
         <!-- ============================================================== -->
         <!-- header -->
         <!-- ============================================================== -->
-		<jsp:include page="/WEB-INF/views/adminViews/adminLayout/adminHeader.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_header.jsp"/>
         <!-- ============================================================== -->
         <!-- end header -->
         <!-- ============================================================== -->
@@ -90,7 +85,7 @@
 			<!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-			<jsp:include page="/WEB-INF/views/adminViews/adminLayout/adminFooter.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_footer.jsp" />
 			<!-- ============================================================== -->
             <!-- end footer -->
             <!-- ============================================================== -->

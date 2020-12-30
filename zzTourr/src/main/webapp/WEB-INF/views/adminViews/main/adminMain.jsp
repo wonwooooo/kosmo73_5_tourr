@@ -10,17 +10,12 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/libs/css/style.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
 
+    <!-- Bootstrap CSS -->
+	<jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_css.jsp"/>
+	
     <!-- Optional JavaScript -->
-    <script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/slimscroll/jquery.slimscroll.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/libs/js/main-js.js"></script>
+    <jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_js.jsp"/>
 
 </head>
 <body>
@@ -38,7 +33,7 @@
         <!-- ============================================================== -->
         <!-- header -->
         <!-- ============================================================== -->
-		<jsp:include page="/WEB-INF/views/adminViews/adminLayout/adminHeader.jsp"></jsp:include>
+		<jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_header.jsp"/>
         <!-- ============================================================== -->
         <!-- end header -->
         <!-- ============================================================== -->
@@ -57,14 +52,13 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Blank Pageheader </h2>
+                            <h2 class="pageheader-title">Main</h2>
                             <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
                             <div class="page-breadcrumb">
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Dashboard</a></li>
-                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Pages</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">Blank Pageheader</li>
+                                        <li class="breadcrumb-item"><a href="#" class="breadcrumb-link">Main</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Main</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -79,7 +73,7 @@
                 <!-- content -->
                 <!-- ============================================================== -->
                 <div class="row">
-                
+                아직
                 </div>
 				<!-- ============================================================== -->
                 <!-- end content -->
@@ -89,7 +83,7 @@
 			<!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-			<jsp:include page="/WEB-INF/views/adminViews/adminLayout/adminFooter.jsp"></jsp:include>
+			<jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_footer.jsp" />
 			<!-- ============================================================== -->
             <!-- end footer -->
             <!-- ============================================================== -->

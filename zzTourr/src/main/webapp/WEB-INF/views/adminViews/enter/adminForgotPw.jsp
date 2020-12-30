@@ -11,10 +11,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/bootstrap/css/bootstrap.min.css">
-    <link href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/libs/css/style.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+	<jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_css.jsp"/>
+
+    <!-- Optional JavaScript -->
+    <jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_js.jsp"/>
     
     <style>
     html,
@@ -58,9 +58,6 @@
     <!-- ============================================================== -->
     <!-- end forgot password  -->
     <!-- ============================================================== -->
-    <!-- Optional JavaScript -->
-    <script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/jquery/jquery-3.3.1.min.js"></script>
-    <script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 
 </body>
 </html>

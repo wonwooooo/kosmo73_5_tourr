@@ -7,7 +7,7 @@
 <title>adminIndex.jsp</title>
 
 	<script type="text/javascript">
-	   window.self.location="adminViews/adminLogin.trip";
+	   window.self.location="enter/adminLogin.trip";
 	</script>
 
 </head>
