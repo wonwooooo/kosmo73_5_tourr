@@ -6,22 +6,69 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>호스트 회원가입 페이지</title>
+<title>hotelMypage.jsp</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </head>
 <script type="text/javascript"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-3.5.1.min.js"></script>
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="ownerlogin.trip">Re:ko</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+          숙소 관리 <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="newLodge.trip">숙소 등록</a></li>
+            <li><a href="ModifyLodge.trip">숙소 수정</a></li>
+            <li><a href="priceEdit.trip">요금 설정</a></li>           
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">예약 관리 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="ResMgr.trip">예약 관리</a></li>
+            <li><a href="salHis.trip">매출 내역</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" >리뷰 관리 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Review.trip">리뷰 및 피드백</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >계정 관리 <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Mypage.trip">마이페이지</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 <article class="container">
             <div class="page-header">
                 <div class="col-md-9 col-md-offset-3">
-                <h3>호스트 회원가입</h3>
+                <h3>마이페이지</h3>
                 </div>
                 <div class="col-md-9 col-md-offset-3">
-                <h5>호스트 회원가입 페이지 입니다.</h5>
                 </div>
             </div>
             <div class="col-sm-6 col-md-offset-3">
@@ -59,16 +106,14 @@
                     </div>
                     </div> --> 
 
-                    <div class="form-group text-center">
+                    <div class="form-group text-right">
                         <button type="submit" id="join-submit" class="btn btn-default">
-                            회원가입
-                        </button>
-                        <button type="submit" class="btn btn-default">
-                            가입취소
+                            회원정보 수정
                         </button>
                     </div>
                 </form>
             </div>
             </article>
 </body>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 </html>

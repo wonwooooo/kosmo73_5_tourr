@@ -6,11 +6,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>hotelResMgr.jsp</title>
+<title>hotelReview</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/hotel.css" />
-
 </head>
 <script type="text/javascript"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -65,67 +64,29 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="col-sm-offset-1 col-sm-10 table-responsive" >
-<h2>예약목록</h2>
-<div class="table-res">
-<table class="table" border="1" >
-	<thead>
-		<tr>
-			<th>예약번호</th>
-			<th>예약숙소/객실</th>
-			<th>체크인/체크아웃</th>
-			<th>회원명</th>
-			<th>회원연락처</th>
-			<th>인원</th>
-			<th>예약상태</th>
-		</tr>
-	</thead>
-	<tbody >
-		<tr>
-			<td>123123</td>
-			<td>123</td>
-			<td>123</td>
-			<td>123</td>
-			<td>123</td>
-			<td>123</td>
-			<td>123</td>
-		</tr>
-	</tbody>
-</table>
+<div class="col-sm-offset-1 col-sm-5">
+	<h2>리뷰</h2>
+	<div class="wrap-star" >
+		<h3>숙소1</h3> 
+		<div class="star-rating">
+			<span style="width:60%"></span>
+		</div>
+	</div>
+	<div class="wrap-star" >
+		<h3>숙소2</h3> <div class="star-rating">
+			<span style="width:80%"></span>
+		</div>
+	</div>
+	<div class="wrap-star" >
+		<h3>숙소3</h3> <div class="star-rating">
+			<span style="width:100%"></span>
+		</div>
+	</div>
 </div>
-<hr/>
-</div>
-<div class="col-sm-offset-1 col-sm-9">
-<h3>세부내역</h3>
-<form role="form">
-	<br/>
-	<div class="form-group">
-	<label>예약번호 :</label> <input type="text"></div>
-	<div class="form-group">
-	<label>예약숙소/객실 :</label> <input type="text">/<input type="text"></div>
-	<div class="form-group">
-	<label>체크인/체크아웃 :</label> <input type="text">/<input type="text"></div>
-	<div class="form-group">
-	<label>회원명 :</label> <input type="text">></div>
-	<div class="form-group">
-	<label>예약자 연락처 :</label> <input type="text"></div>
-	<div class="form-group">
-	<label>인원수 :</label> <input type="text"></div>
-	<div class="form-group">
-	<label>예약금액 :</label> <input type="text"></div>
-	<div class="form-group">
-	<label>예약상태 :</label> <input type="text"></div>
-	<div class="form-group text-right">
-         <button type="submit" id="join-submit" class="btn btn-default">
-         예약확정
-		 </button>
-         <button type="submit" class="btn btn-default">
-         예약취소
-         </button>
-    </div>
-</form>
-</div>
+<div class="col-sm-6">
+	<h2>피드백</h2>
 
+</div>
 </body>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 
