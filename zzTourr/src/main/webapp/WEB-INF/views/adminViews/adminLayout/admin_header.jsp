@@ -167,7 +167,7 @@
 					</div>
 					<a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
 					<a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
-					<a class="dropdown-item" href="/zzTourr2/adminViews/enter/adminLogout.trip"><i class="fas fa-power-off mr-2"></i>Logout</a>
+					<a class="dropdown-item" href="/zzTourr/adminViews/enter/adminLogout.trip"><i class="fas fa-power-off mr-2"></i>Logout</a>
 				</div>
 				</li>
 			</ul>
@@ -202,7 +202,7 @@
 			
 					<!-- ◀◀◀ Main ▶▶▶ -->
 					<li class="nav-item">
-					<a class="nav-link" href="/zzTourr2/adminViews/main/adminMain.trip"><i class="fa fa-fw fa-rocket"></i>Main</a>
+					<a class="nav-link" href="/zzTourr/adminViews/main/adminMain.trip"><i class="fa fa-fw fa-rocket"></i>Main</a>
 					</li>
 					<!-- ◀◀◀ end Main ▶▶▶ -->
 			
@@ -212,7 +212,7 @@
 					<div id="submenu-3" class="collapse submenu" style="">
 						<ul class="nav flex-column">
 							<li class="nav-item">
-							<a class="nav-link" href="/zzTourr2/adminViews/dashboard/adminChart.trip">C3 Charts</a>
+							<a class="nav-link" href="/zzTourr/adminViews/dashboard/adminChart.trip">C3 Charts</a>
 							</li>
 							<li class="nav-item">
 							<a class="nav-link" href="chart-chartist.html">Chartist Charts</a>
@@ -236,7 +236,7 @@
 				
 					<!-- ◀◀◀ Reservation ▶▶▶ -->
 					<li class="nav-item ">
-					<a class="nav-link" href="/zzTourr2/adminViews/reservation/adminReservList.trip"><i class="fab fa-fw fa-wpforms"></i>Reservation</a>
+					<a class="nav-link" href="/zzTourr/adminViews/reservation/adminReservList.trip"><i class="fab fa-fw fa-wpforms"></i>Reservation</a>
 					</li>
 					<!-- ◀◀◀ end Reservation ▶▶▶ -->
 				
@@ -246,10 +246,10 @@
 					<div id="submenu-5" class="collapse submenu" style="">
 						<ul class="nav flex-column">
 							<li class="nav-item">
-							<a class="nav-link" href="adminMemberList.trip">Member List</a>
+							<a class="nav-link" href="/zzTourr/adminViews/account/adminMemberList.trip">Member List</a>
 							</li>
 							<li class="nav-item">
-							<a class="nav-link" href="adminClientList.trip">Client List</a>
+							<a class="nav-link" href="/zzTourr/adminViews/account/adminClientList.trip">Client List</a>
 							</li>
 						</ul>
 					</div>
@@ -262,10 +262,10 @@
 					<div id="submenu-7" class="collapse submenu" style="">
 						<ul class="nav flex-column">
 							<li class="nav-item">
-							<a class="nav-link" href="adminHotelProdList.trip">Room</a>
+							<a class="nav-link" href="/zzTourr/adminViews/product/adminHotelProdList.trip">Room</a>
 							</li>
 							<li class="nav-item">
-							<a class="nav-link" href="adminGuideProdList.trip">Guide</a>
+							<a class="nav-link" href="/zzTourr/adminViews/product/adminGuideProdList.trip">Guide</a>
 							</li>
 						</ul>
 					</div>

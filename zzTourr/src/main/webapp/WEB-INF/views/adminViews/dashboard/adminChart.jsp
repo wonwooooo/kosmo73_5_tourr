@@ -1,170 +1,118 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width,initial-scale=1,shrink-to-fit=no">
-<title>관리자 - 결산!!!!</title>
-<style>
-.menu ul li {
-	float: left;
-	list-style: none;
-	margin-right: 20px;
-}
-
-a {
-	text-decoration: none;
-	color: white;
-	font-weight: bold;
-}
-
-.content table tr td {
-	border: 1px solid black;
-}
-
-.tabel_th {
-	border: 1px solid black;
-	background-color: lightgrey;
-}
-
-.product_list tr td img {
-	width: 80px;
-	height: 80px;
-}
-/* 페이지 넘기기  */
-.paging {
-	float: left;
-	margin-top: 50px;
-	margin-left: 500px;
-}
-
-.btn_pageprev {
-	float: left;
-}
-
-.txt_pagenum {
-	float: left;
-}
-
-.txt_pagenum a {
-	line-height: 35px;
-	padding: 0 15px;
-	color: black;
-}
-
-#totalCalc {
-	border-bottom: 2px dotted white;
-} /* 밑줄 표시하기 header file에 있는 id값 css적용 */
-//
-결산 그래프 
-* {
-	margin: 0;
-	padding: 0;
-}
-/* div{padding:0px; overflow: hidden; height: auto;} */
-.hgroup {
-	padding: 20px;
-	background-color: #e9e9e9;
-}
-
-.hgroup h1 {
-	font-family: Tahoma;
-}
-
-.hgroup p {
-	margin: 10px 0;
-	font-size: 10px
-}
-
-h2 {
-	margin: 0;
-	padding: 20px;
-	border: 1px solid #000;
-	background-color: #f9f9f9;
-	border-width: 1px 0;
-	font-family: Tahoma;
-}
-</style>
-<link rel='stylesheet' href='${pageContext.request.contextPath}/resources/css/Nwagon.css' type='text/css'>
-<script src='${pageContext.request.contextPath}/resources/js/Nwagon.js'></script>
-<script src='${pageContext.request.contextPath}/resources/js/Nwagon_no_vml.js'></script>
-
-
-
+	<jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_css.jsp"/>
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/charts/morris-bundle/morris.css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
 </head>
 <body>
-	<!-- 관리자 메인 로고  -->
-	<section
-		style="width: 1200px; height: 1000px; margin: 0 auto; margin-bottom: 50px;">
-		<br>
-		<div class="content" style="width: 1200px;">
-			<h2>
-				'결제완료'누적 합계 :
-				<fmt:formatNumber value="" pattern="#,###" />
-				원
-			</h2>
-			<h2>1907월 카테고리 별 도넛 그래프 ('결제완료' 기준)</h2>
-			<div id="chart_d"></div>
-			<c:forEach var="type" items="${chart2}">
-		Key is ${type.key}
-	   Value is ${type.value} 
-	</c:forEach>
-			<c:set var="cate_D" value="${chart2['D']}" />
-			<c:set var="cate_T" value="${chart2['T']}" />
-			<c:set var="cate_M" value="${chart2['M']}" />
-			<c:set var="cate_L" value="${chart2['L']}" />
-			<script>
-		var options = {
-			'dataset': {
-				title: '월 카테고리 별 도넛 그래프',
-				values:[${cate_D}, ${cate_T}, ${cate_M}, ${cate_L}],
-				colorset: ['#2BC8C9', '#FF8C00', '#DC143C','#2EB400'],
-				fields: ['디지털/가전', '토이/인형', '문구', '리빙/데코'] 
-			},
-			'donut_width' : 40, 
-			'core_circle_radius':60,
-			'chartDiv': 'chart_d',
-			'chartType': 'donut',
-			'chartSize': {width:600, height:300}
-		};
-		Nwagon.chart(options);
-	</script>
-			<h2>ArtBox 월별 총 판매 그래프 ('결제완료' 기준)</h2>
-			<div id="chart8"></div>
-			<c:forEach var="type" items="${chart1}">
-		Key is ${type.key}
-	   Value is ${type.value} 
-	</c:forEach>
-			<c:set var="date10" value="${chart1['1910'] /10000}" />
-			<c:set var="date9" value="${chart1['1909'] /10000}" />
-			<c:set var="date8" value="${chart1['1908'] /10000}" />
-			<c:set var="date7" value="${chart1['1907'] /10000}" />
-			<c:set var="date6" value="${chart1['1906'] /10000}" />
-			<script>
-		var options = {
-			'legend': {
-	            names: ['6월','7월','8월','9월','10월'],
-	            hrefs: []
-	        },
-	        'dataset': {
-	            title: 'ArtBox 월별 총 판매 그래프',
-	            values: [${date6},${date7},${date8},${date9},${date10}],
-	            colorset: ['#56b4e9'],
-	            fields:['월별 총판매']
-	        },
-	        'chartDiv': 'chart8',
-	        'chartType': 'column',
-	        'chartSize': { width: 700, height: 300 },
-	        'maxValue': 100,
-	        'increment': 10
-		};
-		Nwagon.chart(options);
-	</script>
-		</div>
-	</section>
-	<!-----화면 맨 하단 footer----->
+<div class="dashboard-main-wrapper">
+	<jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_header.jsp"/>
+	<div class="dashboard-wrapper">
+    <div class="container-fluid dashboard-content ">
+        <!-- ============================================================== -->
+        <!-- pageheader -->
+        <!-- ============================================================== -->
+        <div class="row"> 
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+				<div class="card">
+					<h5 class="card-header">Donut Chart- '예약완료'상태의 모든 주문의, 가이드 /상품 건수 비교</h5>
+					
+					<div class="card-body">
+						<div id="morris_donut">
+						</div>
+					</div>
+				</div>
+			</div>		
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+               <div class="card">
+                   <h5 class="card-header">Line Chart - 12월 중 일자별 가이드/상품의 총 sdf판매금액 비교 </h5>
+                   <div class="card-body">
+                       <div id="morris_line" style="position: relative; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+        
+        <c:forEach var="type" items="${chart1}">
+			Key is ${type.key}
+		   Value is ${type.value} 
+		</c:forEach>
+		<c:set var="cate_D" value="${chart1['code2']}"/>
+        <!-- ============================================================== -->
+        <!-- end pageheader -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- content -->
+        <!-- ============================================================== -->
+         </div>
+		<jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_footer.jsp"/>
+	</div> <!-- dashboard-wrapper -->
+</div> <!--dashboard-main-wrapper -->
+<!-- Optional JavaScript -->
+<jsp:include page="/WEB-INF/views/adminViews/adminLayout/admin_js.jsp"/>
+<script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/charts/morris-bundle/morris.js"></script>
+<script src="${pageContext.request.contextPath}/resources/adminTemplate/assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+<!-- <script src="/bootstrap/concept-master/assets/vendor/charts/morris-bundle/Morrisjs.js"></script>
+ -->
+<script>
+(function(window, document, $, undefined) {
+    "use strict";
+    $(function() {
+    	// 도너츠 차트 
+        if ($('#morris_donut').length) {
+            Morris.Donut({
+                element: 'morris_donut',
+                data: [
+                    { value: 70, label: '가이드' },
+                    { value: 44, label: '상품' },
+                    //{ value: ${gage}, label: 'thee' },
+                    //{ value: 5, label: 'A really really long label' }
+                ],
+                labelColor: '#2e2f39',
+                   gridTextSize: '14px',
+                colors: [
+                     "#5969ff",
+                     "#ff407b",
+                     "#25d5f2",
+                     "#ffc750"
+                ],
+                formatter: function(x) { return x + "%" },
+                  resize: true
+            });
+        }
+		// 라인 차트 
+        if ($('#morris_line').length) {
+            // Use Morris.Area instead of Morris.Line
+            Morris.Line({
+                element: 'morris_line',
+                behaveLikeLine: true,
+                data: [
+                    { y: '1227', a: 700000, b: 300000 },
+                    { y: '1230', a: 350000, b: 54000},
+                   // { y: '2008', a: 50, b: 40 },
+                   // { y: '2009', a: 75, b: 65 },
+                    //{ y: '2010', a: 50, b: 40 },
+                    //{ y: '2011', a: 75, b: 65 },
+                    //{ y: '2012', a: 100, b: 90 }
+                ],
+                xkey: 'y',
+                ykeys: ['a', 'b'],
+                labels: ['가이드', '상품'],
+                   lineColors: ['#5969ff', '#ff407b'],
+                     resize: true,
+                        gridTextSize: '14px'
+            });
+        }
+    });
+})(window, document, window.jQuery);
+</script>
 </body>
 </html>

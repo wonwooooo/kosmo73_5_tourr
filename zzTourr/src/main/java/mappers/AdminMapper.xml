@@ -113,26 +113,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			차트!!!!!!!!!!!!!
 	 ================================================ -->
 
-	<!-- 예약 완료 매출 -->
+	<!-- 예약 완료 건 (가이드/상품 별) 카운터 -->
 	<select id="chart1" resultType="Map">
-		SELECT reservday, SUM(RESERVPRICE) AS sum 
+		SELECT code2, COUNT(RESERVPRICE) AS count
 		FROM
-		    (SELECT (TO_CHAR(RESDATE2,'yymm'))AS reservday, RESERVPRICE
-		    FROM reservation
-		    WHERE RESSTATE='예약완료') 
-		GROUP BY reservday
-		ORDER BY reservday ASC
+		   (SELECT SUBSTR(PRODUCTID, 1,1) AS code2, RESERVPRICE
+		   FROM reservation
+		   WHERE  resstate = '예약완료') tb
+		GROUP BY code2
 	</select>
 
 
-	<!-- yy년 mm월의 숙소(6)와 가이드(1)별 매출 -->
+	<!-- 날짜,구분, 금액 합계 가지고오기   -->
 	<select id="chart2" parameterType="String" resultType="Map">
-		SELECT code2, SUM(RESERVPRICE) AS sum
+		SELECT code2, reservday, SUM(RESERVPRICE) AS sum
 		FROM
-		    (SELECT SUBSTR(PRODUCTID, 1,1) AS code2, RESERVPRICE
-		     FROM reservation
-		     WHERE (TO_CHAR(RESDATE2,'yymm'))= #{yymm})
-		GROUP BY code2
+		 	(SELECT SUBSTR(PRODUCTID, 1,1) AS code2, RESERVPRICE, TO_CHAR(RESDATE2,'mmdd') as reservday
+			FROM reservation
+		 	WHERE RESSTATE='예약완료' ) tb
+		GROUP BY code2,reservday
 	</select>
 
 

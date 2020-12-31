@@ -45,7 +45,7 @@
     $('#id').blur(function(){
     	$.ajax({
 		type:"POST",
-		url:"/zzTourr2/adminViews/enter/idCheck.trip",
+		url:"/zzTourr/adminViews/enter/idCheck.trip",
 		data:{"id":$('#id').val()},
 		success:function(data){			//data : checkSignup에서 넘겨준 결과값
 			if($.trim(data)=="YES"){
@@ -155,7 +155,7 @@
                 </div>
             </div>
             <div class="card-footer bg-white">
-                <p>Already member? <button onclick="window.history.back()"><a href="" class="text-secondary">Login Here.</a></button></p>
+                <p>Already member? <button onclick="window.history.back()"><a class="text-secondary">Login Here.</a></button></p>
             </div>
         </div>
     </form>

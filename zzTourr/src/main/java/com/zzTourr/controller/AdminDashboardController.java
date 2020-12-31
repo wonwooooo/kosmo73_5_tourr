@@ -1,5 +1,6 @@
 package com.zzTourr.controller;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -25,8 +26,12 @@ public class AdminDashboardController {
 	
 	@RequestMapping("/adminViews/dashboard/adminChart.trip")
 	public String chart(Model m) {
+		//List<Map<String,Object>> chart1 = adminService.chart1();
+		//List<Map<String,Object>> chart2 = adminService.chart2("2012");
+		
 		List<ChartVO> chart1 = adminService.chart1();
 		List<ChartVO> chart2 = adminService.chart2("2012");
+
 		
 		m.addAttribute("chart1", chart1);
 		m.addAttribute("chart2", chart2);
