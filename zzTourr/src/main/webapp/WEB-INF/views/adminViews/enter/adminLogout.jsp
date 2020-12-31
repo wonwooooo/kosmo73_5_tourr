@@ -12,7 +12,7 @@
     <c:if test="${result != 0}">
         <script type="text/javascript">
             alert("로그아웃 완료 / 다시 로그인 페이지로");
-            window.self.location="/zzTourr2/adminViews/enter/adminLogin.trip";
+            window.self.location="/zzTourr/adminViews/enter/adminLogin.trip";
         </script>
     </c:if>
 </body>

@@ -24,7 +24,7 @@ public class AdminAccountController {
 	 *****************************************************************************************/
 	
 	// 회원 리스트 페이지 띄우기 _201228 원우
-	@RequestMapping("/adminViews/adminMemberList.trip")
+	@RequestMapping("/adminViews/account/adminMemberList.trip")
 	public String memberList(){
 		System.out.println("AdminController : memberList / 회원목록");
 		
@@ -45,14 +45,14 @@ public class AdminAccountController {
 		 * 	model.addAttribute("mList", mList);
 		 */
 		
-		return "adminViews/account/adminMemberList";
+		return "/adminViews/account/adminMemberList";
 		
 	}	// end of memberList
 	
 	
 	
 	// ajax 로 회원 목록 불러오기 _201228 원우
-	@RequestMapping("/adminViews/adminAjaxMemberList.trip")
+	@RequestMapping("/adminViews/account/adminAjaxMemberList.trip")
 	public String ajaxMemberList(Model model){
 		System.out.println("AdminController : ajaxMemberList / 회원목록");
 		
@@ -60,19 +60,19 @@ public class AdminAccountController {
 		
 		model.addAttribute("mList", mList);
 		
-		return "adminViews/account/adminAjaxMemberList";
+		return "/adminViews/account/adminAjaxMemberList";
 		
 	}	// end of ajaxMemberList
 	
 	
 	
 	// 숙소 사장 + 가이드 페이지 띄우기 _201228 원우
-	@RequestMapping("/adminViews/adminClientList.trip")
+	@RequestMapping("/adminViews/account/adminClientList.trip")
 	public ModelAndView clientList() {
 		System.out.println("AdminController : clientList / 숙소사장+가이드 목록");
 		
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("adminViews/account/adminClientList");
+		mv.setViewName("/adminViews/account/adminClientList");
 		
 		return mv;
 		
@@ -81,7 +81,7 @@ public class AdminAccountController {
 	
 	
 	// 숙소 사장 + 가이드 데이터 가져오기 _201229 원우
-	@RequestMapping("/adminViews/adminAjaxClientList.trip")
+	@RequestMapping("/adminViews/account/adminAjaxClientList.trip")
 	public ModelAndView ajaxClientList() {
 		System.out.println("AdminController : ajaxClientList / 숙소사장+가이드 목록");
 		
@@ -93,7 +93,7 @@ public class AdminAccountController {
 		
 		ModelAndView mv = new ModelAndView();
 		
-		mv.setViewName("adminViews/account/adminAjaxClientList");
+		mv.setViewName("/adminViews/account/adminAjaxClientList");
 		mv.addObject("mList", mList);
 		// mv.addObject("lList", lList);
 		// mv.addObject("gList", gList);

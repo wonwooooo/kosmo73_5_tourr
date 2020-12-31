@@ -130,7 +130,7 @@
             	
             	<!-- ★★★★★ 로그아웃 후 로그인 ★★★★★ -->
             	<c:if test="${in !=1}">
-	            	<form method="post" action="/zzTourr2/enter/login.trip">
+	            	<form method="post" action="/zzTourr/enter/login.trip">
 	                	<div class="form-group">
 	                        <input name='adminId' class="form-control form-control-lg" name="id" id="username" type="text" placeholder="Username" autocomplete="off">
 	                    </div>
@@ -170,12 +170,12 @@
 	            
 	            	<!-- ★★★★★ 로그아웃 후 회원가입 ★★★★★ -->
 	                <div class="card-footer-item card-footer-item-bordered">
-	                    <a href="/zzTourr2/enter/adminJoin.trip" class="footer-link">Create An Account</a>
+	                    <a href="/zzTourr/enter/adminJoin.trip" class="footer-link">Create An Account</a>
 	                </div>
 	                
 	                <!-- ★★★★★ 로그아웃 후 비번찾기 ★★★★★ -->
 	                <div class="card-footer-item card-footer-item-bordered">
-	                    <a href="/zzTourr2/enter/adminForgotPw.trip" class="footer-link">Forgot Password</a>
+	                    <a href="/zzTourr/enter/adminForgotPw.trip" class="footer-link">Forgot Password</a>
 	                </div>
 	                
 	            </c:if>
