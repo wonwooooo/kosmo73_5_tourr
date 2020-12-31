@@ -78,7 +78,7 @@
 					                                        		<td>${vo.category }</td>
 					                                        		<td>${vo.resDate2 }</td>
 					                                       			<td>
-					                                       				<a href="/zzTourr2/adminViews/reservation/adminReservDetail.trip">
+					                                       				<a href="/zzTourr/adminViews/reservation/adminReservDetail.trip">
 					                                       					${vo.resId }
 					                                        			</a>
 					                                        		</td>

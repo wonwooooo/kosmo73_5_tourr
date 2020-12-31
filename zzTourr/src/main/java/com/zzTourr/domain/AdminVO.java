@@ -9,6 +9,16 @@ public class AdminVO {
 	private String adminName;
 	private String adminImg;
 	
+	private int num;
+	
+	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	
 	
 	// getter & setter
 	public String getAdminId() {
