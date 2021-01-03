@@ -107,9 +107,9 @@ window.addEventListener('DOMContentLoaded', function(){
                         <!-- ============================================================== -->
                         <div>
                             <div class="card">
-                                <div class="card-header">
-                                	요기는 필터가 들어갈 자리 / 그리고 삭제버튼도 들어갈거임. 선택한거 삭제 할 수 있도록
-                                </div>
+<!--                                 <div class="card-header"> -->
+<!--                                 	요기는 필터가 들어갈 자리 / 그리고 삭제버튼도 들어갈거임. 선택한거 삭제 할 수 있도록 -->
+<!--                                 </div> -->
                                 
                                 <!-- ajax 사용해서 회원 목록 가져오기 -->
                                 <div class="card-body" id="tablebody">

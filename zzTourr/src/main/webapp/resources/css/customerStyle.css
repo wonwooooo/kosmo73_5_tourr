@@ -39,6 +39,9 @@ text-align:justify;
 padding:2px;
 margin:0px;
 }
+.searchtext{
+background:url("/zzTourr/resources/mainImgs/lodge_search_guide.gif") no-repeat;
+}
 p.proposal_text{
 width:170px;
 font-size:11px;
@@ -71,7 +74,7 @@ padding:0px;
 #header{
 width:970px;
 height:110px;
-background-color:#05619b;
+background-color:#dc4241;
 margin:auto;
 }
 #logo{
@@ -99,7 +102,7 @@ way to fit your requirements.
 .menu {font-size:11px;padding:0px; float:right; width:700px;}
 
 /* remove all the bullets, borders and padding from the default list styling */
-.menu ul {padding:0;margin:0;list-style-type:none; height:28px; background:#267cb2;}
+.menu ul {padding:0;margin:0;list-style-type:none; height:28px; background:#b22222;}
 
 /* style the sub-level lists */
 .menu ul ul {width: auto;}
@@ -111,10 +114,10 @@ way to fit your requirements.
 .menu ul ul li {display:block;width: auto;height:auto;position:relative;line-height:1em; border-bottom:1px #2384BF solid;}
 
 /* style the links for the top level */
-.menu a, .menu a:visited {display:block;float:left;height:100%;font-size:11px;text-decoration:none;color:#fff;background:#267cb2;padding:0 21px 0 17px;}
-.menu a.current{background:#3da1e0;}
+.menu a, .menu a:visited {display:block;float:left;height:100%;font-size:11px;text-decoration:none;color:#fff;background:#b22222;padding:0 21px 0 17px;}
+.menu a.current{background:#dc4241;}
 /* style the sub level links */
-.menu ul ul a, .menu ul ul a:visited {display:block;background:#267cb2; color:#fff;width:12em;height:100%;line-height:1em; padding:0.5em 1em;}
+.menu ul ul a, .menu ul ul a:visited {display:block;background:#b22222; color:#fff;width:12em;height:100%;line-height:1em; padding:0.5em 1em;}
 .menu ul table ul a, .menu ul table ul a:visited  {width:14em; w\idth:12em;}
 
 
@@ -127,24 +130,24 @@ way to fit your requirements.
 * html .menu a:hover {position:relative;}
 
 /* style the third level background */
-.menu ul ul ul a, .menu ul ul ul a:visited {background:#3da1e0;}
+.menu ul ul ul a, .menu ul ul ul a:visited {background:#dc4241;}
 /* style the fourth level background */
-.menu ul ul ul ul a, .menu ul ul ul ul a:visited {background:#3da1e0;}
+.menu ul ul ul ul a, .menu ul ul ul ul a:visited {background:#dc4241;}
 /* style the sub level 1 background */
-.menu ul :hover a.sub1 {background:#3da1e0;}
+.menu ul :hover a.sub1 {background:#dc4241;}
 /* style the sub level 2 background */
-.menu ul ul :hover a.sub2 {background:#3da1e0;}
+.menu ul ul :hover a.sub2 {background:#dc4241;}
 
 /* style the level hovers */
 /* first */
-.menu a:hover {color:#fff;background:#3da1e0;}
-.menu :hover > a {color:#fff;background:#3da1e0;}
+.menu a:hover {color:#fff;background:#dc4241;}
+.menu :hover > a {color:#fff;background:#dc4241;}
 /* second */
-.menu ul ul a:hover{color:#fff;background:#3da1e0;}
-.menu ul ul :hover > a {color:#fff;background:#3da1e0;}
+.menu ul ul a:hover{color:#fff;background:#dc4241;}
+.menu ul ul :hover > a {color:#fff;background:#dc4241;}
 /* third */
-.menu ul ul ul a:hover {background:#3da1e0;}
-.menu ul ul ul :hover > a {background:#3da1e0;}
+.menu ul ul ul a:hover {background:#dc4241;}
+.menu ul ul ul :hover > a {background:#dc4241;}
 /* fourth */
 .menu ul ul ul ul a:hover {background:#eee;}
 
@@ -160,7 +163,7 @@ way to fit your requirements.
 
 
 /* make the second level visible when hover on first level list OR link */
-.menu ul li:hover ul, .menu ul a:hover ul {visibility:visible; height:auto; padding-bottom:3em; background:transparent url(images/trans.gif);}
+.menu ul li:hover ul, .menu ul a:hover ul {visibility:visible; height:auto; padding-bottom:3em; background:transparent url(/zTrip/resources/mainimg/trans.gif);}
 /* keep the third level hidden when you hover on first level list OR link */
 .menu ul :hover ul ul{visibility:hidden;}
 /* keep the fourth level hidden when you hover on second level list OR link */
@@ -212,19 +215,19 @@ padding-bottom:10px;
 width:257px;
 height:10px;
 float:left;
-background:url(images/top_box_bg.gif) no-repeat center;
+background:url(/zzTourr/resources/mainImgs/top_box_bg.gif) no-repeat center;
 }
 .center_left_box{
 width:257px;
 height: auto;
 float:left;
-background:url(images/center_box_bg.gif) repeat-y;
+background:url(/zzTourr/resources/mainImgs/center_box_bg.gif) repeat-y;
 }
 .bottom_left_box{
 width:257px;
 height:10px;
 float:left;
-background:url(images/bottom_box_bg.gif) no-repeat center;
+background:url(/zzTourr/resources/mainImgs/bottom_box_bg.gif) no-repeat center;
 }
 .box_title{
 width:257px;
@@ -244,7 +247,7 @@ padding:5px;
 .proposal{
 width:287px;
 height:85px;
-background:url(images/proposal_box.gif) no-repeat center;
+background:url(/zzTourr/resources/mainImgs/proposal_box.gif) no-repeat center;
 background-position:0px 0px;
 margin-left:15px;
 margin-top:15px;
@@ -287,7 +290,7 @@ padding:0px;
 }
 .details_list ul li{
 padding:5px 5px 5px 25px;
-background:url(images/bullet.gif) no-repeat left;
+background:url(/zzTourr/resources/mainImgs/bullet.gif) no-repeat left;
 color:#333333;
 }
 .details_list ul li span{
@@ -296,7 +299,7 @@ color:#0464a1;
 .button{
 width:139px;
 height:30px;
-background:url(images/blank_button.gif) no-repeat center;
+background:url(/zzTourr/resources/mainImgs/blank_button.gif) no-repeat center;
 text-align:center;
 line-height:30px;
 font-weight:bold;
@@ -391,7 +394,7 @@ padding:3px 0 3px 0;
 }
 label.left{
 float:left;
-width:80px;
+width:70px;
 padding-top:3px;
 text-align:right;
 }

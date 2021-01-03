@@ -48,18 +48,15 @@
           </ul>
           </li>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
-     <c:if test="${sessionScope.login != null }">
+    <c:if test="${sessionScope.login != null }">
      <li><a>마이페이지</a>
      <ul>
-            <li><a href="customerReserv.trip">구매내역</a></li>
-            <li><a href="customerCart.trip">장바구니</a></li>
-            <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
-            <li><a href="customerQna.trip">1:1 문의</a></li>
-            <li><a href="customerModify.trip">개인정보</a></li>
+            <li><a href="../customerViews/customerReservList.trip?userId=${sessionScope.loginId}&page=1">구매내역</a></li>
+            
+            <li><a href="../customerViews/customerInfo.trip?userId=${sessionScope.loginId}">개인정보</a></li>
           </ul>
      </li>
      </c:if>
-      </ul>
     </div>
   </div>
   <div id="main_content">
@@ -74,13 +71,8 @@
             <div style="float:right; padding:10px 25px 0 0;">
                 <a href="mainlogin.trip"><input type="button" value="로그인" /></a>
             </div>
-       <div class="form_row">
-              <a href="mainpassmiss.trip" style="text-decoration: none; color:#615357;"><label style="float:center;">아이디/비밀번호 찾기</label></a>
-            
-            </div>
-            
-             <div class="form_row">
-              <label style="float:center;">회원가입 </label>
+      <div class="form_row">
+              <a href="../customerViews/customerJoin.trip"  style="text-decoration: none; color:#615357;"><label style="float:center;">회원가입 </label></a>
            </div>
           </div>
 	 <div class="bottom_left_box"> </div>
@@ -106,28 +98,7 @@
         <div class="bottom_left_box"> </div>
       </div>
        </c:if>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>  
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>  
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>  
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
+   
       <p>&nbsp; </p>
       <p>&nbsp; </p>
       <p>&nbsp; </p>
@@ -174,7 +145,7 @@
 
       <!-- end of column one -->
     <div class="column4">
-      <div class="title">펜션 </div>
+      <div class="title">숙소/객실 소개 </div>
     </div>
     <!-- end of column four -->
     <div class="column2" style="background-color:#f3f5f6; margin-left:5px;">
@@ -200,7 +171,7 @@
            <input type="button" class="showButton" value="사진보기" style="width:80;height:17;FONT-SIZE: 8pt"/>  
  			<input type="button" class="hideButton" value="사진닫기" style="width:80;height:17;FONT-SIZE: 8pt"/>	 
 	  <p class="intro">		
-          <img src="/zzTourr/resources/hotelUpload/${room.imgName}"/>
+          <img src="/zzTourr/resources/hotelUpload/${room.imgName}" width="282" height="212"/>
           </p>
           	<p>${room.roomCont}</p>
           	<p>최대인원 : ${room.maxPeople}명</p>
@@ -209,14 +180,16 @@
           	<p><a href="mainloreservation.trip">
           	<c:if test="${sessionScope.login != null }">
       		<form action="mainloreservation.trip" method="get">
+      		<input type="hidden" name="category" value="${lodge.lodCate}"/> 
       		<input type="hidden" name="reservName" value="${sessionScope.login}"/> 
       		<input type="hidden" name="reservTel" value="${sessionScope.loginTel}"/> 
       		<input type="hidden" name="userId" value="${sessionScope.loginId}"/> 
-      		<input type="hidden" name="productIdi" value="${room.productId}"/> 
+      		<input type="hidden" name="productIdi" value="${lodge.lodId}"/> 
+      		<input type="hidden" name="roomId" value="${room.productId}"/> 
       		<input type="hidden" name="peakPrice" value="${room.peakPrice }"/>
       		<input type="hidden" name="offPrice" value="${room.offPrice }"/>
-      		<input type="hidden" name="peakSumStart" value="${lodge.peakSumStart }"/>
-      		<input type="hidden" name="peakSumExit" value="${lodge.peakSumExit }"/>
+      		<input type="hidden" name="peakSumStart" value="${lodge.lodName }"/>
+      		<input type="hidden" name="peakSumExit" value="${room.roomName }"/>
       		<input type="hidden" name="peakWinStart" value="${lodge.peakWinStart }"/>
       		<input type="hidden" name="peakWinExit" value="${lodge.peakWinExit }"/>
       		<input type="hidden" name="maxPeople" value="${room.maxPeople }"/>
@@ -272,6 +245,7 @@
 	  <p>&nbsp; </p>
   </div>
          <div class="pagination"> <a href="mainlodgedetail.trip?lodId=${lodge.lodId }&page=1"><<</a><a href="mainlodgedetail.trip?lodId=${lodge.lodId }&page=${pNo }"><</a><a href="mainlodgedetail.trip?lodId=${lodge.lodId }&page=${nNo }">></a><a href="mainlodgedetail.trip?lodId=${lodge.lodId }&page=${totalcount }">>></a></div>
+ </div>
   <!-- end of main_content -->
   <div id="footer">
     

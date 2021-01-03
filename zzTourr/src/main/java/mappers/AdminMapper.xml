@@ -59,17 +59,35 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT *
 		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE2, CHECKOUT2, RESERVPRICE, RESSTATE
 			FROM reservation
-			WHERE CATEGORY = '숙소' )
+			WHERE CATEGORY = '호텔' )
 	</select>
 	
 	
-	<!-- 가이드예약목록 가져오기 _201228 원우 -->
+	<!-- 펜션예약목록 가져오기 _201228 원우 -->
 	<select id="guideReservList" parameterType="Map" resultType="reservation">
 		SELECT *
 		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE, CHECKOUT, RESERVPRICE, RESSTATE
 			FROM reservation
-			WHERE CATEGORY = '가이드' )
+			WHERE CATEGORY = '펜션' )
 	</select>
+	
+	<!-- 게스트하우스예약목록 가져오기 _201228 원우 -->
+	<select id="geReservList" parameterType="Map" resultType="reservation">
+		SELECT *
+		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE2, CHECKOUT2, RESERVPRICE, RESSTATE
+			FROM reservation
+			WHERE CATEGORY = '게스트하우스' )
+	</select>
+	
+	
+	<!-- 모텔예약목록 가져오기 _201228 원우 -->
+	<select id="moReservList" parameterType="Map" resultType="reservation">
+		SELECT *
+		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE, CHECKOUT, RESERVPRICE, RESSTATE
+			FROM reservation
+			WHERE CATEGORY = '모텔' )
+	</select>
+	
 	
 	
 	<!-- 예약상세내역 가져오기 _201231 -->
@@ -134,6 +152,18 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		GROUP BY code2,reservday
 	</select>
 
+
+<!-- 	<select id="chart3" resultType="int"> -->
+<!-- 	 select sum(reservprice) from reservation -->
+<!-- 	</select> -->
+	
+		<select id="chart3" resultType="int">
+ select sum(reservprice) from reservation
+	</select>
+	
+		<select id="chart4" resultType="int">
+	 select sum(reservprice) from reservation where category ='숙소'
+	</select>
 
 
 

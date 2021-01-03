@@ -141,6 +141,7 @@
     </div>
   </div>
   <!-- end of main_content -->
+
  <div id="footer">
     
     <ul>
@@ -149,7 +150,7 @@
     </ul>
  
   </div>
- 
+
  
  </body>
 </html>

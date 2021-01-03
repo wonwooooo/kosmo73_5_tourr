@@ -1,13 +1,15 @@
 package com.zzTourr.domain;
-
 public class ChartVO {
-
 	private String reservday;
 	private String sum;
 	private String code2;
-	
-	
-	
+	private String count;
+	public String getCount() {
+		return count;
+	}
+	public void setCount(String count) {
+		this.count = count;
+	}
 	public String getReservday() {
 		return reservday;
 	}
@@ -26,5 +28,4 @@ public class ChartVO {
 	public void setCode2(String code2) {
 		this.code2 = code2;
 	}
-	
 }

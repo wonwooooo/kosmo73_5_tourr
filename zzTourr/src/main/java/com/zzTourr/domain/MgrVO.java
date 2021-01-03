@@ -2,35 +2,47 @@ package com.zzTourr.domain;
 
 public class MgrVO {
 	
-	private String mgrTel;
-	private String mgrId;
-	private String mgrName;
-	private String mgrPass;
+	private String lodTel;
+	private String ownerId;
+	private String ownerName;
+	private String owPass;
 	
-	public String getMgrTel() {
-		return mgrTel;
+	
+	public String getLodTel() {
+		return lodTel;
 	}
-	public void setMgrTel(String mgrTel) {
-		this.mgrTel = mgrTel;
+	public void setLodTel(String lodTel) {
+		this.lodTel = lodTel;
 	}
-	public String getMgrId() {
-		return mgrId;
+	public String getOwnerId() {
+		return ownerId;
+		}
+	public void setOwnerId(String ownerId) {
+		this.ownerId = ownerId;
 	}
-	public void setMgrId(String mgrId) {
-		this.mgrId = mgrId;
+	public String getOwnerName() {
+		return ownerName;
 	}
-	public String getMgrName() {
-		return mgrName;
+	public void setOwnerName(String ownerName) {
+		this.ownerName = ownerName;
 	}
-	public void setMgrName(String mgrName) {
-		this.mgrName = mgrName;
+
+
+	public String getOwPass() {
+		return owPass;
 	}
-	public String getMgrPass() {
-		return mgrPass;
+
+
+	public void setOwPass(String owPass) {
+		this.owPass = owPass;
 	}
-	public void setMgrPass(String mgrPass) {
-		this.mgrPass = mgrPass;
+
+
+	@Override
+	public String toString() {
+		return "MgrVO [mgrTel=" + lodTel + ", mgrId=" + ownerId + ", mgrName=" + ownerName + ", mgrPass=" + owPass + "]";
 	}
+	
 	
 	
 }

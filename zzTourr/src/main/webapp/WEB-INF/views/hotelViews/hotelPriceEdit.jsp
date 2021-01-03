@@ -30,7 +30,6 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">숙소 등록</a></li>
             <li><a href="#">숙소 수정</a></li>
-            <li><a href="#">요금 설정</a></li>           
           </ul>
         </li>
         <li class="dropdown">

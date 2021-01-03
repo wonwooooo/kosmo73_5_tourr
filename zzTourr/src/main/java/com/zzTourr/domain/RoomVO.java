@@ -22,7 +22,7 @@ public class RoomVO {
 	
 	//*************************************************
 
-		MultipartFile file;	// write.jsp¿¡ ÆÄÀÏÃ·ºÎ½Ã name="file"°ú µ¿ÀÏÇÑ º¯¼ö¸í
+		MultipartFile file;	// write.jspï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã·ï¿½Î½ï¿½ name="file"ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 		
 		public MultipartFile getFile() {
 			return file;
@@ -30,14 +30,15 @@ public class RoomVO {
 		public void setFile(MultipartFile file) {
 			this.file = file;
 			
-			// ¾÷·Îµå ÆÄÀÏ Á¢±Ù
+			// ï¿½ï¿½ï¿½Îµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			if(! file.isEmpty()){
 				this.imgName = file.getOriginalFilename();
 				this.imgSize = file.getSize();
 				//C:\\Users\\kosmo_08\\git\\kosmo73_5_tourr\\zzTourr\\src\\main\\webapp\\resources\\hotelImgs
 				//***********************************************
-				// ÇØ´ç °æ·Î·Î º¯°æ
-				File f = new File("C:\\Users\\kosmo_08\\git\\kosmo73_5_tourr\\zzTourr\\src\\main\\webapp\\resources\\hotelImgs"+imgName);
+				// ï¿½Ø´ï¿½ ï¿½ï¿½Î·ï¿½ ï¿½ï¿½ï¿½ï¿½
+				File f = new File("C:\\Users\\kosmo_08\\git\\kosmo73_5_tourr\\zzTourr\\src\\main\\webapp\\resources\\hotelUpload\\"+imgName);
+				
 				
 				try {
 					file.transferTo(f);

@@ -34,15 +34,15 @@
           </li>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->
         
+   <c:if test="${sessionScope.login != null }">
      <li><a>마이페이지</a>
      <ul>
-            <li><a href="customerReserv.trip">구매내역</a></li>
-            <li><a href="customerCart.trip">장바구니</a></li>
-            <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
-            <li><a href="customerQna.trip">1:1 문의</a></li>
-            <li><a href="customerModify.trip">개인정보</a></li>
+            <li><a href="../customerViews/customerReservList.trip?userId=${sessionScope.loginId}&page=1">구매내역</a></li>
+            
+            <li><a href="../customerViews/customerInfo.trip?userId=${sessionScope.loginId}">개인정보</a></li>
           </ul>
      </li>
+     </c:if>
       
     </div>
   </div>
@@ -107,7 +107,8 @@
           
           <input type="hidden" name="category" value="자유게시판"/>
           <input type="hidden" name="userId" value="${sessionScope.loginId }"/>
-           <input type="hidden" name="pId" value="${articleId }"/>
+           <input type="text" name="pId" value="${articleId}"/>
+           ${articleId}
           <div style="float:right; padding:10px 25px 0 0;">
            
           </div>

@@ -3,6 +3,7 @@ package com.zzTourr.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.zzTourr.dao.HotelDAO;
 import com.zzTourr.dao.HotelDAOImpl;
 import com.zzTourr.domain.MgrVO;
 
@@ -10,17 +11,17 @@ import com.zzTourr.domain.MgrVO;
 public class HotelServiceImpl implements HotelService {
 	
 	@Autowired
-	private HotelDAOImpl hotelDAO;
-	
+	HotelDAO hotelDAO;
+
 	@Override
-	public int idInsert(MgrVO vo) {
-		System.out.println("HotelServiceImpl : idINnsert / 회원가입");
-		return hotelDAO.hotelMgrInsert(vo); 
-	}
+	public void hotelMgrInsert(MgrVO vo){
+		System.out.println("hotelServiceImpl : hotelMgrInsert / 회원가입aaaaaaaaaaaaaaaaaaaaaaa");
+		System.out.println(vo.toString());
 		
-	@Override
-	public MgrVO hotelMgrlogin(MgrVO vo) {
-		System.out.println("HotelServiceImpl : MgrLogin / 로그인");
-		return hotelDAO.hotelMgrlogin(vo);
+		hotelDAO.MgrInsert(vo);
+		
+		System.out.println("선관아 고마워");
 	}
+
+	
 }

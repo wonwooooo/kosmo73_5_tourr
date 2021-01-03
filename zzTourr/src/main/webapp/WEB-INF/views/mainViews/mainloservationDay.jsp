@@ -14,7 +14,7 @@ $(function(){
 
 	
 	  $('.checkInDate').click(function(){
-		  alert($(this).val())
+		 
 		    $.ajax({
 		    	type : 'post', //전송방식
 		    	async : true,	//비동기통신
@@ -115,11 +115,9 @@ $(function(){
     <c:if test="${sessionScope.login != null }">
      <li><a>마이페이지</a>
      <ul>
-            <li><a href="customerReserv.trip">구매내역</a></li>
-            <li><a href="customerCart.trip">장바구니</a></li>
-            <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
-            <li><a href="customerQna.trip">1:1 문의</a></li>
-            <li><a href="customerModify.trip">개인정보</a></li>
+            <li><a href="../customerViews/customerReservList.trip?userId=${sessionScope.loginId}&page=1">구매내역</a></li>
+            
+            <li><a href="../customerViews/customerInfo.trip?userId=${sessionScope.loginId}">개인정보</a></li>
           </ul>
      </li>
      </c:if>
@@ -164,7 +162,7 @@ $(function(){
                &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp; &nbsp;  &nbsp; &nbsp;날짜  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;날짜확인
                </div>
             
-      	<input type="hidden" name="productId" id="productId" class="productId" value="${reservation.productId }" />
+      	<input type="hidden" name="productId" id="productId" class="productId" value="${roomId }" />
       	 <input type="label"  id="checkInDate2" value="${reservation.checkInDate2 }" readonly />
              <input type="checkbox" name="checkInDate2" class="checkInDate"  value="${reservation.checkInDate2 }" />
           
@@ -185,6 +183,9 @@ $(function(){
  <a></a>
  <a>
 <input type="text" name="checkInDate2" value="${checkInDate2 }"  style="width:100px" readonly/>
+<input type="hidden" name="checkInDate" value="${checkInDate }"  style="width:100px" readonly/>
+<input type="hidden" name="checkOut" value="${checkOut }" style="width:100px" readonly/>
+
 </a>
 <div style="float:left">
 &nbsp; &nbsp;2. 체크아웃 날짜
@@ -208,6 +209,7 @@ $(function(){
 &nbsp; &nbsp;6. 최종 예약금액
  </div>
 <input type="text" name="reservPrice" value="${price }"  readonly/>
+<input type="hidden" name="category" value="${category }"  readonly/>
 <div>
 &nbsp; &nbsp;
  </div>

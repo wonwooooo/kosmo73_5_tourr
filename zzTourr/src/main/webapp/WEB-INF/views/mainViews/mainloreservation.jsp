@@ -95,11 +95,9 @@
     <c:if test="${sessionScope.login != null }">
      <li><a>마이페이지</a>
      <ul>
-            <li><a href="customerReserv.trip">구매내역</a></li>
-            <li><a href="customerCart.trip">장바구니</a></li>
-            <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
-            <li><a href="customerQna.trip">1:1 문의</a></li>
-            <li><a href="customerModify.trip">개인정보</a></li>
+            <li><a href="../customerViews/customerReservList.trip?userId=${sessionScope.loginId}&page=1">구매내역</a></li>
+            
+            <li><a href="../customerViews/customerInfo.trip?userId=${sessionScope.loginId}">개인정보</a></li>
           </ul>
      </li>
      </c:if>
@@ -135,8 +133,12 @@
               <label class="left">투숙인원: </label>
               <input type="text" class="form_input"name="maxPeople" id="maxPeople"  />
             </div>
-                     
+              <input type="hidden" class="form_input" name="checkInDate" value="${peakSumStart }" />
+               <input type="hidden" class="form_input" name="checkOut" value="${peakSumExit }" />
+                 <input type="hidden" class="form_input" name="category" value="${category }" />
             <input type="hidden" class="form_input" name="productId" value="${productId }" />
+             <input type="hidden" class="form_input" name="roomId" value="${roomId }" />
+           
               	 <br/><p>&nbsp; &nbsp;</p>	 
               	 <p>&nbsp; &nbsp;</p>	 
              <p>
@@ -186,21 +188,14 @@
         <div class="bottom_left_box"> </div>
           </div>
      
-        
-      
-       
-      </div>
+     
+     
         </div>
-    </div>
- <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>  
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
-      <p>&nbsp; </p>
+    
+
   <!-- end of main_content -->
+  </div>
+  </div>
  <div id="footer">
     
     <ul>

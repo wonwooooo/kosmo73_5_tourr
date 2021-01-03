@@ -1,5 +1,6 @@
 package com.zzTourr.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -33,12 +34,19 @@ public interface AdminDAO {
 	int selectTotalListCount(Map<String, Object> param);
 	
 	
-	// 객실예약목록 _201228 원우
+	// 호텔예약목록 _201228 원우
 	List<ReservationVO> roomReservList(Map<String, Object> aa);
 
 	
 	// 가이드예약목록 _201228 원우
 	List<ReservationVO> guideReservList(Map<String, Object> aa);
+	
+	// 게스트하우스예약목록 _201228 원우
+	List<ReservationVO> geReservList(Map<String, Object> aa);
+
+		
+	// 모텔예약목록 _201228 원우
+	List<ReservationVO> moReservList(Map<String, Object> aa);
 	
 	
 	// 회원목록 _201228 원우
@@ -62,6 +70,11 @@ public interface AdminDAO {
 	
 	// 차트 2
 	List<ChartVO> chart2(String yymm);
+	
+	
+	public int chart3();
+	
+	public int chart4();
 	
 	
 }

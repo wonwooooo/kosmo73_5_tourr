@@ -22,227 +22,227 @@ public class MainDAOImpl implements MainDAO{
 	@Autowired
 	private SqlSessionTemplate mybatis;
 	
-	//����-���-�˻�-�������ѹ�
+	//숙소-펜션-검색-페이지넘버
 	public List<LodgeVO> mainLodgeList(HashMap map) {
 		System.out.println("===> Mybatis mainLodgeList() ȣ��");
 		return mybatis.selectList("main.MainDAO.mainLodgeList", map);
 	}
 
-	//����-���-�������ѹ�
+	//숙소-펜션-페이지넘버
 	public int getTotalPagepen() {
 		System.out.println("===> Mybatis getTotalPagepen() ȣ��");
 		return mybatis.selectOne("main.MainDAO.getTotalPagepen");
 	}
 
-	//����-���-�˻�-����
+	//숙소-펜션-검색-보기
 	public List<LodgeVO> mainlodgelistserpen(HashMap map) {
 		System.out.println("===> Mybatis mainlodgelistserpen() ȣ��");
 		return mybatis.selectList("main.MainDAO.mainlodgelistserpen", map);
 	}
 
-	//����-���-�˻�-�������ѹ�
+	//숙소-펜션-검색-페이지넘버
 	public int getTotalPagepense(HashMap map) {
 		System.out.println("===> Mybatis getTotalPagepense() ȣ��");
 		return mybatis.selectOne("main.MainDAO.getTotalPagepense", map);
 	}
 
 	
-	//����-ȣ��-�������ѹ�
+	//숙소-호텔-페이지넘버
 	public int getTotalPageho() {
 		System.out.println("===> Mybatis getTotalPageho() ȣ��");
 		return mybatis.selectOne("main.MainDAO.getTotalPageho");
 	}
 
-	//����-ȣ��-����
+	//숙소-호텔-보기
 	public List<LodgeVO> mainLodgeListho(HashMap map) {
 		System.out.println("===> Mybatis mainLodgeListho() ȣ��");
 		return mybatis.selectList("main.MainDAO.mainLodgeListho", map);
 	}
 
-	//����-ȣ��-�˻�-����
+	//숙소-호텔-검색-보기
 	public List<LodgeVO> mainlodgelistserna(HashMap map) {
 		System.out.println("===> Mybatis mainlodgelistserna() ȣ��");
 		return mybatis.selectList("main.MainDAO.mainlodgelistserna", map);
 	}
 
-	//����-ȣ��-�˻�-�������ѹ�
+	//숙소-호텔-검색-페이지넘버
 	public int getTotalPagehose(HashMap map) {
 		System.out.println(map);
 		System.out.println("===> Mybatis getTotalPagehose() ȣ��");
 		return mybatis.selectOne("main.MainDAO.getTotalPagehose", map);
 	}
 
-	//����-����-�������ѹ�
+	//숙소-모텔-페이지넘버
 	public int getTotalPagemo() {
 		System.out.println("===> Mybatis getTotalPagemo() ȣ��");
 		return mybatis.selectOne("main.MainDAO.getTotalPagemo");
 	}
 
-	//����-����-����
+	//숙소-모텔-보기
 	public List<LodgeVO> mainLodgeListhmo(HashMap map) {
 		System.out.println("===> Mybatis mainLodgeListmo() ȣ��");
 		return mybatis.selectList("main.MainDAO.mainLodgeListmo", map);
 	}
 
-	//����-����-�˻�-����
+	//숙소-모텔-검색-보기
 	public List<LodgeVO> mainlodgelistsermo(HashMap map) {
 		System.out.println("===> Mybatis mainlodgelistsermo() ȣ��");
 		return mybatis.selectList("main.MainDAO.mainlodgelistsermo", map);
 	}
 
-	//����-����-�˻�-�������ѹ�
+	//숙소-모텔-검색-페이지넘버
 	public int getTotalPagemose(HashMap map) {
 		System.out.println("===> Mybatis getTotalPagemose() ȣ��");
 		return mybatis.selectOne("main.MainDAO.getTotalPagemose", map);
 	}
 
-	//����-����-�������ѹ�
+	//숙소-게하-페이지넘버
 	public int getTotalPagege() {
 		System.out.println("===> Mybatis getTotalPagege() ȣ��");
 		return mybatis.selectOne("main.MainDAO.getTotalPagege");
 	}
 
-	//����-����-��ü-����
+	//숙소-게하-전체-보기
 	public List<LodgeVO> mainLodgeListge(HashMap map) {
 		System.out.println("===> Mybatis mainLodgeListge() ȣ��");
 		return mybatis.selectList("main.MainDAO.mainLodgeListge", map);
 	}
 
-	//����-����-�˻�-����
+	//숙소-게하-검색-보기
 	public List<LodgeVO> mainlodgelistserge(HashMap map) {
 		System.out.println("===> Mybatis mainlodgelistserge() ȣ��");
 		return mybatis.selectList("main.MainDAO.mainlodgelistserge", map);
 	}
 
-	//����-����-�˻�-�������ѹ�
+	//숙소-게하-검색-페이지넘버
 	public int getTotalPagegese(HashMap map) {
 		System.out.println("===> Mybatis getTotalPagegese() ȣ��");
 		return mybatis.selectOne("main.MainDAO.getTotalPagegese", map);
 	}
 
-	//�α���
+	//로그인
 	public UsersVO mainmemberLogin(UsersVO vo) {
 		System.out.println("===> MemberMapper mainidCheck ȣ��");
 		return mybatis.selectOne("main.MainDAO.mainidCheck", vo);
 	}
 
-	//���̵�-����Ʈ
+	//가이드-리스트
 	public List<GuideTourVO> mainGuideList(HashMap map) {
 		System.out.println("===> Mybatis mainGuideList() ȣ��");
 		System.out.println(map);
 		return mybatis.selectList("main.MainDAO.mainGuideList", map);
 	}
 
-	//���̵�-��������
+	//가이드-페이지수
 	public int getTotalPageguide() {
 		System.out.println("===> Mybatis getTotalPageguide() ȣ��");
 		return mybatis.selectOne("main.MainDAO.getTotalPageguide");
 	}
 
-	//���̵�-�˻�-����Ʈ
+	//가이드-검색-리스트
 	public List<GuideTourVO> mainGuidelistser(HashMap map) {
 		System.out.println("===> Mybatis ser() ȣ��");
 		return mybatis.selectList("main.MainDAO.ser", map);
 	}
 
-	//���̵�-�˻�-��������
+	//가이드-검색-페이지수
 	public int getTotalPagega(HashMap map) {
 		System.out.println("===> Mybatis getTotalPagega() ȣ��");
 		return mybatis.selectOne("main.MainDAO.getTotalPagega", map);
 	}
 
-	//����-��������
+	//숙소-상세페이지
 	public LodgeVO mainlodgedetail(LodgeVO vo) {
 		System.out.println("===> Mybatis mainlodgedetail ȣ��");
 		return mybatis.selectOne("main.MainDAO.mainlodgedetail", vo);
 	}
 
-	//����-��������-Ŭ���� ��������
+	//숙소-상세페이지-클릭시 객실정보
 	public List<RoomVO> mainroomdetail(LodgeVO vo) {
 		System.out.println("===> Mybatis mainroomdetail ȣ��");
 		return mybatis.selectList("main.MainDAO.mainroomdetail", vo);
 	}
 
-	//����-��������-������-����Ʈ
+	//숙소-상세페이지-고객리뷰-리스트
 	public List<ProductRevboVO> mainProRevList(HashMap map) {
 		System.out.println("===> Mybatis mainProRevList() ȣ��");
 		return mybatis.selectList("main.MainDAO.mainProRevList", map);
 	}
 
-	//����-��������-������-������
+	//숙소-상세페이지-고객리뷰-페이지
 	public int mainProRevPage(int lodIdNum) {
 		System.out.println("===> Mybatis mainProRevPage() ȣ��");
 		return mybatis.selectOne("main.MainDAO.mainProRevPage", lodIdNum);
 	}
 
-	//���̵� ��������(���̵�����)
+	//가이드 상세페이지(가이드정보)
 	public GuideTourVO mainguidedetail(String programName) {
 		System.out.println("===> Mybatis mainguidedetail ȣ��");
 		return mybatis.selectOne("main.MainDAO.mainguidedetail", programName);
 	}
 
-	//���̵� �������� ��ȸ-������-��ü����Ʈ
+	//가이드 상세페이지 조회-고객리뷰-전체리스트
 	public List<ProductRevboVO> mainProRevListga(HashMap map) {
 		System.out.println("===> Mybatis mainProRevListga() ȣ��");
 		return mybatis.selectList("main.MainDAO.mainProRevListga", map);
 	}
 
-	//���̵� �������� ��ȸ-������-������
+	//가이드 상세페이지 조회-고객리뷰-페이지
 	public int mainProRevPagega(String programName) {
 		System.out.println("===> Mybatis mainProRevPagega() ȣ��");
 		return mybatis.selectOne("main.MainDAO.mainProRevPagega", programName);
 	}
 
-	//�����Խ���-��ü����Ʈ
+	//자유게시판-전체리스트
 	public List<ComBoardVO> mainComBoardList(HashMap map) {
 		System.out.println("===> Mybatis mainProRevListga() ȣ��");
 		return mybatis.selectList("main.MainDAO.mainComBoardList", map);
 	}
-
-	//�����Խ���-��ü��������
+	
+	//자유게시판-전체페이지수
 	public int getTotalPageComBoard() {
 		System.out.println("===> Mybatis getTotalPageComBoard() ȣ��");
 		return mybatis.selectOne("main.MainDAO.getTotalPageComBoard");
 	}
 
-	//�����Խ���-�׷��ȣ�޾ƿ���
+	//자유게시판-그룹번호받아오기
 	public int mainGetFrGroupIddao() {
 		System.out.println("===> Mybatis mainGetFrGroupIddao() ȣ��");
 		return mybatis.selectOne("main.MainDAO.mainGetFrGroupIddao");
 	}
 
-	//�����Խ���-�۾���
+	//자유게시판-글쓰기
 	public int insertComBoard(ComBoardVO vo) {
 		System.out.println("===> Mybatis insertComBoard() ȣ��");
 		return mybatis.insert("main.MainDAO.insertComBoard", vo);
 	}
-	//�����Խ���-�ۺ���
+	//자유게시판-글보기
 	public ComBoardVO mainfreeBoardViewdao(int articleId) {
 		System.out.println("===> Mybatis mainfreeBoardViewdao ȣ��");
 		return mybatis.selectOne("main.MainDAO.mainfreeBoardViewdao", articleId);
 	}
 
-	//�����Խ���-�� ���� ��ȸ�� +1 ����
+	//자유게시판-조회수 수정
 	public void updateFreeBoardCountdao(int articleId) {
 		System.out.println("===> Mybatis updateFreeBoardCountdao() ȣ��");
 		mybatis.update("main.MainDAO.updateFreeBoardCountdao", articleId);
 		
 	}
 
-	//�����Խ���-�ۼ���
+	//자유게시판-글수정
 	public void mainupdatefrBoard(ComBoardVO vo) {
 		System.out.println("===> Mybatis mainupdatefrBoard ȣ��");
 		mybatis.update("main.MainDAO.mainupdatefrBoard", vo);
 	}
 
-	//�����Խ���-�ۻ���
+	//자유게시판-글보기
 	public void maindeletefrBoard(ComBoardVO vo) {
 		System.out.println("===> Mybatis maindeletefrBoard ȣ��");
 		mybatis.update("main.MainDAO.maindeletefrBoard", vo);
 	}
 
 	//����� ��ȣ
-	public String selectLastSequenceNumber(String maxSeqNum, String minSeqNum) {
+	public String selectLastSequenceNumber(int maxSeqNum, int minSeqNum) {
 		HashMap map = new HashMap();
 		map.put("maxSeqNum", maxSeqNum);	
 		map.put("minSeqNum", minSeqNum);
@@ -281,10 +281,10 @@ public class MainDAOImpl implements MainDAO{
 	}
 	
 	//���Ǽ� üũ
-	public int roomNum(ReservationVO vo) {
+	public int roomNum(HashMap map) {
 		System.out.println("===> Mybatis roomNum ȣ��");
-		//System.out.println(map);
-		return mybatis.selectOne("main.MainDAO.roomNum", vo);
+		System.out.println(map);
+		return mybatis.selectOne("main.MainDAO.roomNum", map);
 	}
 
 	//예약하기

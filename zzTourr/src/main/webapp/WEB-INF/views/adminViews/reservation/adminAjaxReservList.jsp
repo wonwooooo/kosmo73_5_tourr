@@ -27,10 +27,16 @@
                                         <a class="nav-link active show" id="pills-campaign-tab" data-toggle="pill" href="#pills-campaign" role="tab" aria-controls="pills-campaign" aria-selected="true">Total</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="pills-packages-tab" data-toggle="pill" href="#pills-packages" role="tab" aria-controls="pills-packages" aria-selected="false">Room</a>
+                                        <a class="nav-link" id="pills-packages-tab" data-toggle="pill" href="#pills-packages" role="tab" aria-controls="pills-packages" aria-selected="false">호텔</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-selected="false">Guide</a>
+                                        <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-review" role="tab" aria-controls="pills-review" aria-selected="false">펜션</a>
+                                    </li>
+                                     <li class="nav-item">
+                                        <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-r" role="tab" aria-controls="pills-review" aria-selected="false">게스트하우스</a>
+                                    </li>
+                                     <li class="nav-item">
+                                        <a class="nav-link" id="pills-review-tab" data-toggle="pill" href="#pills-m" role="tab" aria-controls="pills-review" aria-selected="false">모텔</a>
                                     </li>
                                 </ul>
                                 <!-- ▶▶▶ end 탭 제목 ◀◀◀ -->
@@ -43,9 +49,9 @@
                                     <div class="tab-pane fade active show" id="pills-campaign" role="tabpanel" aria-labelledby="pills-campaign-tab">
                                         <div class="card">
                                         
-                                            <div class="card-header">
-                                            	요기는 검색 필터들
-                                            </div>
+<!--                                             <div class="card-header"> -->
+<!--                                             	요기는 검색 필터들 -->
+<!--                                             </div> -->
                                             
                                             <!-- ▷▷▷ Total Table ◁◁◁ -->
                                             <div class="card-body">
@@ -65,7 +71,7 @@
 					                                                <th>이용 시작일</th>
 					                                                <th>이용 종료일</th>
 					                                                <th>판매금액</th>
-					                                                <th>입금액</th>
+					                                               <th>입금액</th>
 					                                                <th>예약상태</th>
 					                                            </tr>
 					                                            
@@ -77,35 +83,18 @@
 					                                        	<tr>
 					                                        		<td>${vo.category }</td>
 					                                        		<td>${vo.resDate2 }</td>
-					                                       			<td>
-					                                       				<a href="/zzTourr/adminViews/reservation/adminReservDetail.trip">
-					                                       					${vo.resId }
-					                                        			</a>
-					                                        		</td>
+					                                        		<td>${vo.resId }</td>
 					                                        		<td>${vo.productId }</td>
 					                                        		<td>${vo.reservName }</td>
-				                                        		<c:choose>
-				                                        			<c:when test="${vo.category eq '숙소'}">
-					                                        			<td>${vo.checkInDate2 }</td>
-					                                        			<td>${vo.checkOut2 }</td>
-					                                        		</c:when>
-					                                        		<c:when test="${vo.category eq '가이드' }">
-					                                        			<td>${vo.checkInDate }</td>
-					                                        			<td>${vo.checkOut }</td>
-					                                        		</c:when>
-				                                        		</c:choose>
+					                                        		<td>${vo.checkInDate2 }</td>
+					                                        		<td>${vo.checkOut2 }</td>
 					                                        		<td>${vo.reservPrice }</td>
-					                                        	<c:if test="${vo.category eq '숙소' }">
-					                                        		<td>${vo.reservPrice * 0.87}</td>
-					                                        	</c:if>
-					                                        	<c:if test="${vo.category != '숙소' }">
-					                                        		<td>${vo.reservPrice * 0.85}</td>
-					                                        	</c:if>
+					                                        		<td>${vo.reservPrice*0.87 }</td>
 					                                        	<c:choose>
-					                                        		<c:when test="${vo.resState == '예약대기' }">
+					                                        		<c:when test="${vo.resState == '예약완료' }">
 					                                        			<td><span class="badge-dot badge-brand mr-1"></span>${vo.resState }</td>
 					                                        		</c:when>
-					                                        		<c:when test="${vo.resState eq '예약완료' }">
+					                                        		<c:when test="${vo.resState eq '결제완료' }">
 					                                        			<td><span class="badge-dot badge-success mr-1"></span>${vo.resState }</td>
 					                                        		</c:when>
 					                                        	</c:choose>
@@ -141,12 +130,12 @@
                                     <!-- ▶▶▶ end Total ◀◀◀ -->
                                     
                                     
-                                    <!-- ▶▶▶ Room ◀◀◀ -->
+                                    <!-- ▶▶▶ 호텔 ◀◀◀ -->
                                     <div class="tab-pane fade" id="pills-packages" role="tabpanel" aria-labelledby="pills-packages-tab">
                                         <div class="card">
-                                            <div class="card-header">
-                                            	요기는 검색 필터들
-                                            </div>
+<!--                                             <div class="card-header"> -->
+<!--                                             	요기는 검색 필터들 -->
+<!--                                             </div> -->
 
                                             <!-- ▷▷▷ Room Table ◁◁◁ -->
                                             <div class="card-body">
@@ -185,10 +174,10 @@
 					                                        		<td>${vo.reservPrice }</td>
 					                                        		<td>${vo.reservPrice*0.87 }</td>
 					                                        		<c:choose>
-					                                        		<c:when test="${vo.resState == '예약대기' }">
+					                                        		<c:when test="${vo.resState == '예약완료' }">
 					                                        			<td><span class="badge-dot badge-brand mr-1"></span>${vo.resState }</td>
 					                                        		</c:when>
-					                                        		<c:when test="${vo.resState eq '예약완료' }">
+					                                        		<c:when test="${vo.resState eq '결제완료' }">
 					                                        			<td><span class="badge-dot badge-success mr-1"></span>${vo.resState }</td>
 					                                        		</c:when>
 					                                        	</c:choose>
@@ -197,6 +186,8 @@
 					                                        </c:forEach>
 					                                      
 					                                    </table>
+					                                    
+					                                    
 								                    </div>
 								                    <!-- ============================================================== -->
 								                    <!-- end data table  -->
@@ -218,15 +209,15 @@
 <!--                                             </ul> -->
 <!--                                         </nav> -->
                                     </div>
-                                    <!-- ▶▶▶ end Room ◀◀◀ -->
+                                    <!-- ▶▶▶ end 호텔 ◀◀◀ -->
                                     
                                     
-                                    <!-- ▶▶▶ Guide ◀◀◀ -->
+                                    <!-- ▶▶▶ 펜션 ◀◀◀ -->
                                     <div class="tab-pane fade" id="pills-review" role="tabpanel" aria-labelledby="pills-review-tab">
                                         <div class="card">
-                                            <div class="card-header">
-                                            	요기는 검색 필터들
-                                            </div>
+<!--                                             <div class="card-header"> -->
+<!--                                             	요기는 검색 필터들 -->
+<!--                                             </div> -->
 
                                             <!-- ▷▷▷ Guide Table ◁◁◁ -->
                                             <div class="card-body">
@@ -265,10 +256,10 @@
 					                                        		<td>${vo.reservPrice }</td>
 					                                        		<td>${vo.reservPrice }</td>
 					                                        		<c:choose>
-					                                        		<c:when test="${vo.resState == '예약대기' }">
+					                                        		<c:when test="${vo.resState == '예약완료' }">
 					                                        			<td><span class="badge-dot badge-brand mr-1"></span>${vo.resState }</td>
 					                                        		</c:when>
-					                                        		<c:when test="${vo.resState eq '예약완료' }">
+					                                        		<c:when test="${vo.resState eq '결제완료' }">
 					                                        			<td><span class="badge-dot badge-success mr-1"></span>${vo.resState }</td>
 					                                        		</c:when>
 					                                        	</c:choose>
@@ -298,9 +289,163 @@
 <!--                                             </ul> -->
 <!--                                         </nav> -->
                                     </div>
-                                    <!-- ▶▶▶ end Guide ◀◀◀ -->
-                                
-                                    
+                                    <!-- ▶▶▶ end 펜션 ◀◀◀ -->
+                                <!-- ▶▶▶ 게스트하우스 ◀◀◀ -->
+                                    <div class="tab-pane fade" id="pills-m" role="tabpanel" aria-labelledby="pills-review-tab">
+                                        <div class="card">
+<!--                                             <div class="card-header"> -->
+<!--                                             	요기는 검색 필터들 -->
+<!--                                             </div> -->
+
+                                            <!-- ▷▷▷ Guide Table ◁◁◁ -->
+                                            <div class="card-body">
+								                <div class="row">
+								                    <!-- ============================================================== -->
+								                    <!-- data table  -->
+								                    <!-- ============================================================== -->
+								                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					                                    <table id="example" class="table table-striped table-bordered second" style="width:100%">
+					                                        <thead>
+					                                            <tr>
+					                                            	<th>분류</th>
+					                                                <th>예약일</th>
+					                                                <th>접수번호</th>
+					                                                <th>상품명</th>
+					                                                <th>예약자명</th>
+					                                                <th>이용 시작일</th>
+					                                                <th>이용 종료일</th>
+					                                                <th>판매금액</th>
+					                                                <th>입금액</th>
+					                                                <th>예약상태</th>
+					                                            </tr>
+					                                        </thead>
+					                                        
+					                                        <!-- 요 부분이 값을 자동으로 받아와야 하는 부분임 -->
+															<c:forEach var='vo' items="${mList }">
+					                                        <tbody>
+					                                        	<tr>
+					                                        		<td>${vo.category }</td>
+					                                        		<td>${vo.resDate2 }</td>
+					                                        		<td>${vo.resId }</td>
+					                                        		<td>${vo.productId }</td>
+					                                        		<td>${vo.reservName }</td>
+					                                        		<td>${vo.checkInDate }</td>
+					                                        		<td>${vo.checkOut }</td>
+					                                        		<td>${vo.reservPrice }</td>
+					                                        		<td>${vo.reservPrice }</td>
+					                                        		<c:choose>
+					                                        		<c:when test="${vo.resState == '예약완료' }">
+					                                        			<td><span class="badge-dot badge-brand mr-1"></span>${vo.resState }</td>
+					                                        		</c:when>
+					                                        		<c:when test="${vo.resState eq '결제완료' }">
+					                                        			<td><span class="badge-dot badge-success mr-1"></span>${vo.resState }</td>
+					                                        		</c:when>
+					                                        	</c:choose>
+					                                        	</tr>
+					                                        </tbody>
+					                                        </c:forEach>
+					                                        
+					                                    </table>
+								                    </div>
+								                    <!-- ============================================================== -->
+								                    <!-- end data table  -->
+								                    <!-- ============================================================== -->
+								                </div>
+                                            </div>
+											<!-- ▷▷▷ end Guide Table ◁◁◁ -->
+
+                                        </div>
+                                        
+                                        <!-- 페이징 -->
+<!--                                         <nav aria-label="Page navigation example"> -->
+<!--                                             <ul class="pagination"> -->
+<!--                                                 <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
+<!--                                                 <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+<!--                                                 <li class="page-item active"><a class="page-link " href="#">2</a></li> -->
+<!--                                                 <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+<!--                                                 <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+<!--                                             </ul> -->
+<!--                                         </nav> -->
+                                    </div>
+                                    <!-- ▶▶▶ end 게스트하우스 ◀◀◀ -->
+                                        <!-- ▶▶▶ 모텔 ◀◀◀ -->
+                                    <div class="tab-pane fade" id="pills-r" role="tabpanel" aria-labelledby="pills-review-tab">
+                                        <div class="card">
+<!--                                             <div class="card-header"> -->
+<!--                                             	요기는 검색 필터들 -->
+<!--                                             </div> -->
+
+                                            <!-- ▷▷▷ Guide Table ◁◁◁ -->
+                                            <div class="card-body">
+								                <div class="row">
+								                    <!-- ============================================================== -->
+								                    <!-- data table  -->
+								                    <!-- ============================================================== -->
+								                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					                                    <table id="example" class="table table-striped table-bordered second" style="width:100%">
+					                                        <thead>
+					                                            <tr>
+					                                            	<th>분류</th>
+					                                                <th>예약일</th>
+					                                                <th>접수번호</th>
+					                                                <th>상품명</th>
+					                                                <th>예약자명</th>
+					                                                <th>이용 시작일</th>
+					                                                <th>이용 종료일</th>
+					                                                <th>판매금액</th>
+					                                                <th>입금액</th>
+					                                                <th>예약상태</th>
+					                                            </tr>
+					                                        </thead>
+					                                        
+					                                        <!-- 요 부분이 값을 자동으로 받아와야 하는 부분임 -->
+															<c:forEach var='vo' items="${gsList }">
+					                                        <tbody>
+					                                        	<tr>
+					                                        		<td>${vo.category }</td>
+					                                        		<td>${vo.resDate2 }</td>
+					                                        		<td>${vo.resId }</td>
+					                                        		<td>${vo.productId }</td>
+					                                        		<td>${vo.reservName }</td>
+					                                        		<td>${vo.checkInDate }</td>
+					                                        		<td>${vo.checkOut }</td>
+					                                        		<td>${vo.reservPrice }</td>
+					                                        		<td>${vo.reservPrice }</td>
+					                                        		<c:choose>
+					                                        		<c:when test="${vo.resState == '예약완료' }">
+					                                        			<td><span class="badge-dot badge-brand mr-1"></span>${vo.resState }</td>
+					                                        		</c:when>
+					                                        		<c:when test="${vo.resState eq '결제완료' }">
+					                                        			<td><span class="badge-dot badge-success mr-1"></span>${vo.resState }</td>
+					                                        		</c:when>
+					                                        	</c:choose>
+					                                        	</tr>
+					                                        </tbody>
+					                                        </c:forEach>
+					                                        
+					                                    </table>
+								                    </div>
+								                    <!-- ============================================================== -->
+								                    <!-- end data table  -->
+								                    <!-- ============================================================== -->
+								                </div>
+                                            </div>
+											<!-- ▷▷▷ end Guide Table ◁◁◁ -->
+
+                                        </div>
+                                        
+                                        <!-- 페이징 -->
+<!--                                         <nav aria-label="Page navigation example"> -->
+<!--                                             <ul class="pagination"> -->
+<!--                                                 <li class="page-item"><a class="page-link" href="#">Previous</a></li> -->
+<!--                                                 <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+<!--                                                 <li class="page-item active"><a class="page-link " href="#">2</a></li> -->
+<!--                                                 <li class="page-item"><a class="page-link" href="#">3</a></li> -->
+<!--                                                 <li class="page-item"><a class="page-link" href="#">Next</a></li> -->
+<!--                                             </ul> -->
+<!--                                         </nav> -->
+                                    </div>
+                                    <!-- ▶▶▶ end 모텔 ◀◀◀ -->
                                 </div>
                                 <!-- ▶▶▶ end 탭 내용 ◀◀◀ -->
                                 
