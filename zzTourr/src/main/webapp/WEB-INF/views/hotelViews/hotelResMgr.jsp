@@ -10,61 +10,13 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/hotel.css" />
-
-</head>
 <script type="text/javascript"></script>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<body>
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="ownerlogin.trip">Re:ko</a>
-    </div>
+</head>
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-          숙소 관리 <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="newLodge.trip">숙소 등록</a></li>
-            <li><a href="ModifyLodge.trip">숙소 수정</a></li>
-            <li><a href="priceEdit.trip">요금 설정</a></li>           
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">예약 관리 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="ResMgr.trip">예약 관리</a></li>
-            <li><a href="salHis.trip">매출 내역</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" >리뷰 관리 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="Review.trip">리뷰 및 피드백</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" >계정 관리 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="Mypage.trip">마이페이지</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+<body>
+<jsp:include page="hotelMenu.jsp"/>
 <div class="col-sm-offset-1 col-sm-10 table-responsive" >
 <h2>예약목록</h2>
 <div class="table-res">
@@ -72,25 +24,29 @@
 	<thead>
 		<tr>
 			<th>예약번호</th>
-			<th>예약숙소/객실</th>
+			<th>상품id</th>
 			<th>체크인/체크아웃</th>
 			<th>회원명</th>
 			<th>회원연락처</th>
-			<th>인원</th>
+			<th>인원수</th>
 			<th>예약상태</th>
 		</tr>
 	</thead>
-	<tbody >
+	
+	<tbody>
+	<c:forEach items="" var="vo">
 		<tr>
-			<td>123123</td>
-			<td>123</td>
-			<td>123</td>
-			<td>123</td>
-			<td>123</td>
-			<td>123</td>
-			<td>123</td>
+			<td>${vo.resId}</td>
+			<td >${vo.productId}</td>
+			<td >${vo.checkInDate}/${vo.checkOut}</td>
+			<td >${vo.userName}</td>
+			<td >${vo.userTel}</td>
+			<td >${vo.peopleNum}</td>
+			<td >${vo.resState}</td>
 		</tr>
+		</c:forEach>
 	</tbody>
+	
 </table>
 </div>
 <hr/>

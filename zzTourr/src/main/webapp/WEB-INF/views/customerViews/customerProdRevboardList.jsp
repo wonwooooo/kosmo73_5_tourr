@@ -16,15 +16,50 @@
     <div class="banner_adds"></div>
     <div class="menu">
       <ul>
+      <li><a href="mainguidelist.trip">가이드</a></li>
+        <li><a>숙소
+          <!--[if IE 7]><!-->
+          </a>
+          <!--<![endif]-->
+          <!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul>
+           <li><a href="mainlodgelistho.trip?page=1">호텔</a></li>
+            <li><a href="mainlodgelistmo.trip?page=1">모텔</a></li>
+            <li><a href="mainlodgelistge.trip?page=1">게스트하우스</a></li>
+            <li><a href="mainlodgelist.trip?page=1">펜션</a></li>
+          </ul>
+          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
+        <li><a>커뮤니티
+          <!--[if IE 7]><!-->
+          </a>
+          <!--<![endif]-->
+          <!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul>
+            <li><a href="mainrvboardlist.trip">리뷰게시판</a></li>
+            <li><a href="mainfreeboardlist.trip">자유게시판</a></li>
+           
+          </ul>
+         </li>
+        <li><a>유용한 정보
+          <!--[if IE 7]><!-->
+          </a>
+          <!--<![endif]-->
+          <!--[if lte IE 6]><table><tr><td><![endif]-->
+          <ul>
+            <li><a href="http://all-free-download.com/free-website-templates/">지도</a></li>
+          </ul>
+          <!--[if lte IE 6]></td></tr></table></a><![endif]-->
+        </li>
         <li><a href>마이페이지
           </a>
           
           <ul>
-            <li><a href="customerReservList.trip">구매내역</a></li>
-<!--             <li><a href="customerCart.trip">장바구니</a></li> -->
-            <li><a href="customerProdRevboardList.trip">My 상품후기</a></li>
-            <li><a href="customerQnaList.trip">1:1 문의</a></li>
-            <li><a href="customerInfo.trip?userId=${sessionScope.loginId }">개인정보</a></li>
+          <li><a href="/customerViews/customerReservList.trip?userId=${sessionScope.loginId}">구매내역</a></li>
+     
+<%--             <li><a href="../customerViews/customerProdRevboard.trip?userId=${sessionScope.loginId}">My 상품후기</a></li> --%>
+            
+            <li><a href="/customerViews/customerInfo.trip?userId="${sessionScope.login}">개인정보</a></li>
           </ul>
         </li>
 
@@ -65,16 +100,14 @@
   </div>
   <!-- end of main_content -->
   <div id="footer">
-    <div id="copyright">
-      <div style="float:left; padding:3px;"><a href="http://all-free-download.com/free-website-templates/"><img src="images/footer_logo.gif" width="42" height="35" alt="" border="0" /></a></div>
-      <div style="float:left; padding:14px 10px 10px 10px;"> Company name.&copy; All Rights Reserved 2008 - By <a href="http://csscreme.com" style="color:#772c17;">csscreme</a></div>
-    </div>
-    <ul class="footer_menu">
-      <li><a href="http://all-free-download.com/free-website-templates/" class="nav_footer"> Home </a></li>
-      
+    
+    <ul>
+      <li> (주)리코 &nbsp; &nbsp;   | &nbsp; &nbsp;   대표 : 정원우, 서주영  &nbsp; &nbsp; |&nbsp; &nbsp;    주소 : (03161) 경기도 화성시 능동 1137 </li>
+      <li><a>이메일 : nattty@gmail.com &nbsp; &nbsp;   | &nbsp; &nbsp;  고객센터 : 010-4708-7412</a></li>
     </ul>
+ 
   </div>
 </div>
 <!-- end of main_container -->
-<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+</body>
 </html>

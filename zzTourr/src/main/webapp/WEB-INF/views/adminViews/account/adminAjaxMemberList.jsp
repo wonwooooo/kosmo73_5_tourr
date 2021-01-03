@@ -20,7 +20,7 @@
 				<th scope="col">nation</th>
 				<th scope="col">gender</th>
 				<th scope="col">age</th>
-				<th scope="col">DEL</th>
+<!-- 				<th scope="col">DEL</th> -->
 			</tr>
 		</thead>
 

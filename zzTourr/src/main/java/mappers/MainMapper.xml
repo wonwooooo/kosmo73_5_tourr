@@ -396,7 +396,7 @@ SELECT min(sequenceno) as minseq FROM comboard WHERE sequenceno < #{maxSeqNum} A
 </select>
 
 <!-- 객실수 체크 -->
-<select id="roomNum" parameterType="reservation" resultType="int">
+<select id="roomNum" parameterType="hashmap" resultType="int">
 	<![CDATA[
   select (select lodcount from room where productid=#{productId}) - (SELECT COUNT(*) CNT from reservation 
   where productid=#{productId} AND #{checkInDate2} >= CHECKINDATE2 AND #{checkInDate2} < CHECKOUT2) cnt from dual
@@ -405,8 +405,8 @@ SELECT min(sequenceno) as minseq FROM comboard WHERE sequenceno < #{maxSeqNum} A
 
 <!-- 예약하기 -->
 <insert id="insertRevDAO" parameterType="reservation">
-insert into reservation(resid, userid, category, productid, checkindate2, checkout2, reservname, reservtel, lodger, lodgertel, count, peoplenum, resdate2, resstate, reservprice)
-values(seq_resid.nextval, #{userId}, '숙소', #{productId}, #{checkInDate2}, #{checkOut2},  #{reservName},  #{reservTel}, #{lodger}, #{lodgerTel}, 1, #{peopleNum}, sysdate, '예약완료', #{reservPrice})
+insert into reservation(resid, userid, category, productid, checkindate2, checkout2, reservname, reservtel, lodger, lodgertel, count, peoplenum, resdate2, resstate, reservprice, checkINDATE, CHECKOUT)
+values(seq_resid.nextval, #{userId}, #{category}, #{productId}, #{checkInDate2}, #{checkOut2},  #{reservName},  #{reservTel}, #{lodger}, #{lodgerTel}, 1, #{peopleNum}, sysdate, '예약완료', #{reservPrice}, #{checkInDate}, #{checkOut})
 </insert>
 
 <!-- 펜션-메인리스트 -->

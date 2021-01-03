@@ -38,16 +38,16 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 	
 	// 아이디 중복 검사
-	public void idCheck(UsersVO vo) {
+	public int idCheck(UsersVO vo) {
 		System.out.println("===> Mybatis idCheck() 호출");
-	      mybatis.selectOne("customer.customerDAO.idCheck", vo);
+	     return mybatis.selectOne("customer.customerDAO.idCheck", vo);
 		
 	}
 
 	// 예약내역
-	public List<ReservationVO> reservationDAO(String userId) {
+	public List<ReservationVO> reservationDAO(HashMap map) {
 		System.out.println("===> Mybatis reservationDAO 호출");
-	    return  mybatis.selectList("customer.customerDAO.reservationDAO", userId);
+	    return  mybatis.selectList("customer.customerDAO.reservationDAO", map);
 	}
 
 	// 결제하기
@@ -55,7 +55,13 @@ public class CustomerDAOImpl implements CustomerDAO {
 		System.out.println("===> Mybatis customerPayment() 호출");
 	      mybatis.insert("customer.customerDAO.customerPayment", vo);
 	}
-
+	
+	// 결제하기-상태변경
+	public void customerUpdate(PaymentVO vo) {
+		System.out.println("===> Mybatis customerUpdate() 호출");
+	      mybatis.update("customer.customerDAO.customerUpdate", vo);
+	}
+	
 	// 상품후기 작성(화면)
 	public void customerInsertProdRev(ProductRevboVO vo) {
 		System.out.println("===> Mybatis customerInsertProdRev() 호출");
@@ -73,5 +79,14 @@ public class CustomerDAOImpl implements CustomerDAO {
 		System.out.println("===> Mybatis revListDAO 호출");
 		   return  mybatis.selectList("customer.customerDAO.revListDAO", map);
 	}
+
+	// 예약내역 페이지
+	public int resPageDAO() {
+		System.out.println("===> Mybatis reservationDAOPage호출");
+		   return  mybatis.selectOne("customer.customerDAO.reservationDAOPage");
+	}
+
+
+	}
 	
-}
+

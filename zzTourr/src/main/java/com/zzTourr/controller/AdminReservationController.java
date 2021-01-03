@@ -108,6 +108,8 @@ public class AdminReservationController {
 		model.addAttribute("tList", adminService.totalReservList(param));  // hashMap -> map으로
 		model.addAttribute("rList", adminService.roomReservList(param)); 
 		model.addAttribute("gList", adminService.guideReservList(param)); 
+		model.addAttribute("gsList", adminService.gesReservList(param)); 
+		model.addAttribute("mList", adminService.mosReservList(param)); 
 		
 		return "adminViews/reservation/adminAjaxReservList";
 		

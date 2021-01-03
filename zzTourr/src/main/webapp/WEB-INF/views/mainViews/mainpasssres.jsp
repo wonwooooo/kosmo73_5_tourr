@@ -58,14 +58,12 @@
           </ul>
           </li>
           <!--[if lte IE 6]></td></tr></table></a><![endif]-->	
-    <c:if test="${sessionScope.login != null }">
+  <c:if test="${sessionScope.login != null }">
      <li><a>마이페이지</a>
      <ul>
-            <li><a href="customerReserv.trip">구매내역</a></li>
-            <li><a href="customerCart.trip">장바구니</a></li>
-            <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
-            <li><a href="customerQna.trip">1:1 문의</a></li>
-            <li><a href="customerModify.trip">개인정보</a></li>
+            <li><a href="../customerViews/customerReservList.trip?userId=${sessionScope.loginId}&page=1">구매내역</a></li>
+            
+            <li><a href="../customerViews/customerInfo.trip?userId=${sessionScope.loginId}">개인정보</a></li>
           </ul>
      </li>
      </c:if>

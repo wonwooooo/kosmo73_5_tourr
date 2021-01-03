@@ -1,5 +1,6 @@
 package com.zzTourr.service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -91,6 +92,23 @@ public class AdminServiceImpl implements AdminService {
 	}
 	
 	
+	// 게스트하우스예약목록 _201228 원우
+	public List<ReservationVO> gesReservList(Map<String, Object> list) {
+		System.out.println("AdminServiceImpl : geReservList / 게스트하우스예약목록");
+		return adminDAO.geReservList(list);
+	}
+
+
+
+	// 모텔하우스예약목록 _201228 원우
+	public List<ReservationVO> mosReservList(Map<String, Object> list) {
+		System.out.println("AdminServiceImpl : moReservList / 모텔예약목록");
+		return adminDAO.moReservList(list);
+	}
+
+
+
+	
 	
 	// 회원목록 _201228 원우
 	@Override
@@ -136,9 +154,26 @@ public class AdminServiceImpl implements AdminService {
 		
 		return adminDAO.chart2(yymm);
 	}
+	
+	// 차트 1
+	@Override
+	public int chart3() {
+			System.out.println("서비스임플 : chart3");
+			
+			return adminDAO.chart3();
+	}
 
 
+	// 차트 2
+	@Override
+	public int chart4() {
+			System.out.println("서비스임플 : chart4");
+			
+	return adminDAO.chart4();
+	}
 
+
+	
 
 
 }

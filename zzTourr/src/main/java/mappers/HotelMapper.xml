@@ -3,17 +3,59 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace = "Hotel">
+<mapper namespace = "hotel">
+
 	<!-- 회원가입 -->
-	<insert id="insertId" parameterType='mgr'>
-		
+	<insert id="MgrInsert">
+		INSERT INTO lodowner(LODTEL,OWNERID,OWNERNAME,OWPASS)
+		VALUES(#{lodTel},#{ownerId},#{ownerName},#{owPass})
 	</insert> 
 	
-	<!-- 로그인 -->
-	<select id="loginId" parameterType="mgr" resultType="mgr">
-	<![CDATA[
-		
-	]]>
+	 <!-- 로그인 -->
+	<select id="MgrLogin" parameterType="mgr" resultType="mgr">
+		SELECT * FROM lodowner 
+	 	WHERE ownerid = #{ownerId} AND owpass = #{owPass}
 	</select>
-
+	
+	
+	
+	<!-- 숙소주인 정보가져오기 -->
+	<select id="selMgr" resultType="mgr">
+		SELECT * FROM lodowner
+		WHERE lodTel = #{lodTel}
+	</select>
+	
+	 <!-- 숙소주인 개인정보수정 -->
+	<update id="updateMgr">
+	<![CDATA[
+	UPDATE lodowner SET ownerid = #{ownerId}, ownerName= #{ownerName}, owpass=#{owPass} WHERE LODTEL = #{lodTel}
+	]]>
+	</update>
+	
+	<!-- 숙소등록 -->
+	<insert id="LodgeInsert">
+		INSERT INTO lodge(LODTEL,LODID,LODNAME,LODADDR,LODCONT,LODCONVEN,LODCATE,LODCOUNT,ip,imgname,imgsize)
+		VALUES(#{lodTel},SEQ_LODGEID.nextval,#{lodName},#{lodAddr},#{lodCont},#{lodConven},#{lodCate},0,#{ip},#{imgName},#{imgSize}
+		)
+	</insert>
+	<!-- 숙소 수정 -->
+	<update id="updateLodge">
+		UPDATE lodge set LODTEL,LODID,LODNAME,LODADDR,LODCONT,LODCONVEN,LODCATE,LODCOUNT,PEAKSUMSTART,PEAKSUMEXIT,PEAKWINSTART
+		,PEAKWINEXIT,IP,IMGNAME,IMGSIZE WHERE LODTEL = #{lodTel} AND  LODID = #{lodId}
+		
+	
+	</update>
+	
+	<!-- 시퀀스번호 -->
+	<select id="RoomSep" resultType="int">
+	select	(select last_number from user_sequences where sequence_name =  'SEQ_LODGEID')-1 from dual
+	</select>
+	
+	<!-- 객실등록 -->
+	<insert id="RoomInsert" parameterType="room">
+		insert into room(productid, lodgeid, roomname, roomcont, peakprice, offprice, lodcount, ip, imgname, imgsize, maxpeople)
+		VALUES(SEQ_productid.nextval,#{lodgeId},#{roomName},#{roomCont},#{peakPrice},#{offPrice},#{lodCount},#{ip},#{imgName},#{imgSize},#{maxPeople}
+		)
+	</insert>
+	
 </mapper>

@@ -38,7 +38,6 @@
           <ul class="dropdown-menu">
             <li><a href="newLodge.trip">숙소 등록</a></li>
             <li><a href="ModifyLodge.trip">숙소 수정</a></li>
-            <li><a href="priceEdit.trip">요금 설정</a></li>           
           </ul>
         </li>
         <li class="dropdown">

@@ -39,7 +39,7 @@ public class AdminEnterController {
 		String message = null;
 		
 		if(result > 0) {
-			message = vo.getAdminName() + "님 가입 ㅊㅊ";
+			message = vo.getAdminName() + "님 가입을 축하드립니다.";
 		}
 		else {
 			message = "회원가입 실패";
@@ -89,13 +89,13 @@ public class AdminEnterController {
 		
 		if(result==null || result.getAdminId()==null) {
 			mv.setViewName("adminViews/enter/adminLogin");
-			alert = "id / pw 를 확인하셈";
+			alert = "id / pw 를 확인 부탁드립니다";
 			mv.addObject("alert", alert);
 			
 			return mv;
 		}
 		else {
-			session.setAttribute("login", result.getAdminName());
+			session.setAttribute("loginadmin", result.getAdminName());
 			
 			Cookie setCookie = new Cookie("userInputId", result.getAdminId()); // 쿠키 이름을 name으로 생성
 			mv.addObject(setCookie);	//  mv에 쿠키 추가
@@ -139,7 +139,7 @@ public class AdminEnterController {
 		
 		int result = 0;
 		
-        if (session.getAttribute("login") != null) {
+        if (session.getAttribute("loginadmin") != null) {
             //로그 아웃시에 모든 쿠키 값들을 비워줌
             session.invalidate(); //session 초기화
             System.out.println("로그아웃되나요");

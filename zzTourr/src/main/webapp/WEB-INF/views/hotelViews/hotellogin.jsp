@@ -26,13 +26,13 @@
   <div class="form-group">
     <label for="inputEmail3" class="col-sm-2 control-label">아이디</label>
     <div class="col-sm-5">
-      <input class="form-control" id="inputid" placeholder="id">
+      <input class="form-control" id="inputid" placeholder="id" name="ownerId">
     </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">비밀번호</label>
     <div class="col-sm-5">
-      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="owPass">
     </div>
   </div>
   <div class="form-group">
@@ -41,11 +41,11 @@
     </div>
   </div>
 </form><br/>
-<form class="form-horizontal" action="newOwner.trip" method="post">
+<form class="form-horizontal" action="ownerInsert.trip" method="post">
 <div class="form-group">
 	<div class="col-sm-offset-2 col-sm-4">
 		아직 호스팅 아이디가 없으신가요? &nbsp;
-		<input class="btn btn-default" type="submit" name="newOwner" value="회원가입" />
+		<input class="btn btn-default" type="submit" name="ownerInsert" value="회원가입" />
 	</div>
 	</div>
 </form>

@@ -160,9 +160,9 @@
 	                </div>
 	                
 	                <!-- ★★★★★ 첫 접속시 비번찾기 ★★★★★ -->
-	                <div class="card-footer-item card-footer-item-bordered">
-	                    <a href="adminForgotPw.trip" class="footer-link">Forgot Password</a>
-	                </div>
+<!-- 	                <div class="card-footer-item card-footer-item-bordered"> -->
+<!-- 	                    <a href="adminForgotPw.trip" class="footer-link">Forgot Password</a> -->
+<!-- 	                </div> -->
 	                
 	            </c:if>
 	            
@@ -174,9 +174,9 @@
 	                </div>
 	                
 	                <!-- ★★★★★ 로그아웃 후 비번찾기 ★★★★★ -->
-	                <div class="card-footer-item card-footer-item-bordered">
-	                    <a href="/zzTourr/enter/adminForgotPw.trip" class="footer-link">Forgot Password</a>
-	                </div>
+<!-- 	                <div class="card-footer-item card-footer-item-bordered"> -->
+<!-- 	                    <a href="/zzTourr/enter/adminForgotPw.trip" class="footer-link">Forgot Password</a> -->
+<!-- 	                </div> -->
 	                
 	            </c:if>
 	            

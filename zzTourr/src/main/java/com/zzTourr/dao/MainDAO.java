@@ -131,13 +131,13 @@ public interface MainDAO {
 	public void mainrvdeletefrBoard(ComBoardVO vo);
 
 	//답글의 번호
-	public String selectLastSequenceNumber(String maxSeqNum, String minSeqNum);
+	public String selectLastSequenceNumber(int maxSeqNum, int minSeqNum);
 	
 	//리스트-숙소-날짜
 	public List<ReservationVO> mainlosevDateDAO(ReservationVO vo);
 	
 	//���� �ܿ� ����
-	public int roomNum(ReservationVO vo);
+	public int roomNum(HashMap map);
 	
 	//메인페이지-펜션
 	public List<LodgeVO> mmainLodgeListpen();

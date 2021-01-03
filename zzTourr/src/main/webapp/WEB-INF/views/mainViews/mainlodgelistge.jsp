@@ -42,11 +42,9 @@
       <c:if test="${sessionScope.login != null }">
      <li><a>마이페이지</a>
      <ul>
-            <li><a href="customerReserv.trip">구매내역</a></li>
-            <li><a href="customerCart.trip">장바구니</a></li>
-            <li><a href="customerProdRevboard.trip">My 상품후기</a></li>
-            <li><a href="customerQna.trip">1:1 문의</a></li>
-            <li><a href="customerModify.trip">개인정보</a></li>
+            <li><a href="../customerViews/customerReservList.trip?userId=${sessionScope.loginId}&page=1">구매내역</a></li>
+            
+            <li><a href="../customerViews/customerInfo.trip?userId=${sessionScope.loginId}">개인정보</a></li>
           </ul>
      </li>
      </c:if>
@@ -65,13 +63,8 @@
             <div style="float:right; padding:10px 25px 0 0;">
                 <a href="mainlogin.trip"><input type="button" value="로그인" /></a>
             </div>
-       <div class="form_row">
-              <a href="mainpassmiss.trip" style="text-decoration: none; color:#615357;"><label style="float:center;">아이디/비밀번호 찾기</label></a>
-            
-            </div>
-            
-             <div class="form_row">
-              <label style="float:center;">회원가입 </label>
+        <div class="form_row">
+              <a href="../customerViews/customerJoin.trip"  style="text-decoration: none; color:#615357;"><label style="float:center;">회원가입 </label></a>
            </div>
           </div>
 	 <div class="bottom_left_box"> </div>

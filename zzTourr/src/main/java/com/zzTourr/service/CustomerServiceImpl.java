@@ -15,6 +15,13 @@ import com.zzTourr.domain.UsersVO;
 
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
+	
+	private int totalRecCount;	
+	
+	private int pageTotalCount;		
+	
+	//한 페이지당 예약내역 수
+	private int countPerPage = 10;
 
 	@Autowired
 	private CustomerDAOImpl customerDAO;
@@ -36,18 +43,25 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	//아이디 중복 검사
-	public void idCheck(UsersVO vo) {
-		customerDAO.idCheck(vo);
+	//public void idCheck(UsersVO vo) {
+	//	customerDAO.idCheck(vo);
 		
-	}
+	//}
 
 	//예약내역
-	public List<ReservationVO> reservation(String userId) {
-		return customerDAO.reservationDAO(userId);
+	public List<ReservationVO> reservation(String userId, int pageNo) {
+		int firstRow = (pageNo-1)*countPerPage + 1;
+		int endRow = pageNo*countPerPage; 
+		HashMap map = new HashMap();
+		map.put("userId", userId);
+		map.put("row1", firstRow);	
+		map.put("row2", endRow);
+		return customerDAO.reservationDAO(map);
 	}
 
 	//결제하기
 	public void customerPayment(PaymentVO vo) {
+		
 		customerDAO.customerPayment(vo);
 	}
 
@@ -63,10 +77,30 @@ public class CustomerServiceImpl implements CustomerService {
 
 	//상품후기 내역
 	public List<ProductRevboVO> productrevbo(String resId, String productId) {
+		int pp = Integer.parseInt(productId);
 		HashMap map = new HashMap();
 		map.put("resId", resId);
-		map.put("productId", productId);
+		map.put("productId", pp);
 		return customerDAO.revListDAO(map);
+	}
+
+	//예약내역 페이지
+	public int resPage() {
+		totalRecCount = customerDAO.resPageDAO();
+		pageTotalCount = totalRecCount / countPerPage;
+		if(totalRecCount % countPerPage != 0)pageTotalCount++;
+	
+		return pageTotalCount;
+	}
+
+	//아이디 중복 검사
+	public int idChecks(UsersVO vo) {
+		return customerDAO.idCheck(vo);
+	}
+
+	//결제하기-상태변경
+	public void customerUpdate(PaymentVO vo) {
+		customerDAO.customerUpdate(vo);
 	}
 	
 }

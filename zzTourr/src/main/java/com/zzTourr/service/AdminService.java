@@ -1,5 +1,5 @@
 package com.zzTourr.service;
-
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -36,13 +36,20 @@ public interface AdminService {
 	public PageMaker pagingInfo(Map<String, Object> param, Criteria cri) throws Exception;
 	
 	
-	// 객실예약목록 _201228 원우
+	// 호텔예약목록 _201228 원우
 	public List<ReservationVO> roomReservList(Map<String, Object> list);
 	
 	
-	// 가이드예약목록 _201228 원우
+	// 펜션예약목록 _201228 원우
 	public List<ReservationVO> guideReservList(Map<String, Object> list);
 
+	// 게스트하우스예약목록 _201228 원우
+	public List<ReservationVO> gesReservList(Map<String, Object> list);
+		
+		
+	// 모텔가이드예약목록 _201228 원우
+	public List<ReservationVO> mosReservList(Map<String, Object> list);
+	
 	
 	// 회원목록 _201228 원우
 	public List<UsersVO> memberList();
@@ -67,7 +74,9 @@ public interface AdminService {
 	// 차트 2
 	public List<ChartVO> chart2(String yymm);	
 	
+	public int chart3();
 	
+	public int chart4();
 	
 	
 	

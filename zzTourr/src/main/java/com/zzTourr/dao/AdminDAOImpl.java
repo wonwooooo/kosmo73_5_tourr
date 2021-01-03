@@ -1,5 +1,6 @@
 package com.zzTourr.dao;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -63,17 +64,17 @@ public class AdminDAOImpl implements AdminDAO {
 	// 객실예약목록 _201228 원우
 	@Override
 	public List<ReservationVO> roomReservList(Map<String, Object> aa) {
-		System.out.println("AdminDAOImpl : roomReservList / 객실예약목록");
+		System.out.println("AdminDAOImpl : roomReservList / 호텔예약목록");
 		return mybatis.selectList("manager.roomReservList",aa);
 		
 	}	// end of reservList
 
 
 
-	// 가이드예약목록 _201228 원우
+	// 펜션예약목록 _201228 원우
 	@Override
 	public List<ReservationVO> guideReservList(Map<String, Object> aa) {
-		System.out.println("AdminDAOImpl : guideReservList / 가이드예약목록");
+		System.out.println("AdminDAOImpl : guideReservList / 펜션예약목록");
 		return mybatis.selectList("manager.guideReservList",aa);
 		
 	}	// end of guideReservList
@@ -87,6 +88,23 @@ public class AdminDAOImpl implements AdminDAO {
 		return mybatis.selectList("manager.memberList");
 		
 	}	// end of memberList
+
+	
+	//게스트하우스예약목록 _201228 원우
+	public List<ReservationVO> geReservList(Map<String, Object> aa) {
+		System.out.println("AdminDAOImpl : geReservList / 게스트하우스예약목록");
+		return mybatis.selectList("manager.geReservList",aa);
+		
+	}
+
+
+
+	//모텔예약목록 _201228 원우
+	public List<ReservationVO> moReservList(Map<String, Object> aa) {
+		System.out.println("AdminDAOImpl : moReservList / 모텔예약목록");
+		return mybatis.selectList("manager.moReservList",aa);
+		
+	}
 
 
 
@@ -109,8 +127,7 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 
-	
-	
+
 	
 	
 	
@@ -135,8 +152,17 @@ public class AdminDAOImpl implements AdminDAO {
 		return mybatis.selectList("manager.chart2", yymm);
 	}
 
+	//차트
+	public int chart3() {
+			System.out.println("다오임플 : chart3");
+			return mybatis.selectOne("manager.chart3");
+	}
 
-
+	//차트
+	public int chart4() {
+			System.out.println("다오임플 : chart4");
+			return mybatis.selectOne("manager.chart4");
+	}
 
 	
 	

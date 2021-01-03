@@ -6,12 +6,23 @@
 
 <!-- VO 객체 별칭 지정 -->
 <typeAliases>
-	<typeAlias type="com.zzTourr.domain.mainVO" alias='main'/>
-	<typeAlias type="com.zzTourr.domain.customerVO" alias='customer'/>
-	<typeAlias type="com.zzTourr.domain.adminVO" alias='admin'/>
-	<typeAlias type="com.zzTourr.domain.hotelVO" alias='hotel'/>
-	
+		<typeAlias type="com.zzTourr.domain.MainVO" alias='main'/>
+		<typeAlias type="com.zzTourr.domain.CustomerVO" alias='customer'/>
+		<typeAlias type="com.zzTourr.domain.AdminVO" alias='admin'/>
+		<typeAlias type="com.zzTourr.domain.HotelVO" alias='hotel'/>
+		<typeAlias type="com.zzTourr.domain.LodgeVO" alias="lodge"/>		
+		<typeAlias type="com.zzTourr.domain.UsersVO" alias='users'/>
+		<typeAlias type="com.zzTourr.domain.GuideTourVO" alias='guidetour'/>
+		<typeAlias type="com.zzTourr.domain.RoomVO" alias='room'/>
+		<typeAlias type="com.zzTourr.domain.ProductRevboVO" alias='productrevbo'/>
+		<typeAlias type="com.zzTourr.domain.ComBoardVO" alias='comboard'/>
+		<typeAlias type="com.zzTourr.domain.ReservationVO" alias='reservation'/>
+		<typeAlias type="com.zzTourr.domain.PaymentVO" alias='payment'/>
+		<typeAlias type="com.zzTourr.domain.MgrVO" alias='mgr'/>
+		<typeAlias type="com.zzTourr.domain.ChartVO" alias='chart'/>
+		
 </typeAliases>
+	
 
 </configuration>
 

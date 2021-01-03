@@ -12,7 +12,7 @@
    </insert>
    
    <!-- 아이디 중복 검사 -->
-   <select id="customerIdcheck" parameterType="String" resultType="int">
+   <select id="idCheck" parameterType="String" resultType="int">
    	 SELECT count(*) FROM users WHERE userId = #{userId}
    </select>
    
@@ -20,7 +20,7 @@
    <!-- 회원정보 수정(비밀번호) -->
    <update id="customerModify" parameterType="users">
    	 <![CDATA[
-   		UPDATE users SET password = #{password}
+   		UPDATE users SET password = #{password}, username = #{userName}, usertel=#{userTel}, email=#{email}, nation=#{nation}, gender=#{gender}, age=#{age}
    		WHERE userid = #{userId}
    	]]>
    </update>
@@ -31,11 +31,22 @@
    </select>
    
    <!-- 세션으로 불러온 id에 맞는 예약내역을 list로 호출 -->
-   <select id="reservationDAO" parameterType="String" resultType="reservation">
-	select resid, (select lodname from lodge where lodid in (select lodgeid from room where productid  in (select productid from room where productid in (select productid from reservation where userid=#{userId})))) || ' / ' ||
-(select roomname from room where productid in (select productid from reservation where userid = #{userId}))
-as category, reservprice, peoplenum, checkindate2, resstate, resdate2, productId from reservation where userid=#{userId}
+   <select id="reservationDAO" parameterType="HashMap" resultType="reservation">
+     	 <![CDATA[
+ select resid, reservprice, peoplenum, checkindate2, resstate, resdate2, productId, checkindate, checkout from reservation  where userid=#{userId} and resid in
+	(select resid from (select rownum as rnum, resid 
+	from (select resid from reservation  WHERE userid=#{userId} order by resid desc)) where rnum>=#{row1} and rnum<=#{row2}) 
+	order by resid desc
+		]]>
    </select>
+   
+   	<!-- 예약내역 list 페이징 쿼리 -->
+	<select id="reservationDAOPage" resultType="int">
+		<![CDATA[
+select count(*) cnt from reservation
+		]]>
+	</select>
+		
    
    <!-- 결제하기 -->
    <insert id="customerPayment" parameterType="payment">
@@ -44,6 +55,13 @@ as category, reservprice, peoplenum, checkindate2, resstate, resdate2, productId
 		VALUES (SEQ_PAYID.nextval, #{resId}, #{payPrice}, sysdate)
       ]]>
    </insert>
+   
+    <!-- 수정하기 -->
+   <update id="customerUpdate" >
+      <![CDATA[
+		 update reservation set resstate='결제완료' where resid=#{resId}
+      ]]>
+   </update>
    
    <!-- 상품후기 작성 -->
    <insert id="revInsertDao" parameterType="productrevbo">
@@ -54,10 +72,10 @@ as category, reservprice, peoplenum, checkindate2, resstate, resdate2, productId
    </insert>
    
    <!-- 상품후기 내역 -->
-   <select id="revListDAO" parameterType="String" resultType="productrevbo">
-   		select * from productrevbo where res
+<!--    <select id="revListDAO" parameterType="String" resultType="productrevbo"> -->
+<!--    		select * from productrevbo where res -->
    
-   </select>
+<!--    </select> -->
    
    
 </mapper>

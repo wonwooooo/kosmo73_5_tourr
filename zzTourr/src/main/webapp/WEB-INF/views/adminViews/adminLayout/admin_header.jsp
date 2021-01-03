@@ -15,21 +15,21 @@
 			- 회사 이름
 			- 클릭시 유저페이지로 이동 
 		 -->
-		<a class="navbar-brand" href="/">Re:KO</a>
+		<a class="navbar-brand" >Re:KO</a>
 		
 		
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 		<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse " id="navbarSupportedContent">
+<!-- 		<div class="collapse navbar-collapse " id="navbarSupportedContent"> -->
 			<ul class="navbar-nav ml-auto navbar-right-top">
 				<li class="nav-item">
-				<div id="custom-search" class="top-search-bar">
-					<input class="form-control" type="text" placeholder="Search">
-				</div>
+<!-- 				<div id="custom-search" class="top-search-bar"> -->
+<!-- 					<input class="form-control" type="text" placeholder="Search"> -->
+<!-- 				</div> -->
 				</li>
 				<li class="nav-item dropdown notification">
-				<a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i><span class="indicator"></span></a>
+<!-- 				<a class="nav-link nav-icons" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-fw fa-bell"></i><span class="indicator"></span></a> -->
 				<ul class="dropdown-menu dropdown-menu-right notification-dropdown">
 					<li>
 					<div class="notification-title">
@@ -101,8 +101,8 @@
 				</ul>
 				</li>
 				<li class="nav-item dropdown connection">
-				<a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<i class="fas fa-fw fa-th"></i></a>
+<!-- 				<a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> -->
+<!-- 				<i class="fas fa-fw fa-th"></i></a> -->
 				<ul class="dropdown-menu dropdown-menu-right connection-dropdown">
 					<li class="connection-list">
 					<div class="row">
@@ -143,8 +143,8 @@
 				</li>
 				<li class="nav-item dropdown nav-user">
 				<a class="nav-link nav-user-img" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<img src="${pageContext.request.contextPath}/resources/adminTemplate/assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle">
-				여기에 로그인 한 사람 사진 
+<%-- 				<img src="${pageContext.request.contextPath}/resources/adminTemplate/assets/images/avatar-1.jpg" alt="" class="user-avatar-md rounded-circle"> --%>
+<!-- 				여기에 로그인 한 사람 사진  -->
 					<c:if test="${sessionScope.login != null }">
 						<h5 class="mb-0 nav-user-name">${sessionScope.login }</h5>
 						
@@ -165,7 +165,7 @@
 
 						<span class="status"></span><span class="ml-2">Available</span>
 					</div>
-					<a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>Account</a>
+					<a class="dropdown-item" href="#"><i class="fas fa-user mr-2"></i>회원정보</a>
 					<a class="dropdown-item" href="#"><i class="fas fa-cog mr-2"></i>Setting</a>
 					<a class="dropdown-item" href="/zzTourr/adminViews/enter/adminLogout.trip"><i class="fas fa-power-off mr-2"></i>Logout</a>
 				</div>
@@ -202,55 +202,55 @@
 			
 					<!-- ◀◀◀ Main ▶▶▶ -->
 					<li class="nav-item">
-					<a class="nav-link" href="/zzTourr/adminViews/main/adminMain.trip"><i class="fa fa-fw fa-rocket"></i>Main</a>
+					<a class="nav-link" href="/zzTourr/adminViews/main/adminMain.trip"><i class="fa fa-fw fa-rocket"></i>메인페이지</a>
 					</li>
 					<!-- ◀◀◀ end Main ▶▶▶ -->
 			
 					<!-- ◀◀◀ Dashboard ▶▶▶ -->
-					<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>Dashboard</a>
-					<div id="submenu-3" class="collapse submenu" style="">
-						<ul class="nav flex-column">
-							<li class="nav-item">
-							<a class="nav-link" href="/zzTourr/adminViews/dashboard/adminChart.trip">C3 Charts</a>
-							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="chart-chartist.html">Chartist Charts</a>
-							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="chart-charts.html">Chart</a>
-							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="chart-morris.html">Morris</a>
-							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="chart-sparkline.html">Sparkline</a>
-							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="chart-gauge.html">Guage</a>
-							</li>
-						</ul>
-					</div>
-					</li>
+<!-- 					<li class="nav-item"> -->
+<!-- 					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-3" aria-controls="submenu-3"><i class="fas fa-fw fa-chart-pie"></i>Dashboard</a> -->
+<!-- 					<div id="submenu-3" class="collapse submenu" style=""> -->
+<!-- 						<ul class="nav flex-column"> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="/zzTourr/adminViews/dashboard/adminChart.trip">C3 Charts</a> -->
+<!-- 							</li> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="chart-chartist.html">Chartist Charts</a> -->
+<!-- 							</li> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="chart-charts.html">Chart</a> -->
+<!-- 							</li> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="chart-morris.html">Morris</a> -->
+<!-- 							</li> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="chart-sparkline.html">Sparkline</a> -->
+<!-- 							</li> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="chart-gauge.html">Guage</a> -->
+<!-- 							</li> -->
+<!-- 						</ul> -->
+<!-- 					</div> -->
+<!-- 					</li> -->
 					<!-- ◀◀◀ end Dashboard ▶▶▶ -->
 				
 					<!-- ◀◀◀ Reservation ▶▶▶ -->
 					<li class="nav-item ">
-					<a class="nav-link" href="/zzTourr/adminViews/reservation/adminReservList.trip"><i class="fab fa-fw fa-wpforms"></i>Reservation</a>
+					<a class="nav-link" href="/zzTourr/adminViews/reservation/adminReservList.trip"><i class="fab fa-fw fa-wpforms"></i>예약내역조회</a>
 					</li>
 					<!-- ◀◀◀ end Reservation ▶▶▶ -->
 				
 					<!-- ◀◀◀ Account ▶▶▶ -->
 					<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>Account</a>
+					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-5" aria-controls="submenu-5"><i class="fas fa-fw fa-table"></i>회원정보</a>
 					<div id="submenu-5" class="collapse submenu" style="">
 						<ul class="nav flex-column">
 							<li class="nav-item">
-							<a class="nav-link" href="/zzTourr/adminViews/account/adminMemberList.trip">Member List</a>
+							<a class="nav-link" href="/zzTourr/adminViews/account/adminMemberList.trip">회원정보 상세보기</a>
 							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="/zzTourr/adminViews/account/adminClientList.trip">Client List</a>
-							</li>
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="/zzTourr/adminViews/account/adminClientList.trip">Client List</a> -->
+<!-- 							</li> -->
 						</ul>
 					</div>
 					</li>
@@ -258,127 +258,130 @@
 				
 					<!-- ◀◀◀ Product ▶▶▶ -->
 					<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>Product<span class="badge badge-secondary">New</span></a>
+					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-7" aria-controls="submenu-7"><i class="fas fa-fw fa-inbox"></i>숙소/객실관리<span class="badge badge-secondary">New</span></a>
 					<div id="submenu-7" class="collapse submenu" style="">
 						<ul class="nav flex-column">
 							<li class="nav-item">
-							<a class="nav-link" href="/zzTourr/adminViews/product/adminHotelProdList.trip">Room</a>
+							<a class="nav-link" href="/zzTourr/newLodge.trip">숙소/객실 추가</a>
 							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="/zzTourr/adminViews/product/adminGuideProdList.trip">Guide</a>
-							</li>
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="/zzTourr/adminViews/product/adminHotelProdList.trip">Room</a> -->
+<!-- 							</li> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="/zzTourr/adminViews/product/adminGuideProdList.trip">Guide</a> -->
+<!-- 							</li> -->
 						</ul>
 					</div>
 					</li>
 					<!-- ◀◀◀ end Product ▶▶▶ -->
 				
 					<!-- ◀◀◀ Form ▶▶▶ -->
-					<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Form</a>
-					<div id="submenu-10" class="collapse submenu" style="">
-						<ul class="nav flex-column">
-							<li class="nav-item">
-							<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-11" aria-controls="submenu-11">Calculate</a>
-							<div id="submenu-11" class="collapse submenu" style="">
-								<ul class="nav flex-column">
-									<li class="nav-item">
-									<a class="nav-link" href="#">Invoice</a>
-									</li>
-									<li class="nav-item">
-									<a class="nav-link" href="#">Tax</a>
-									</li>
-								</ul>
-							</div>
-							</li>
-						</ul>
-					</div>
-					</li>
+<!-- 					<li class="nav-item"> -->
+<!-- 					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-10" aria-controls="submenu-10"><i class="fas fa-f fa-folder"></i>Form</a> -->
+<!-- 					<div id="submenu-10" class="collapse submenu" style=""> -->
+<!-- 						<ul class="nav flex-column"> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-11" aria-controls="submenu-11">Calculate</a> -->
+<!-- 							<div id="submenu-11" class="collapse submenu" style=""> -->
+<!-- 								<ul class="nav flex-column"> -->
+<!-- 									<li class="nav-item"> -->
+<!-- 									<a class="nav-link" href="#">Invoice</a> -->
+<!-- 									</li> -->
+<!-- 									<li class="nav-item"> -->
+<!-- 									<a class="nav-link" href="#">Tax</a> -->
+<!-- 									</li> -->
+<!-- 								</ul> -->
+<!-- 							</div> -->
+<!-- 							</li> -->
+<!-- 						</ul> -->
+<!-- 					</div> -->
+<!-- 					</li> -->
 					<!-- ◀◀◀ end Form ▶▶▶ -->
 				
 				
 					<!-- ◀◀◀ Group2 ▶▶▶ -->
-					<li class="nav-divider">
-					Setting </li>
+<!-- 					<li class="nav-divider"> -->
+<!-- 					Setting </li> -->
 				
 					<!-- ◀◀◀ MY ▶▶▶ -->
-					<li class="nav-item ">
-					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>My<span class="badge badge-success">6</span></a>
-					<div id="submenu-1" class="collapse submenu" style="">
-						<ul class="nav flex-column">
-							<li class="nav-item">
-							<a class="nav-link" href="" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Personal Info</a>
-							<div id="submenu-1-2" class="collapse submenu" style="">
-							</div>
-							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="">Main Setting</a>
-							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">?</a>
-							<div id="submenu-1-1" class="collapse submenu" style="">
-								<ul class="nav flex-column">
-									<li class="nav-item">
-									<a class="nav-link" href="../dashboard-influencer.html">??</a>
-									</li>
-									<li class="nav-item">
-									<a class="nav-link" href="../influencer-finder.html">???</a>
-									</li>
-								</ul>
-							</div>
-							</li>
-						</ul>
-					</div>
-					</li>
+<!-- 					<li class="nav-item "> -->
+<!-- 					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1"><i class="fa fa-fw fa-user-circle"></i>My<span class="badge badge-success">6</span></a> -->
+<!-- 					<div id="submenu-1" class="collapse submenu" style=""> -->
+<!-- 						<ul class="nav flex-column"> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="" aria-expanded="false" data-target="#submenu-1-2" aria-controls="submenu-1-2">Personal Info</a> -->
+<!-- 							<div id="submenu-1-2" class="collapse submenu" style=""> -->
+<!-- 							</div> -->
+<!-- 							</li> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="">Main Setting</a> -->
+<!-- 							</li> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-1-1" aria-controls="submenu-1-1">?</a> -->
+<!-- 							<div id="submenu-1-1" class="collapse submenu" style=""> -->
+<!-- 								<ul class="nav flex-column"> -->
+<!-- 									<li class="nav-item"> -->
+<!-- 									<a class="nav-link" href="../dashboard-influencer.html">??</a> -->
+<!-- 									</li> -->
+<!-- 									<li class="nav-item"> -->
+<!-- 									<a class="nav-link" href="../influencer-finder.html">???</a> -->
+<!-- 									</li> -->
+<!-- 								</ul> -->
+<!-- 							</div> -->
+<!-- 							</li> -->
+<!-- 						</ul> -->
+<!-- 					</div> -->
+<!-- 					</li> -->
 					<!-- ◀◀◀ end MY ▶▶▶ -->
 					
 					
 					<!-- ◀◀◀ Group3 ▶▶▶ -->
-					<li class="nav-divider">
-					etc </li>
+<!-- 					<li class="nav-divider"> -->
+<!-- 					etc </li> -->
 					
-					<!-- ◀◀◀ Board ▶▶▶ -->
-					<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-file"></i>Board</a>
-					<div id="submenu-6" class="collapse submenu" style="">
-						<ul class="nav flex-column">
-							<li class="nav-item">
-							<a class="nav-link" href="">Notice</a>
-							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="blank-page.html">Community</a>
-							</li>
-						</ul>
-					</div>
-					</li>
+<!-- 					◀◀◀ Board ▶▶▶ -->
+<!-- 					<li class="nav-item"> -->
+<!-- 					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-6" aria-controls="submenu-6"><i class="fas fa-fw fa-file"></i>Board</a> -->
+<!-- 					<div id="submenu-6" class="collapse submenu" style=""> -->
+<!-- 						<ul class="nav flex-column"> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="">Notice</a> -->
+<!-- 							</li> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="blank-page.html">Community</a> -->
+<!-- 							</li> -->
+<!-- 						</ul> -->
+<!-- 					</div> -->
+<!-- 					</li> -->
 					<!-- ◀◀◀ end Board ▶▶▶ -->
 				
 				
 					<!-- ◀◀◀ Group4 ▶▶▶ -->
-					<li class="nav-divider">
-					+a </li>
+<!-- 					<li class="nav-divider"> -->
+<!-- 					+a </li> -->
 				
 					<!-- ◀◀◀ Planner ▶▶▶ -->
-					<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-8" aria-controls="submenu-8"><i class="fas fa-fw fa-columns"></i>Planner</a>
-					<div id="submenu-8" class="collapse submenu" style="">
-					</div>
-					</li>
+<!-- 					<li class="nav-item"> -->
+<!-- 					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-8" aria-controls="submenu-8"><i class="fas fa-fw fa-columns"></i>Planner</a> -->
+<!-- 					<div id="submenu-8" class="collapse submenu" style=""> -->
+<!-- 					</div> -->
+<!-- 					</li> -->
 					<!-- ◀◀◀ end Planner ▶▶▶ -->
 				
 					<!-- ◀◀◀ ?? ▶▶▶ -->
-					<li class="nav-item">
-					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a>
-					<div id="submenu-9" class="collapse submenu" style="">
-						<ul class="nav flex-column">
-							<li class="nav-item">
-							<a class="nav-link" href="map-google.html">Google Maps</a>
-							</li>
-							<li class="nav-item">
-							<a class="nav-link" href="map-vector.html">Vector Maps</a>
-							</li>
-						</ul>
-					</div>
-					</li>
+<!-- 					<li class="nav-item"> -->
+<!-- 					<a class="nav-link" href="#" data-toggle="collapse" aria-expanded="false" data-target="#submenu-9" aria-controls="submenu-9"><i class="fas fa-fw fa-map-marker-alt"></i>Maps</a> -->
+<!-- 					<div id="submenu-9" class="collapse submenu" style=""> -->
+<!-- 						<ul class="nav flex-column"> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="map-google.html">Google Maps</a> -->
+<!-- 							</li> -->
+<!-- 							<li class="nav-item"> -->
+<!-- 							<a class="nav-link" href="map-vector.html">Vector Maps</a> -->
+<!-- 							</li> -->
+<!-- 						</ul> -->
+<!-- 					</div> -->
+<!-- 					</li> -->
 					<!-- ◀◀◀ end ?? ▶▶▶ -->
 					
 					

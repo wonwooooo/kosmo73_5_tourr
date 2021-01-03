@@ -133,30 +133,30 @@
                 </div>
                 
                 <!-- 사진 -->
-                <div class="form-group">
-                    <input class="form-control form-control-lg" type="file" name="adminImg" value='증명사진'>
-                </div>
+<!--                 <div class="form-group"> -->
+<!--                     <input class="form-control form-control-lg" type="file" name="adminImg" value='증명사진'> -->
+<!--                 </div> -->
 
                 <div class="form-group pt-2">
                     <button class="btn btn-block btn-primary" type="submit">Register My Account</button>
                 </div>
-                <div class="form-group">
-                    <label class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox"><span class="custom-control-label">By creating an account, you agree the <a href="#">terms and conditions</a></span>
-                    </label>
-                </div>
-                <div class="form-group row pt-0">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2">
-                        <button class="btn btn-block btn-social btn-facebook " type="button">Facebook</button>
-                    </div>
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <button class="btn  btn-block btn-social btn-twitter" type="button">Twitter</button>
-                    </div>
-                </div>
-            </div>
-            <div class="card-footer bg-white">
-                <p>Already member? <button onclick="window.history.back()"><a class="text-secondary">Login Here.</a></button></p>
-            </div>
+<!--                 <div class="form-group"> -->
+<!--                     <label class="custom-control custom-checkbox"> -->
+<!--                         <input class="custom-control-input" type="checkbox"><span class="custom-control-label">By creating an account, you agree the <a href="#">terms and conditions</a></span> -->
+<!--                     </label> -->
+<!--                 </div> -->
+<!--                 <div class="form-group row pt-0"> -->
+<!--                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mb-2"> -->
+<!--                         <button class="btn btn-block btn-social btn-facebook " type="button">Facebook</button> -->
+<!--                     </div> -->
+<!--                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12"> -->
+<!--                         <button class="btn  btn-block btn-social btn-twitter" type="button">Twitter</button> -->
+<!--                     </div> -->
+<!--                 </div> -->
+<!--             </div> -->
+<!--             <div class="card-footer bg-white"> -->
+<!--                 <p>Already member? <button onclick="window.history.back()"><a class="text-secondary">Login Here.</a></button></p> -->
+<!--             </div> -->
         </div>
     </form>
 

@@ -2,8 +2,6 @@
 	pageEncoding="utf-8"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +21,6 @@
 			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
 				<div class="card">
 					<h5 class="card-header">Donut Chart- '예약완료'상태의 모든 주문의, 가이드 /상품 건수 비교</h5>
-					
 					<div class="card-body">
 						<div id="morris_donut">
 						</div>
@@ -40,7 +37,6 @@
                </div>
            </div>
         </div>
-        
         <c:forEach var="type" items="${chart1}">
 			Key is ${type.key}
 		   Value is ${type.value} 

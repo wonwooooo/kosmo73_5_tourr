@@ -163,6 +163,7 @@ public class MainController {
 	//필요한 값 모델엔뷰로 리턴
 	ModelAndView mv = new ModelAndView();
 	mv.setViewName("mainViews/mainfreeboardreply");
+	mv.addObject("articleId", articleId);
 	return mv;
 	}
 	
@@ -235,8 +236,10 @@ public class MainController {
 		ComBoardVO cvo = mainService.mainfreeBoardView(parentId);
 		
 		// 답변글에 순서번호 구하기
-		String maxSeqNum = cvo.getSequenceNo();
-		String minSeqNum = getSearchMinSeqNum(cvo);
+		String maxSeqNu = cvo.getSequenceNo();
+		String minSeqNu = getSearchMinSeqNum(cvo);
+		int maxSeqNum = Integer.parseInt(maxSeqNu);
+		int minSeqNum = Integer.parseInt(minSeqNu);
 		
 		String lastChildSeq = mainDAO.selectLastSequenceNumber( maxSeqNum, minSeqNum );
 				
@@ -812,13 +815,13 @@ public class MainController {
 	//숙소-예약-화면에서 넘겨받은값들 예약 페이지로 끌고가기
 	@RequestMapping("/mainViews/mainloreservation.trip")
 	public ModelAndView mainloreservation(String reservName, String reservTel, String userId, 
-			String productIdi, String peakPrice, String offPrice, String peakSumStart, String peakSumExit, String peakWinStart, String peakWinExit, String maxPeople) {
+			String productIdi, String peakPrice, String offPrice, String peakSumStart, String peakSumExit, String peakWinStart, String peakWinExit, String maxPeople, String category, String roomId) {
 		System.out.println("kk" + offPrice);
 		System.out.println("hh" + peakSumExit);
 		System.out.println(maxPeople);
 		int maxPe = Integer.parseInt(maxPeople);
 		int productId = Integer.parseInt(productIdi);
-		
+		System.out.println(productId);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("reservName", reservName);
 		mv.addObject("reservTel", reservTel);
@@ -831,14 +834,15 @@ public class MainController {
 		mv.addObject("peakWinStart", peakWinStart);
 		mv.addObject("peakWinExit", peakWinExit);
 		mv.addObject("maxPeople", maxPe);
-		
+		mv.addObject("category", category);
+		mv.addObject("roomId", roomId);
 		mv.setViewName("mainViews/mainloreservation");
 		return mv;
 	}
 	
 	//숙소-예약-화면에서 넘겨받은값들 예약 페이지로 끌고가서-날짜확인 
 		@RequestMapping("/mainViews/mainloservationDay.trip")
-		public ModelAndView mainloservationDay(ReservationVO vo, String checkInDate2, String checkOut2, String reservPrice, String maxPeople) { 
+		public ModelAndView mainloservationDay(ReservationVO vo, String checkInDate2, String checkOut2, String reservPrice, String maxPeople,  String checkInDate, String checkOut, String category, String roomId) { 
 	//		System.out.println(offPrice);
 			List<ReservationVO> result = mainService.mainlosevDate(vo);
 			System.out.println(result.size());
@@ -848,7 +852,11 @@ public class MainController {
 			mv.addObject("checkInDate2", checkInDate2);
 			mv.addObject("checkOut2", checkOut2);
 			mv.addObject("maxPeople", maxPeople);
+			mv.addObject("checkInDate", checkInDate);
+			mv.addObject("checkOut", checkOut);
+			mv.addObject("category", category);
 			mv.addObject("productId", vo.getProductId());
+			mv.addObject("roomId", Integer.parseInt(roomId));
 			System.out.println(vo.getProductId());
 			mv.setViewName("mainViews/mainloservationDay");
 			return mv;
@@ -861,14 +869,12 @@ public class MainController {
 		@ResponseBody
 		public String idCheck(ReservationVO vo){
 		
-	//	int pId  = Integer.parseInt(productId);
-		//	System.out.println("++"+pId);
-	//	vo.setProductId(pId);
+
 			
 			String message = null;
 			
 			int result = mainService.idCheck_Login(vo);
-			System.out.println(result);
+			System.out.println("00"+result);
 			message = "1";
 			if(result > 0) {
 				message = "사용가능한 아이디입니다";
@@ -889,7 +895,7 @@ public class MainController {
 			//****** 리턴형이 String 인 경우 원래는 뷰페이지 지정이여야 하지만
 			// AJAX인 경우는 결과 리턴
 		}
-	//	@RequestMapping("/mainViews/maingureservation.trip")	
+
 		
 		
 	@RequestMapping("/mainViews/maingureservation.trip")
