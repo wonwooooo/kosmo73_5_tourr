@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.zzTourr.domain.MgrVO;
-import com.zzTourr.domain.HotelVO;
+
 import com.zzTourr.domain.LodgeVO;
 import com.zzTourr.domain.ReservationVO;
 import com.zzTourr.domain.RoomVO;

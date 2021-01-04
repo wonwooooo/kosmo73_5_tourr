@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.zzTourr.dao.MainDAOImpl;
 import com.zzTourr.domain.ComBoardVO;
-import com.zzTourr.domain.GuideTourVO;
+
 import com.zzTourr.domain.LodgeVO;
 import com.zzTourr.domain.ProductRevboVO;
 import com.zzTourr.domain.ReservationVO;
@@ -231,52 +231,7 @@ public class MainServiceImpl implements MainService{
 			return mainDAO.mainmemberLogin(vo);
 		}
 
-		//숙소-가이드-리스트
-		public List<GuideTourVO> mainGuideList(int pageNo) {
-			int firstRow = (pageNo-1)*countPerPage + 1;
-			int endRow = pageNo*countPerPage; 
-			System.out.println(firstRow);
-			System.out.println(endRow);
-			HashMap map = new HashMap();
-			map.put("row1", firstRow);	
-			map.put("row2", endRow);
-			return mainDAO.mainGuideList(map);
-		}
-
-		//숙소-가이드-전체페이지수
-		public int mainGuidePage(GuideTourVO vo) {
-			totalRecCount =  mainDAO.getTotalPageguide();
-			pageTotalCount = totalRecCount / countPerPage;
-			if(totalRecCount % countPerPage != 0)pageTotalCount++;
-		
-			return pageTotalCount;
-		}
-
-		//가이드-리스트-검색
-		public List<GuideTourVO> mainguidelistser(int pageNo, GuideTourVO vo, String searchlo) {
-			System.out.println("//"+searchlo);
-			int firstRow = (pageNo-1)*countPerPage + 1;
-			int endRow = pageNo*countPerPage; 
-			HashMap map = new HashMap();
-			map.put("searchtext", searchlo);
-			map.put("row1", firstRow);	
-			map.put("row2", endRow);
-			System.out.println(map);
-			return mainDAO.mainGuidelistser(map);
-		}
-
-		//가이드-전체페이지수-검색
-		public int mainGuidePageser(GuideTourVO vo, String searchtext) {
-			HashMap map = new HashMap();
-			map.put("lov", vo);	
-			map.put("searchtext", searchtext);
-			System.out.println(map);
-			totalRecCount =  mainDAO.getTotalPagega(map);
-			pageTotalCount = totalRecCount / countPerPage;
-			if(totalRecCount % countPerPage != 0)pageTotalCount++;
-		
-			return pageTotalCount;
-		}
+	
 
 		//숙소-상세페이지
 		public LodgeVO mainlodgedetail(LodgeVO vo) {
@@ -312,33 +267,7 @@ public class MainServiceImpl implements MainService{
 			return pageTotalCount;
 		}
 
-		//가이드상세페이지-검색-가이드(정보)
-		public GuideTourVO mainguidedetail(String programName) {
-			return mainDAO.mainguidedetail(programName);
-		}
-
-		//가이드-상세페이지-고객리뷰-리스트
-		public List<ProductRevboVO> productRevboListga(String programName, int pageNo) {
-			int firstRow = (pageNo-1)*countPerPageRe + 1;
-			int endRow = pageNo*countPerPageRe; 
-			System.out.println(firstRow);
-			System.out.println(endRow);
-			HashMap map = new HashMap();
-			map.put("programName", programName);
-			map.put("row1", firstRow);	
-			map.put("row2", endRow);
-			return mainDAO.mainProRevListga(map);
-		}
-
-		//가이드-상세페이지-고객리뷰-전체페이지수
-		public int productRevboPagega(String programName) {
-			totalRecCount =  mainDAO.mainProRevPagega(programName);
-			pageTotalCount = totalRecCount / countPerPageRe;
-			if(totalRecCount % countPerPageRe != 0)pageTotalCount++;
-		
-			return pageTotalCount;
-		}
-
+	
 		//자유게시판-리스트
 		public List<ComBoardVO> freeBoardList(int pageNo) {
 			int firstRow = (pageNo-1)*countPerPageBo + 1;

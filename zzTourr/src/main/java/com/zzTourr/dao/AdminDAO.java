@@ -59,12 +59,6 @@ public interface AdminDAO {
 	
 	
 	
-	
-	
-	
-	
-	
-	
 	// 차트 1
 	List<ChartVO> chart1();
 	
@@ -74,7 +68,7 @@ public interface AdminDAO {
 	
 	public int chart3();
 	
-	public int chart4();
+	public List<ReservationVO> chart4();
 	
 	
 }

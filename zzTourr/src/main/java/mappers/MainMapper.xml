@@ -151,117 +151,7 @@ and password= #{password}
 </where>  
 </select>
 
-	<!-- 가이드-전체-전체페이지 -->
-	<select id="getTotalPageguide" resultType="int">
-		<![CDATA[
-select count(*) cnt from (select guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, cuscount, ip, imgname, imgsize from guidetour where
- guicate in  (select guicate from guidetour group by guicate) 
-and guiname in  (select guiname from guidetour group by guiname)
-and programname in (select programname from guidetour group by programname) 
-and guiarea in (select guiarea from guidetour group by guiarea) 
-and guicontent in (select guicontent from guidetour group by guicontent) 
-and guiprice in (select guiprice from guidetour group by guiprice) 
-and guitime in (select guitime from guidetour group by guitime)  
-and cuscount in (select cuscount from guidetour group by cuscount) 
-and ip in (select ip from guidetour group by ip) 
-and imgname in (select imgname from guidetour group by imgname) 
-and imgsize in (select imgsize from guidetour group by imgsize)  
-group by guicate, guiname,  programname, guiarea, guicontent, guiprice, guitime, cuscount,  ip, imgname, imgsize)
-		]]>
-	</select>
-	
-<!-- 가이드-전체-전체리스트 -->
- <select id="mainGuideList" parameterType="hashmap" resultType="guidetour">
-			<![CDATA[
- select guicate, guiname, programname, guiarea, substr(guicontent, 1, 70) guicontent,  guiprice, guitime, imgname from
-  (select rownum as rnum, guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, imgname from(
-select guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, imgname from (
-select * from (select productid, guicate, guiname,  programname, guiarea, SUBSTR(guicontent, 1, 70) guicontent,  guiprice, guitime, imgname
-from (select * from guidetour order by productid desc) where
- guicate in  (select guicate from guidetour group by guicate) 
- and guiname in  (select guiname from guidetour group by guiname) 
- and programname in (select programname from guidetour group by programname)
- and guiarea in (select guiarea from guidetour group by guiarea) 
-and guicontent in (select guicontent from guidetour group by guicontent) 
-and guiprice in (select guiprice from guidetour group by guiprice) 
-and guitime in (select guitime from guidetour group by guitime)  
-and cuscount in (select cuscount from guidetour group by cuscount) 
-and imgname in (select imgname from guidetour group by imgname) 
-and productid in (select productid from guidetour group by productid) 
-  group by productid,  guicate, guiname, programname, guiarea, guicontent,  guiprice, guitime, imgname
- order by productid desc)
-  order by productid desc
-) where
- guicate in  (select guicate from guidetour group by guicate) 
-and guiname in  (select guiname from guidetour group by guiname)
-and programname in (select programname from (select * from guidetour order by productid desc)) 
-and guiarea in (select guiarea from guidetour group by guiarea) 
-and guicontent in (select guicontent from guidetour group by guicontent) 
-and guiprice in (select guiprice from guidetour group by guiprice) 
-and guitime in (select guitime from guidetour group by guitime)  
-and imgname in (select imgname from guidetour group by imgname)  
-group by guicate, guiname,  programname, guiarea, guicontent, guiprice, guitime, imgname))
-where rnum between #{row1} and #{row2}
-		]]>
- </select>
 
-
-	
-<!-- 가이드-전체-검색페이지 -->
-	<select id="getTotalPagega" parameterType="hashmap" resultType="int">
-	<![CDATA[
-		select count(*) cnt from (select guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, cuscount, ip, imgname, imgsize from guidetour where
-guiarea like '%'||trim(#{searchtext})||'%' and
- guicate in  (select guicate from guidetour group by guicate) 
-and guiname in  (select guiname from guidetour group by guiname)
-and programname in (select programname from guidetour group by programname) 
-and guiarea in (select guiarea from guidetour group by guiarea) 
-and guicontent in (select guicontent from guidetour group by guicontent) 
-and guiprice in (select guiprice from guidetour group by guiprice) 
-and guitime in (select guitime from guidetour group by guitime)  
-and cuscount in (select cuscount from guidetour group by cuscount) 
-and ip in (select ip from guidetour group by ip) 
-and imgname in (select imgname from guidetour group by imgname) 
-and imgsize in (select imgsize from guidetour group by imgsize)  
-group by guicate, guiname,  programname, guiarea, guicontent, guiprice, guitime, cuscount,  ip, imgname, imgsize)
-		]]>
-	</select>
-
-<!-- 가이드-전체-검색리스트 -->
-<select id="ser" parameterType="hashmap" resultType="guidetour">
-	<![CDATA[
-select guicate, guiname,  programname, guiarea, substr(guicontent, 1, 60) guicontent,  guiprice, guitime, imgname from
-  (select rownum as rnum, guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, imgname from(
-select guicate, guiname,  programname, guiarea, guicontent,  guiprice, guitime, imgname from (
-select * from (select productid, guicate, guiname,  programname, guiarea, SUBSTR(guicontent, 1, 70) guicontent,  guiprice, guitime, imgname 
-from (select * from guidetour order by productid desc) where 
- guicate in  (select guicate from guidetour group by guicate) 
- and guiname in  (select guiname from guidetour group by guiname) 
- and programname in (select programname from guidetour group by programname) 
- and guiarea in (select guiarea from guidetour group by guiarea) 
-and guicontent in (select guicontent from guidetour group by guicontent) 
-and guiprice in (select guiprice from guidetour group by guiprice) 
-and guitime in (select guitime from guidetour group by guitime)  
-and cuscount in (select cuscount from guidetour group by cuscount) 
-and imgname in (select imgname from guidetour group by imgname) 
-and productid in (select productid from guidetour group by productid) 
-  group by productid,  guicate, guiname, programname, guiarea, guicontent,  guiprice, guitime, imgname 
- order by productid desc) 
-  order by productid desc 
-) where 
- guicate in  (select guicate from guidetour group by guicate) 
-and guiname in  (select guiname from guidetour group by guiname) 
-and programname in (select programname from (select * from guidetour order by productid desc)) 
-and guiarea in (select guiarea from guidetour group by guiarea) 
-and guicontent in (select guicontent from guidetour group by guicontent) 
-and guiprice in (select guiprice from guidetour group by guiprice) 
-and guitime in (select guitime from guidetour group by guitime)  
-and imgname in (select imgname from guidetour group by imgname)  
-AND guiarea like '%'||trim(#{searchtext})||'%' 
-group by guicate, guiname,  programname, guiarea, guicontent, guiprice, guitime, imgname)) 
-where rnum between  #{row1} and #{row2}
-		]]>
-</select>
 
 <!-- 숙소-상세페이지 -->
 	<select id="mainlodgedetail" parameterType="lodge" resultType="lodge">
@@ -294,31 +184,6 @@ order by prorevid desc
 ]]> 
 </select>
 
-<!-- 가이드 상세페이지(가이드 프로그램 정보) -->
-<select id="mainguidedetail" parameterType="String" resultType="guidetour">
-	<![CDATA[
-select * from guidetour where productid in 
-(select productid from guidetour where programname=#{programName}) 
-and rownum =1
-]]> 
-</select>
-
-<!-- 가이드 상세페이지 조회-고객리뷰-전체리스트 -->
-<select id="mainProRevListga" parameterType="hashmap" resultType="productrevbo">
-	<![CDATA[
-select * from productrevbo where prorevid in
-(select prorevid from (select rownum as rnum, prorevid 
-from (select * from productrevbo where productid in (select productid from guidetour where programname=#{programName}) order by prorevid desc)) where rnum>=1 and rnum<=3)
-order by prorevid desc
-]]> 
-</select>
-
-<!-- 가이드 상세페이지 조회-고객리뷰-페이지 -->
-<select id="mainProRevPagega" parameterType="String" resultType="int">
-	<![CDATA[
-select count(*) cnt from productrevbo where productid in (select productid from guidetour where programname=#{programName})
-]]> 
-</select>
 
 <!-- 자유게시판-그룹번호받아오기 -->
 <select id="mainGetFrGroupIddao" resultType="int">

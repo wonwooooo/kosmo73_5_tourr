@@ -8,9 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.zzTourr.domain.ComBoardVO;
-import com.zzTourr.domain.GuideTourVO;
+
 import com.zzTourr.domain.LodgeVO;
-import com.zzTourr.domain.MainVO;
+
 import com.zzTourr.domain.ProductRevboVO;
 import com.zzTourr.domain.ReservationVO;
 import com.zzTourr.domain.RoomVO;
@@ -126,30 +126,6 @@ public class MainDAOImpl implements MainDAO{
 		return mybatis.selectOne("main.MainDAO.mainidCheck", vo);
 	}
 
-	//가이드-리스트
-	public List<GuideTourVO> mainGuideList(HashMap map) {
-		System.out.println("===> Mybatis mainGuideList() ȣ��");
-		System.out.println(map);
-		return mybatis.selectList("main.MainDAO.mainGuideList", map);
-	}
-
-	//가이드-페이지수
-	public int getTotalPageguide() {
-		System.out.println("===> Mybatis getTotalPageguide() ȣ��");
-		return mybatis.selectOne("main.MainDAO.getTotalPageguide");
-	}
-
-	//가이드-검색-리스트
-	public List<GuideTourVO> mainGuidelistser(HashMap map) {
-		System.out.println("===> Mybatis ser() ȣ��");
-		return mybatis.selectList("main.MainDAO.ser", map);
-	}
-
-	//가이드-검색-페이지수
-	public int getTotalPagega(HashMap map) {
-		System.out.println("===> Mybatis getTotalPagega() ȣ��");
-		return mybatis.selectOne("main.MainDAO.getTotalPagega", map);
-	}
 
 	//숙소-상세페이지
 	public LodgeVO mainlodgedetail(LodgeVO vo) {
@@ -175,24 +151,7 @@ public class MainDAOImpl implements MainDAO{
 		return mybatis.selectOne("main.MainDAO.mainProRevPage", lodIdNum);
 	}
 
-	//가이드 상세페이지(가이드정보)
-	public GuideTourVO mainguidedetail(String programName) {
-		System.out.println("===> Mybatis mainguidedetail ȣ��");
-		return mybatis.selectOne("main.MainDAO.mainguidedetail", programName);
-	}
-
-	//가이드 상세페이지 조회-고객리뷰-전체리스트
-	public List<ProductRevboVO> mainProRevListga(HashMap map) {
-		System.out.println("===> Mybatis mainProRevListga() ȣ��");
-		return mybatis.selectList("main.MainDAO.mainProRevListga", map);
-	}
-
-	//가이드 상세페이지 조회-고객리뷰-페이지
-	public int mainProRevPagega(String programName) {
-		System.out.println("===> Mybatis mainProRevPagega() ȣ��");
-		return mybatis.selectOne("main.MainDAO.mainProRevPagega", programName);
-	}
-
+	
 	//자유게시판-전체리스트
 	public List<ComBoardVO> mainComBoardList(HashMap map) {
 		System.out.println("===> Mybatis mainProRevListga() ȣ��");

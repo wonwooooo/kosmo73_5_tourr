@@ -1,5 +1,7 @@
 package com.zzTourr.controller;
 
+import java.util.List;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.zzTourr.domain.AdminVO;
+import com.zzTourr.domain.ReservationVO;
 import com.zzTourr.service.AdminService;
 
 @Controller
@@ -117,15 +120,17 @@ public class AdminEnterController {
 	}	// end of login
 	
 	
-	
+	// *******
 	// 로그인 후 메인으로 리다이렉트 _201224 원우
 	@RequestMapping("main/adminMain.trip")
 	public ModelAndView mainGo() {
+		List<ReservationVO> rvo = adminService.chart4();
 		System.out.println("AdminEnterController : mainGo / 메인");
 		
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("adminViews/main/adminMain");
-		
+		mv.addObject("rList", rvo);
+		System.out.println(rvo);
 		return mv;
 		
 	}	// end of mainGo
