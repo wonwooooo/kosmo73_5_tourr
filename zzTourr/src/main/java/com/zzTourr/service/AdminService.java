@@ -76,7 +76,7 @@ public interface AdminService {
 	
 	public int chart3();
 	
-	public int chart4();
+	public List<ReservationVO> chart4();
 	
 	
 	

@@ -3,7 +3,7 @@ package com.zzTourr.service;
 import java.util.List;
 
 import com.zzTourr.domain.ComBoardVO;
-import com.zzTourr.domain.GuideTourVO;
+
 import com.zzTourr.domain.LodgeVO;
 import com.zzTourr.domain.ProductRevboVO;
 import com.zzTourr.domain.ReservationVO;
@@ -63,18 +63,7 @@ public interface MainService {
 	//로그인
 	public UsersVO mainidCheckLogin(UsersVO vo);
 	
-	//가이드-리스트
-	List<GuideTourVO> mainGuideList(int pageNo);
-		
-	//가이드-전체페이지수
-	int mainGuidePage(GuideTourVO vo);
 	
-	//가이드-검색-리스트
-	public List<GuideTourVO> mainguidelistser(int pageNo, GuideTourVO vo, String searchtext);
-			
-	//가이드-검색-페이지수
-	public int mainGuidePageser(GuideTourVO vo, String searchtext);
-
 	//숙소-상세-(정보)
 	LodgeVO mainlodgedetail(LodgeVO vo);
 	
@@ -87,14 +76,7 @@ public interface MainService {
 	//숙소-상세페이지-고객리뷰-전체페이지수
 	int productRevboPage(int lodIdNum);
 	
-	//가이드상세페이지-검색-리스트(정보)
-	GuideTourVO mainguidedetail(String programName);
 	
-	//가이드-상세페이지-고객리뷰-리스트
-	public List<ProductRevboVO> productRevboListga(String programName, int pageNo);
-				
-	//가이드-상세페이지-고객리뷰-전체페이지수
-	int productRevboPagega(String programName);
 	
 	//자유게시판-리스트
 	List<ComBoardVO> freeBoardList(int pageNo);

@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import com.zzTourr.domain.ComBoardVO;
-import com.zzTourr.domain.GuideTourVO;
+
 import com.zzTourr.domain.LodgeVO;
-import com.zzTourr.domain.MainVO;
+
 import com.zzTourr.domain.ProductRevboVO;
 import com.zzTourr.domain.ReservationVO;
 import com.zzTourr.domain.RoomVO;
@@ -64,17 +64,6 @@ public interface MainDAO {
 	//로그인 확인기능 구현
 	public UsersVO mainmemberLogin(UsersVO vo);
 		
-	//가이드-전체리스트
-	public List<GuideTourVO> mainGuideList(HashMap map);
-		
-	//가이드-전체페이지수
-	public int getTotalPageguide();
-	
-	//가이드-검색-전체리스트
-	public List<GuideTourVO> mainGuidelistser(HashMap map);
-			
-	//가이드-검색-페이지수
-	public int getTotalPagega(HashMap map);
 	
 	//숙소 상세페이지(숙소정보)
 	public LodgeVO mainlodgedetail(LodgeVO vo);
@@ -88,14 +77,6 @@ public interface MainDAO {
 	//숙소 상세페이지 조회-고객리뷰-페이지
 	public int  mainProRevPage(int lodIdNum);
 	
-	//가이드 상세페이지(가이드정보)
-	public GuideTourVO mainguidedetail(String programName);
-	
-	//가이드 상세페이지 조회-고객리뷰-전체리스트
-	public List<ProductRevboVO> mainProRevListga(HashMap map);
-					
-	//가이드 상세페이지 조회-고객리뷰-페이지
-	public int  mainProRevPagega(String programName);
 	
 	//자유게시판-전체리스트
 	public List<ComBoardVO> mainComBoardList(HashMap map);
@@ -136,7 +117,7 @@ public interface MainDAO {
 	//리스트-숙소-날짜
 	public List<ReservationVO> mainlosevDateDAO(ReservationVO vo);
 	
-	//���� �ܿ� ����
+	//방 확인
 	public int roomNum(HashMap map);
 	
 	//메인페이지-펜션

@@ -17,7 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.zzTourr.dao.MainDAO;
 import com.zzTourr.domain.ComBoardVO;
-import com.zzTourr.domain.GuideTourVO;
+
 import com.zzTourr.domain.LodgeVO;
 import com.zzTourr.domain.ProductRevboVO;
 import com.zzTourr.domain.ReservationVO;
@@ -295,88 +295,8 @@ public class MainController {
 		
 	}	
 	
-	//가이드리스트
-	@RequestMapping("/mainViews/mainguidelist.trip")
-	public ModelAndView mainguidelist(String page, GuideTourVO vo) {
-		int pageNo = 1;
 
-		if(page != null) pageNo = Integer.parseInt(page);
 
-		int totalcount = mainService.mainGuidePage(vo);
-		int pNo = 1;
-		int nNo = totalcount;
-		if(pageNo > 1){
-			pNo = pageNo-1;
-		}
-		if(pageNo < totalcount){
-			nNo = pageNo+1;
-		}
-		int startNo = 1;
-		int endNo = totalcount;
-	
-		System.out.println(startNo);
-		List<GuideTourVO> result = mainService.mainGuideList(pageNo);
-		System.out.println("00" + result.get(0).toString());
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("mainViews/mainguidelist");
-		mv.addObject("page", page);
-		mv.addObject("guideList", result);
-		System.out.println(result);
-		
-		mv.addObject("totalcount", totalcount);
-		mv.addObject("pageNo", pageNo);
-		mv.addObject("startNo", startNo);
-		mv.addObject("endNo", endNo);
-		mv.addObject("pNo", pNo);
-		mv.addObject("nNo", nNo);
-		return mv;
-	
-	}	
-	
-	//가이드 검색기능
-	@RequestMapping(value="/mainViews/mainguidelistse.trip", method = RequestMethod.GET)
-	public ModelAndView mainguidelistse(String page, String searchtext, GuideTourVO vo) {
-		int pageNo = 1;
-
-		if(page != null) pageNo = Integer.parseInt(page);
-
-		int totalcount = mainService.mainGuidePageser(vo, searchtext);
-		System.out.println(pageNo);
-		System.out.println(totalcount);
-		List<GuideTourVO> result = mainService.mainguidelistser(pageNo, vo, searchtext);
-	
-		
-		int pNo = 1;
-		int nNo = totalcount;
-		if(pageNo > 1){
-			pNo = pageNo-1;
-		}
-		if(pageNo < totalcount){
-			nNo = pageNo+1;
-		}
-		int startNo = 1;
-		int endNo = totalcount;
-					
-			ModelAndView mv = new ModelAndView();
-			mv.setViewName("mainViews/mainguidelistse");
-			mv.addObject("page", page);
-			mv.addObject("searchtext", searchtext);
-			System.out.println("--"+searchtext);
-			System.out.println(result);
-			mv.addObject("guideList", result);
-			mv.addObject("totalcount", totalcount);
-			mv.addObject("pageNo", pageNo);
-			mv.addObject("startNo", startNo);
-			mv.addObject("endNo", endNo);
-			mv.addObject("pNo", pNo);
-			mv.addObject("nNo", nNo);
-			System.out.println("=="+pageNo);
-			System.out.println(totalcount);
-			System.out.println(page);
-			System.out.println(mv);
-			return mv;
-	
-	}
 	
 	@RequestMapping("/mainViews/mainlogin.trip")
 	public String mainlogin() {
@@ -716,50 +636,7 @@ public class MainController {
 				
 				}
 				
-	//가이드 상세페이지 조회기능			
-	@RequestMapping(value="/mainViews/mainguidedetail.trip", method = RequestMethod.GET)
-	public ModelAndView mainguidedetail(String page, GuideTourVO vo, String programName) {
-		
-		//넘겨받은 가이드 프로그램명의 가이드 정보
-		GuideTourVO result = mainService.mainguidedetail(programName);
-		System.out.println(result.getProgramName());
-		int pageNo = 1;
-
-		if(page != null) pageNo = Integer.parseInt(page);
-		
-		//고객 후기 페이지 넘버 구하기
-		int totalcount = mainService.productRevboPagega(programName);
-		int pNo = 1;
-		int nNo = totalcount;
-		if(pageNo > 1){
-					pNo = pageNo-1;
-		}
-		if(pageNo < totalcount){
-					nNo = pageNo+1;
-		}
-		int startNo = 1;
-		int endNo = totalcount;	
-		
-		//고객 후기 리스트 
-		List<ProductRevboVO> resultList = mainService.productRevboListga(programName, pageNo);		
-		
-		 //필요한 값 모델엔뷰로 리턴
-		 ModelAndView mv = new ModelAndView();
-		mv.setViewName("mainViews/mainguidedetail");
-		System.out.println(pageNo);
-		mv.addObject("RevboList", resultList);
-		mv.addObject("totalcount", totalcount);
-		mv.addObject("pageNo", pageNo);
-		mv.addObject("page", page);
-		mv.addObject("startNo", startNo);
-		System.out.println(startNo);
-		mv.addObject("endNo", endNo);
-		mv.addObject("pNo", pNo);
-		mv.addObject("nNo", nNo);
-		mv.addObject("programName", programName);
-		mv.addObject("guidetour", result);
-		return mv;
-	}
+	
 	
 	//숙소 상세페이지 조회기능
 	@RequestMapping(value="/mainViews/mainlodgedetail.trip", method = RequestMethod.GET)
@@ -862,6 +739,7 @@ public class MainController {
 			return mv;
 		}
 		
+		//
 		@RequestMapping(value = "/mainViews/idCheck.trip",
 				produces = "application/text;charset=utf-8")
 		//*****************************************

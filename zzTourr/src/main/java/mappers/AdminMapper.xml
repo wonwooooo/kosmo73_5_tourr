@@ -66,7 +66,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 펜션예약목록 가져오기 _201228 원우 -->
 	<select id="guideReservList" parameterType="Map" resultType="reservation">
 		SELECT *
-		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE, CHECKOUT, RESERVPRICE, RESSTATE
+		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE2, CHECKOUT2, RESERVPRICE, RESSTATE
 			FROM reservation
 			WHERE CATEGORY = '펜션' )
 	</select>
@@ -83,7 +83,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 모텔예약목록 가져오기 _201228 원우 -->
 	<select id="moReservList" parameterType="Map" resultType="reservation">
 		SELECT *
-		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE, CHECKOUT, RESERVPRICE, RESSTATE
+		FROM(SELECT ROWNUM as NUM, CATEGORY, RESDATE2, RESID, PRODUCTID, RESERVNAME, CHECKINDATE2, CHECKOUT2, RESERVPRICE, RESSTATE
 			FROM reservation
 			WHERE CATEGORY = '모텔' )
 	</select>
@@ -161,8 +161,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  select sum(reservprice) from reservation
 	</select>
 	
-		<select id="chart4" resultType="int">
-	 select sum(reservprice) from reservation where category ='숙소'
+		<select id="chart4" resultType="reservation">
+	 select category, sum(reservprice) reservprice from reservation group by category
 	</select>
 
 

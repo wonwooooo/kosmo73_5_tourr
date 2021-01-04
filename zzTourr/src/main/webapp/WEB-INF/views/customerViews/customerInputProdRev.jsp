@@ -8,6 +8,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/customerStyle.css" />
 <link rel="stylesheet" type="text/css" href="/zzTourr/resources/css/customerAdmin.css" />
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(function(){
+	$('#btn').click(function(){
+		if( $.trim($("#revContent").val()) == '' ){
+            alert("후기를 입력해주세요.");
+            return false;
+        }
+		$('#insertRev').submit();
+	})
+})
+</script>
 </head>
 <body>
 <div id="main_container">
@@ -77,7 +90,7 @@
       <div class="contact_tab">
         <div class="form_contact">
         
-       <form action="customerInsertProdRev.trip" method="get">
+       <form action="customerInsertProdRev.trip" method="get" id="insertRev">
         <div class="adminform_row_contact">
        <div>
           <input type="hidden" name="resId" value="${resId }" />
@@ -97,13 +110,13 @@
         </div>
         <div class="adminform_row_contact">
           <label class="adminleft">상품 후기: </label>
-          <textarea name="revContent" rows="" cols="" ></textarea>
+          <textarea name="revContent" id="revContent" rows="" cols="" ></textarea>
         </div>
         </div>
 
         <div style="float:right; padding:10px 25px 0 0;">
 
-          <input style="float:right;" type="submit" value="등 록"/>       
+          <input style="float:right;" type="button" value="등 록" id="btn"/>       
      	</div>
         </div>
         </form>

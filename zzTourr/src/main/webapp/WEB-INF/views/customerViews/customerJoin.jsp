@@ -176,7 +176,10 @@ $(function(){
           <div class="form_row_contact">
             <label class="left">아이디: </label>
             <input type="text" class="form_input_contact" id="userId" name="userId"/>
-            <span id="idCheck" style="width:150px;color:blue"></span>
+            <br/>
+            <div>
+            &nbsp; &nbsp;  <span id="idCheck" style="width:150px;color:blue"></span>
+            </div>
           </div>
           <div class="form_row_contact">
             <label class="left">비밀번호: </label>

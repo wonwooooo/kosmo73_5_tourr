@@ -20,7 +20,7 @@ public class HotelServiceImpl implements HotelService {
 		
 		hotelDAO.MgrInsert(vo);
 		
-		System.out.println("선관아 고마워");
+		
 	}
 
 	

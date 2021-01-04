@@ -166,7 +166,7 @@ public class AdminServiceImpl implements AdminService {
 
 	// 차트 2
 	@Override
-	public int chart4() {
+	public List<ReservationVO> chart4() {
 			System.out.println("서비스임플 : chart4");
 			
 	return adminDAO.chart4();

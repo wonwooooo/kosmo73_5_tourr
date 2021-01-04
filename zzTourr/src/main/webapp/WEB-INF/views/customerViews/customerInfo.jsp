@@ -155,7 +155,9 @@ $(function(){
         <div class="form_contact">
         
         <form action="customerModify.trip" method="post" id="insertjoin">
-         <label>고객님의 소중한 개인정보 조회가 가능하며, 하단부 폼을 통해 비밀번호 변경이 가능합니다.</label>
+         <label>고객님의 소중한 개인정보 조회가 가능하며,</label>
+         <br/>
+           <label>성별과 ID 제외 모든 정보 수정이 가능합니다</label>
           <div class="form_row_contact">
             <label class="left">이름: </label>
             <input type="text" class="form_input_contact" id="userName" name="userName" value="${sessionScope.login}"/>
@@ -173,7 +175,7 @@ $(function(){
             <input type="password" class="form_input_contact" id="password" name="password" /></br>
           </div> 	
           <div class="form_row_contact">
-          	<label class="left">비밀번호 재입력: </label>
+          	<label class="left">PW재입력: </label>
             <input type="password" class="form_input_contact" id="password2" name="password2"/></br>
           </div>
  

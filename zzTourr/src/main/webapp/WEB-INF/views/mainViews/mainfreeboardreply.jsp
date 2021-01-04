@@ -107,8 +107,8 @@
           
           <input type="hidden" name="category" value="자유게시판"/>
           <input type="hidden" name="userId" value="${sessionScope.loginId }"/>
-           <input type="text" name="pId" value="${articleId}"/>
-           ${articleId}
+           <input type="hidden" name="pId" value="${articleId}"/>
+           
           <div style="float:right; padding:10px 25px 0 0;">
            
           </div>

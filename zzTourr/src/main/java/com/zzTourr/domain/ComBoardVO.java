@@ -5,15 +5,15 @@ public class ComBoardVO {
 	private String category;
 	private String userId;
 	private int groupId;
-	private	String	sequenceNo;	// 순서번호
-	private	String	postingDate;	// 게시날짜
+	private	String	sequenceNo;	
+	private	String	postingDate;	
 	private	int		readCount;	
-	private	String	userName;	// 작성자
-	private	String	title;				// 제목
+	private	String	userName;	
+	private	String	title;				
 	private	String	content;	
 	private int level;
 	
-	// 내용
+
 	public int getArticleId() {
 		return articleId;
 	}

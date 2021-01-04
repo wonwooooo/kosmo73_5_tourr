@@ -251,10 +251,10 @@
 					                                        		<td>${vo.resId }</td>
 					                                        		<td>${vo.productId }</td>
 					                                        		<td>${vo.reservName }</td>
-					                                        		<td>${vo.checkInDate }</td>
-					                                        		<td>${vo.checkOut }</td>
+					                                        		<td>${vo.checkInDate2 }</td>
+					                                        		<td>${vo.checkOut2 }</td>
 					                                        		<td>${vo.reservPrice }</td>
-					                                        		<td>${vo.reservPrice }</td>
+					                                        		<td>${vo.reservPrice*0.87 }</td>
 					                                        		<c:choose>
 					                                        		<c:when test="${vo.resState == '예약완료' }">
 					                                        			<td><span class="badge-dot badge-brand mr-1"></span>${vo.resState }</td>
@@ -329,10 +329,10 @@
 					                                        		<td>${vo.resId }</td>
 					                                        		<td>${vo.productId }</td>
 					                                        		<td>${vo.reservName }</td>
-					                                        		<td>${vo.checkInDate }</td>
-					                                        		<td>${vo.checkOut }</td>
+					                                        		<td>${vo.checkInDate2 }</td>
+					                                        		<td>${vo.checkOut2 }</td>
 					                                        		<td>${vo.reservPrice }</td>
-					                                        		<td>${vo.reservPrice }</td>
+					                                        		<td>${vo.reservPrice*0.87 }</td>
 					                                        		<c:choose>
 					                                        		<c:when test="${vo.resState == '예약완료' }">
 					                                        			<td><span class="badge-dot badge-brand mr-1"></span>${vo.resState }</td>
@@ -407,10 +407,10 @@
 					                                        		<td>${vo.resId }</td>
 					                                        		<td>${vo.productId }</td>
 					                                        		<td>${vo.reservName }</td>
-					                                        		<td>${vo.checkInDate }</td>
-					                                        		<td>${vo.checkOut }</td>
+					                                        		<td>${vo.checkInDate2 }</td>
+					                                        		<td>${vo.checkOut2 }</td>
 					                                        		<td>${vo.reservPrice }</td>
-					                                        		<td>${vo.reservPrice }</td>
+					                                        		<td>${vo.reservPrice*0.87 }</td>
 					                                        		<c:choose>
 					                                        		<c:when test="${vo.resState == '예약완료' }">
 					                                        			<td><span class="badge-dot badge-brand mr-1"></span>${vo.resState }</td>

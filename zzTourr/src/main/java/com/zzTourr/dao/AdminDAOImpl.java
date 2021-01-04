@@ -159,9 +159,9 @@ public class AdminDAOImpl implements AdminDAO {
 	}
 
 	//차트
-	public int chart4() {
+	public List<ReservationVO> chart4() {
 			System.out.println("다오임플 : chart4");
-			return mybatis.selectOne("manager.chart4");
+			return mybatis.selectList("manager.chart4");
 	}
 
 	

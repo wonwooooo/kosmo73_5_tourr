@@ -44,7 +44,7 @@ public class AdminDashboardController {
 	*/
 	//차트
 	
-	@RequestMapping(value = "adminChart.trip",
+	@RequestMapping(value = "/main/adminChart.trip",
 			produces = "application/text;charset=utf-8")
 	//*****************************************
 	//AJAX
