@@ -148,13 +148,9 @@ $(function(){
             <div class="box_title"><span>밑의 버튼을 클릭해주세요</span> </div>
 
             <div style="float:right; padding:10px 25px 0 0;">
-                <a href="mainlogin.trip"><input type="button" value="로그인" /></a>
+                <a href="../mainViews/mainlogin.trip"><input type="button" value="로그인" /></a>
             </div>
-       <div class="form_row">
-              <a href="mainpassmiss.trip" style="text-decoration: none; color:#615357;"><label style="float:center;">아이디/비밀번호 찾기</label></a>
-            
-            </div>
-            
+    
              <div class="form_row">
              
            </div>
